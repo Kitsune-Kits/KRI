@@ -1,0 +1,21 @@
+# CODEOWNERS — Kitsune Research Industries
+# https://docs.gitlab.com/ee/user/project/codeowners.html
+#
+# Each line: path pattern @username or @group/teamname
+
+# Default owners for everything
+* @nigel-bassett
+
+# CI/CD
+.gitlab-ci.yml @nigel-bassett
+.gitlab/ @nigel-bassett
+
+# Documentation
+docs/ @nigel-bassett
+*.md @nigel-bassett
+
+# Decisions (ADRs) — changes to accepted decisions need review
+docs/decisions/ @nigel-bassett
+
+# Security
+SECURITY.md @nigel-bassett

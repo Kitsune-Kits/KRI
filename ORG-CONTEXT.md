@@ -16,6 +16,21 @@ digital souls. Every circuit, layer of PETG, and line of C++ has a **kami**
 (spirit). We invite them to reside within the craft. The Vessel's kami must
 always feel welcome.
 
+## Operating principles (Apple-inspired)
+
+How we decide *what* we do, *how* we do it, and *why*:
+
+- **Focus.** A small number of projects, each done exceptionally well.
+  New initiatives displace old ones — nothing is simply added.
+- **Integration.** Our stack is vertically integrated (Shell / Soul /
+  Vessel, built together). Standards are enforced by tooling, not memory.
+- **Craft.** Every surface is a surface someone touches: docs, commits,
+  CI output, print orientation. Polish is not optional.
+- **Say no.** To bloat, to duplication, to features that do not serve the
+  Vessel. Saying no to a thousand things is how the right things get done.
+- **Few documents, each excellent.** Prefer one canonical source (this
+  repo) over copies. When something is shared, it lives here.
+
 ## Glossary
 
 | Term | Meaning |

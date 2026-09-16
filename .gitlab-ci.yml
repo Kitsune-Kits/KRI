@@ -1,0 +1,40 @@
+# .gitlab-ci.yml — KRI (org context hub)
+# Minimal CI: agent-guidance guard + sibling repo link check.
+# All jobs non-blocking — signals, not gates (org convention).
+
+stages:
+  - validate
+
+# -- Agents guard (KRI context-rot standard) --
+agents-guard:
+  stage: validate
+  image: alpine:latest
+  variables:
+    KRI_LINK_REQUIRED: "false"
+  script:
+    - sh .gitlab/scripts/agents-guard.sh
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
+  allow_failure: true
+
+# -- Sibling repo link check (README / ORG-CONTEXT URLs resolve) --
+repo-link-check:
+  stage: validate
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache curl
+  script:
+    - |
+      for url in \
+        https://gitlab.com/kitsune-kits/kitsunebios \
+        https://gitlab.com/kitsune-kits/kitsuneOS \
+        https://gitlab.com/kitsune-kits/Project-Kogane \
+        https://gitlab.com/kitsune-kits/Project-Saffron-Blossom \
+        https://gitlab.com/kitsune-kits/Project-Lazy-Comet; do
+        code=$(curl -s -o /dev/null -w '%{http_code}' "$url")
+        echo "$code $url"
+      done
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  allow_failure: true

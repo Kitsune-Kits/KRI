@@ -62,6 +62,9 @@ spanning more than a handful of steps:
 - KRI persona attribution — branch prefixes (`coco/`, `zaku/`, `piko/`,
   `nui/`), `KRI-Persona:` and `Co-authored-by:` trailers:
   [PERSONA-ATTRIBUTION.md](PERSONA-ATTRIBUTION.md).
+- Architectural decisions are recorded as ADRs in
+  [docs/decisions/](docs/decisions/) — accepted ADRs are immutable;
+  supersede rather than edit.
 
 ## Tooling via Vibe (gitlab_4be8 connector)
 
