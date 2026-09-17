@@ -1,6 +1,14 @@
-# .gitlab-ci.yml — KRI (org context hub)
-# Minimal CI: agent-guidance guard + sibling repo link check.
-# All jobs non-blocking — signals, not gates (org convention).
+#
+#  .gitlab-ci.yml
+#  kri
+#
+#  Abstract:
+#      Minimal CI for the KRI org context hub: the agent-guidance guard
+#      and a sibling repo link check. All jobs are non-blocking --
+#      signals, not gates (org convention).
+#
+#  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
+#
 
 stages:
   - validate
