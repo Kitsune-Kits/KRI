@@ -12,6 +12,7 @@ index.
 | `AGENTS.md` | Org-wide AI agent operating standard — read before working in any repo |
 | `CLAUDE.md` | Claude Code entrypoint (imports AGENTS.md) |
 | `ORG-CONTEXT.md` | What KRI is: philosophy, glossary, three-repo split, pull graph |
+| `ORGANIZATION-SYSTEM.md` | How KRI organizes files: pillars, tags, sync, media toolchain, shortcuts — consult before touching files |
 | `PERSONA-ATTRIBUTION.md` | KRI ensemble attribution standard |
 
 ## Repos

@@ -10,6 +10,9 @@ holds what is shared. **Read both before working.**
 2. The repo's `README.md`.
 3. The repo's `AGENTS.md` — repo-specific rules, repo map, watch-outs.
 4. This file, plus the repo's `.gitlab/DEV-WORKFLOW.md`.
+5. [ORGANIZATION-SYSTEM.md](ORGANIZATION-SYSTEM.md) — how KRI files, tags,
+   tools, and media are organized. Consult before creating, naming, moving,
+   or tagging any KRI file or asset.
 
 ## Context rot mitigation — mandatory for big operations
 
