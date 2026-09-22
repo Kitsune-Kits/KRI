@@ -19,12 +19,16 @@ Alternatives considered:
 - SF Pro everywhere, no serif — rejected: formal lettering (Gold-Leaf's role in
   ADR-0001) demands a serif voice.
 - A Western serif (New York / Source Serif 4) as the formal voice — rejected
-  during review: beautiful, but traditional without futurism. Replaced by
-  **Noto Serif JP** (open canon; New York as the Apple-native stand-in where
-  Shippori cannot be installed): Mincho letterforms are born of woodblock
-  printing — ink-cut terminals shaped by the carving knife — matching the
-  Eastern tradition of the torii crimson and sumi ink. *Modern and futuristic,
-  grounded in tradition*, per the Architect's direction.
+  during review: beautiful, but traditional without futurism. Replaced by a
+  Mincho: letterforms born of woodblock printing — ink-cut terminals shaped
+  by the carving knife — matching the Eastern tradition of the torii crimson
+  and sumi ink. *Modern and futuristic, grounded in tradition*, per the
+  Architect's direction.
+- **Shippori Mincho** — selected first, then replaced during MR review: the
+  Architect could not install it (web-distributed, not packaged as normal
+  macOS font files). A canon font must install when its Architect asks.
+  **Noto Serif JP** takes its place: same Mincho tradition, full weight range
+  (400/700 canon weights), ordinary downloadable font files.
 - Open fonts only (Inter + Noto Serif JP + JetBrains Mono) — rejected as primary:
   the Apple-native families are canon; the open faces are the licensed-for-web
   voice of the same families, not lesser fallbacks.

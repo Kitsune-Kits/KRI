@@ -68,7 +68,7 @@ line-heights are part of the size, not a suggestion.
 4. **Line length:** 60–75 characters for body text. `body-lg` max ~55.
 5. **Weights are three:** 400 (working), 600 (structure), 700 (ceremony). No 300, no 800 — thin weights break on physical prints, and 800 shouts louder than Zaku.
 6. **Letterspacing:** negative on `display` (-1%), zero on body, positive on `overline` (+5%). Mincho's ink-cut terminals already carry visual weight — its display sizes need the least correction of any family we have tried.
-7. **If Noto Serif JP cannot be installed:** fetch it from Google Fonts (one CSS line, zero dependencies) — or fall to **New York** (Apple-native, best Latin display) or **Songti SC** (Apple-bundled; the Chinese Song face of the same woodblock tradition — genuine Mincho lineage, though its Latin capitals are wider and flatter than Shippori's; prefer New York for Latin-only display). The stack order encodes this: never is a system left without a correct-tradition face.
+7. **KRI Mincho installs normally:** Noto Serif JP downloads from Google Fonts as ordinary TTF/OTF files — double-click → Install Font. If unavailable, the stack degrades gracefully: **New York** (Apple-native, best Latin display) → **Songti SC** (Apple-bundled Chinese Song face, same woodblock tradition; Latin capitals wider and flatter — prefer New York for Latin-only display) → Hiragino Mincho ProN. Never is a system left without a correct-tradition face.
 
 ## Pairing with the Palette
 
