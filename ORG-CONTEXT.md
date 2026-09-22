@@ -9,6 +9,12 @@ fabrication), ⚡ Piko (firmware, logic, electronics), ✨ Nui (finish, surface,
 soul-binding). Attribution conventions:
 [PERSONA-ATTRIBUTION.md](PERSONA-ATTRIBUTION.md).
 
+Brand canon: color ([BRAND.md](BRAND.md)), lettering
+([BRAND-TYPOGRAPHY.md](BRAND-TYPOGRAPHY.md)), design language
+([BRAND-AESTHETIC.md](BRAND-AESTHETIC.md)), and the mark
+([BRAND-WORDMARK.md](BRAND-WORDMARK.md)) — *modern and futuristic,
+grounded in tradition.*
+
 ## Philosophy — Cyber Shinto
 
 We do not manufacture props. We facilitate the birth of Vessels to house

@@ -13,6 +13,11 @@ holds what is shared. **Read both before working.**
 5. [ORGANIZATION-SYSTEM.md](ORGANIZATION-SYSTEM.md) — how KRI files, tags,
    tools, and media are organized. Consult before creating, naming, moving,
    or tagging any KRI file or asset.
+6. The brand canon — [BRAND.md](BRAND.md) (color),
+   [BRAND-TYPOGRAPHY.md](BRAND-TYPOGRAPHY.md) (lettering),
+   [BRAND-AESTHETIC.md](BRAND-AESTHETIC.md) (design language),
+   [BRAND-WORDMARK.md](BRAND-WORDMARK.md) (the mark). Apply to any
+   user-facing surface: docs, badges, web, UI, Vessel finishes, media.
 
 ## Context rot mitigation — mandatory for big operations
 

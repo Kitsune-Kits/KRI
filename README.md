@@ -14,6 +14,10 @@ index.
 | `ORG-CONTEXT.md` | What KRI is: philosophy, glossary, three-repo split, pull graph |
 | `ORGANIZATION-SYSTEM.md` | How KRI organizes files: pillars, tags, sync, media toolchain, shortcuts — consult before touching files |
 | `PERSONA-ATTRIBUTION.md` | KRI ensemble attribution standard |
+| `BRAND.md` | Brand palette canon — five-color core + persona sub-palettes (ADR-0001) |
+| `BRAND-TYPOGRAPHY.md` | Typography canon — KRI Sans/Mincho/Mono, size scale (ADR-0002) |
+| `BRAND-AESTHETIC.md` | Design language — Kitsune Modern: tradition is the structure, the future is the light (ADR-0003) |
+| `BRAND-WORDMARK.md` | Wordmark & seal spec — the hanko (ADR-0004) |
 
 ## Repos
 
