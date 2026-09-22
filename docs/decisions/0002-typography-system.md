@@ -24,15 +24,17 @@ Alternatives considered:
   by the carving knife — matching the Eastern tradition of the torii crimson
   and sumi ink. *Modern and futuristic, grounded in tradition*, per the
   Architect's direction.
-- **Shippori Mincho** — selected first, then replaced during MR review: the
-  Architect could not install it (web-distributed, not packaged as normal
-  macOS font files). A canon font must install when its Architect asks.
-- **Noto Serif JP** — selected second, then replaced: it is a Japanese font —
-  the download arrives as a large CJK glyph set with Latin as a second-class
-  passenger, while KRI's canon lettering is Latin-first. **Hahmlet** takes its
-  place: a Mincho-style Latin typeface (same woodblock-cut tradition, built
-  for the script KRI actually sets), ordinary downloadable font files, canon
-  weights 400/700 available.
+- **Shippori Mincho** — selected first, briefly replaced twice, then
+  **reinstated by Architect decision**: the initial removal was because it
+  would not install; it was then discovered that Homebrew provides it
+  (`brew install --cask font-shippori-mincho`), dissolving the objection.
+  It is the most traditional Mincho considered and holds the canon.
+- **Noto Serif JP** — replaced: a Japanese glyph set whose Latin is secondary
+  and whose download is a large CJK package.
+- **Hahmlet** — a purpose-built Mincho-style Latin typeface; held the canon
+  briefly and remains an honorable alternative if KRI ever wants a
+  Latin-first face, but Shippori is the more traditional choice and the
+  Architect prefers it.
 - Open fonts only (Inter + Noto Serif JP + JetBrains Mono) — rejected as primary:
   the Apple-native families are canon; the open faces are the licensed-for-web
   voice of the same families, not lesser fallbacks.
