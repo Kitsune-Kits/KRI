@@ -24,7 +24,7 @@ voice licensed for that surface.
 | Stack | Canon (Apple-native) | Canon (open equivalent) | Role |
 |---|---|---|---|
 | **KRI Sans** | SF Pro | Inter | Body, UI, structure — the working voice |
-| **KRI Mincho** | New York / Songti SC | Shippori Mincho | Display & formal lettering — titles, wordmarks, ceremony; pairs with Gold-Leaf. Woodblock-cut letterforms: the tradition is the structure, the crispness is the future |
+| **KRI Mincho** | New York / Songti SC | Noto Serif JP | Display & formal lettering — titles, wordmarks, ceremony; pairs with Gold-Leaf. Woodblock-cut letterforms: the tradition is the structure, the crispness is the future |
 | **KRI Mono** | SF Mono | JetBrains Mono | Code, firmware, terminal, technical readouts, prop engravings |
 
 **Rules:**
@@ -35,7 +35,7 @@ voice licensed for that surface.
 5. **No italic in Mono** — code is never emphasized, it is read.
 6. Font stacks (write them exactly):
    - Sans: `font-family: "SF Pro", "Inter", -apple-system, system-ui, sans-serif`
-   - Mincho: `font-family: "Shippori Mincho", "New York", "Songti SC", "Hiragino Mincho ProN", serif`
+   - Mincho: `font-family: "Noto Serif JP", "New York", "Songti SC", "Hiragino Mincho ProN", serif`
    - Mono: `font-family: "SF Mono", "JetBrains Mono", "SF Mono", ui-monospace, monospace`
 
 ## The Size Scale
@@ -68,7 +68,7 @@ line-heights are part of the size, not a suggestion.
 4. **Line length:** 60–75 characters for body text. `body-lg` max ~55.
 5. **Weights are three:** 400 (working), 600 (structure), 700 (ceremony). No 300, no 800 — thin weights break on physical prints, and 800 shouts louder than Zaku.
 6. **Letterspacing:** negative on `display` (-1%), zero on body, positive on `overline` (+5%). Mincho's ink-cut terminals already carry visual weight — its display sizes need the least correction of any family we have tried.
-7. **If Shippori Mincho cannot be installed:** fetch it from Google Fonts (one CSS line, zero dependencies) — or fall to **New York** (Apple-native, best Latin display) or **Songti SC** (Apple-bundled; the Chinese Song face of the same woodblock tradition — genuine Mincho lineage, though its Latin capitals are wider and flatter than Shippori's; prefer New York for Latin-only display). The stack order encodes this: never is a system left without a correct-tradition face.
+7. **If Noto Serif JP cannot be installed:** fetch it from Google Fonts (one CSS line, zero dependencies) — or fall to **New York** (Apple-native, best Latin display) or **Songti SC** (Apple-bundled; the Chinese Song face of the same woodblock tradition — genuine Mincho lineage, though its Latin capitals are wider and flatter than Shippori's; prefer New York for Latin-only display). The stack order encodes this: never is a system left without a correct-tradition face.
 
 ## Pairing with the Palette
 
