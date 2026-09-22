@@ -24,7 +24,7 @@ voice licensed for that surface.
 | Stack | Canon (Apple-native) | Canon (open equivalent) | Role |
 |---|---|---|---|
 | **KRI Sans** | SF Pro | Inter | Body, UI, structure — the working voice |
-| **KRI Mincho** | New York / Songti SC | Noto Serif JP | Display & formal lettering — titles, wordmarks, ceremony; pairs with Gold-Leaf. Woodblock-cut letterforms: the tradition is the structure, the crispness is the future |
+| **KRI Mincho** | New York / Songti SC | Hahmlet | Display & formal lettering — titles, wordmarks, ceremony; pairs with Gold-Leaf. Woodblock-cut letterforms: the tradition is the structure, the crispness is the future |
 | **KRI Mono** | SF Mono | JetBrains Mono | Code, firmware, terminal, technical readouts, prop engravings |
 
 **Rules:**
@@ -35,7 +35,7 @@ voice licensed for that surface.
 5. **No italic in Mono** — code is never emphasized, it is read.
 6. Font stacks (write them exactly):
    - Sans: `font-family: "SF Pro", "Inter", -apple-system, system-ui, sans-serif`
-   - Mincho: `font-family: "Noto Serif JP", "New York", "Songti SC", "Hiragino Mincho ProN", serif`
+   - Mincho: `font-family: "Hahmlet", "New York", "Songti SC", "Hiragino Mincho ProN", serif`
    - Mono: `font-family: "SF Mono", "JetBrains Mono", "SF Mono", ui-monospace, monospace`
 
 ## The Size Scale
@@ -68,7 +68,7 @@ line-heights are part of the size, not a suggestion.
 4. **Line length:** 60–75 characters for body text. `body-lg` max ~55.
 5. **Weights are three:** 400 (working), 600 (structure), 700 (ceremony). No 300, no 800 — thin weights break on physical prints, and 800 shouts louder than Zaku.
 6. **Letterspacing:** negative on `display` (-1%), zero on body, positive on `overline` (+5%). Mincho's ink-cut terminals already carry visual weight — its display sizes need the least correction of any family we have tried.
-7. **KRI Mincho installs normally:** Noto Serif JP downloads from Google Fonts as ordinary TTF/OTF files — double-click → Install Font. If unavailable, the stack degrades gracefully: **New York** (Apple-native, best Latin display) → **Songti SC** (Apple-bundled Chinese Song face, same woodblock tradition; Latin capitals wider and flatter — prefer New York for Latin-only display) → Hiragino Mincho ProN. Never is a system left without a correct-tradition face.
+7. **KRI Mincho is Latin-native:** Hahmlet is a Mincho-style Latin typeface (woodblock-cut terminals for the Latin script KRI actually sets) — ordinary downloadable font files, weights 400/500/600/700. The stack degrades gracefully: **New York** (Apple-native, always present on the Architect's Mac, same voice) → **Songti SC** (Apple-bundled, for CJK setting) → Hiragino Mincho ProN. Never is a system left without a correct-tradition face. Japanese/CJK display text uses the CJK faces directly (Songti SC / Hiragino Mincho); the brand's canon lettering is Latin-first.
 
 ## Pairing with the Palette
 

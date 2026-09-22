@@ -27,8 +27,12 @@ Alternatives considered:
 - **Shippori Mincho** — selected first, then replaced during MR review: the
   Architect could not install it (web-distributed, not packaged as normal
   macOS font files). A canon font must install when its Architect asks.
-  **Noto Serif JP** takes its place: same Mincho tradition, full weight range
-  (400/700 canon weights), ordinary downloadable font files.
+- **Noto Serif JP** — selected second, then replaced: it is a Japanese font —
+  the download arrives as a large CJK glyph set with Latin as a second-class
+  passenger, while KRI's canon lettering is Latin-first. **Hahmlet** takes its
+  place: a Mincho-style Latin typeface (same woodblock-cut tradition, built
+  for the script KRI actually sets), ordinary downloadable font files, canon
+  weights 400/700 available.
 - Open fonts only (Inter + Noto Serif JP + JetBrains Mono) — rejected as primary:
   the Apple-native families are canon; the open faces are the licensed-for-web
   voice of the same families, not lesser fallbacks.
