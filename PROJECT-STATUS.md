@@ -37,7 +37,7 @@ not from memory of this table.
   (non-blocking) — verifies guidance files exist, KRI link resolves, and
   warns when `PROJECT-STATUS.md` is >30 days stale.
 - **Decision log (done, Sept 16):** ADR convention in `docs/decisions/`.
-- **Study tier + Study 001a: First Light (Sept 23):** ADR-0004 defines the
+- **Study tier + Study 001a: First Light (Sept 23):** ADR-0005 defines the
   Study tier and numbering; STUDIES.md is the canonical index. First Light is
   a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
   doctrine. Repo to be created by the Architect in the GitLab UI.

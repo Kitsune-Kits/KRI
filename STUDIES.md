@@ -1,7 +1,7 @@
 # STUDIES — the Study tier ledger
 
-> Canonical index of KRI Studies. Tier definition: ADR-0004
-> (docs/decisions/0004-study-tier.md). A Study is a focused work of craft,
+> Canonical index of KRI Studies. Tier definition: ADR-0005
+> (docs/decisions/0005-study-tier.md). A Study is a focused work of craft,
 > smaller than a Project, whose deliverable includes written principles.
 > One repo per Study, full craft standards.
 

@@ -1,4 +1,4 @@
-# ADR-0004: The Study tier
+# ADR-0005: The Study tier
 
 - **Status:** Accepted
 - **Date:** 2026-09-23
