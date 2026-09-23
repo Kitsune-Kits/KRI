@@ -20,8 +20,8 @@ not from memory of this table.
 | Repo | Role | Phase |
 |---|---|---|
 | [kitsunebios](https://gitlab.com/kitsune-kits/kitsunebios) | Shell | v0.4 — boot-to-CLI in progress |
-| [kitsuneOS](https://gitlab.com/kitsune-kits/kitsuneOS) | Soul | Stable core; all modules complete |
-| [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | Vessel | Tasogane build + testbench |
+| [kitsuneOS](https://gitlab.com/kitsune-kits/kitsuneOS) | Soul | **Rust-primary** (ADR-0004, 2026-09-23) — workspace compiles, rust-check blocking, C reference frozen |
+| [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | Vessel | Tasogane build + testbench — rewired to cargo firmware build (ADR-0004) |
 | [Project-Saffron-Blossom](https://gitlab.com/kitsune-kits/Project-Saffron-Blossom) | Cosplay Vessel | M1 — electronics design (deadline 2027-10-31) |
 | [Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet) | Cosplay Vessel | Debuted May 2026 |
 | [Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light) | Study 001a | S1 foundation done; S2 KMOD outline merged |
@@ -37,6 +37,7 @@ not from memory of this table.
   (non-blocking) — verifies guidance files exist, KRI link resolves, and
   warns when `PROJECT-STATUS.md` is >30 days stale.
 - **Decision log (done, Sept 16):** ADR convention in `docs/decisions/`.
+- **Rust-primary switchover (Sept 23, kitsuneOS ADR-0004):** Rust is canonical; rust-check blocking; C-only CI jobs retired; C tree frozen as the R2 golden-harness reference. Kogane rewired (build.sh --firmware → cargo). **Manual step pending:** create the `legacy/c-reference` tag in the kitsuneOS GitLab UI (connector cannot create tags). Commits: kitsuneOS `2fe60c15`, Kogane `90274f4a`.
 - **Study tier + Study 001a: First Light (Sept 23):** ADR-0005 defines the
   Study tier and numbering; STUDIES.md is the canonical index. First Light is
   a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
