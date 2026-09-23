@@ -1,6 +1,6 @@
 # PROJECT-STATUS — KRI (org context hub)
 
-> **Last updated:** 2026-09-16 · **Maintained by:** KRI (Kitsune Research Industries)
+> **Last updated:** 2026-09-23 · **Maintained by:** KRI (Kitsune Research Industries)
 > **Read this first when starting a new chat** — org-wide state lives here.
 
 ## Overview
@@ -24,6 +24,7 @@ not from memory of this table.
 | [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | Vessel | Tasogane build + testbench |
 | [Project-Saffron-Blossom](https://gitlab.com/kitsune-kits/Project-Saffron-Blossom) | Cosplay Vessel | M1 — electronics design (deadline 2027-10-31) |
 | [Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet) | Cosplay Vessel | Debuted May 2026 |
+| [Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light) | Study 001a | Soul-mapped; repo creation pending (see STUDIES.md) |
 
 ## Current initiatives
 
@@ -36,6 +37,10 @@ not from memory of this table.
   (non-blocking) — verifies guidance files exist, KRI link resolves, and
   warns when `PROJECT-STATUS.md` is >30 days stale.
 - **Decision log (done, Sept 16):** ADR convention in `docs/decisions/`.
+- **Study tier + Study 001a: First Light (Sept 23):** ADR-0005 defines the
+  Study tier and numbering; STUDIES.md is the canonical index. First Light is
+  a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
+  doctrine. Repo to be created by the Architect in the GitLab UI.
 
 ## Manual setup remaining (GitLab UI)
 
