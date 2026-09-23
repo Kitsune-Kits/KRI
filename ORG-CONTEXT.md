@@ -45,6 +45,8 @@ How we decide *what* we do, *how* we do it, and *why*:
 | Three-repo split | Shell / Soul / Vessel architecture |
 | KMOD | Compiled prop module, loaded by URANOS with CRC32 verification |
 | Kitsunebi | Fox-fire; also the name of the Shell OS (kitsunebiOS) |
+| Study | Focused work of craft, smaller than a Project, whose deliverable includes written principles (ADR-0004; index: STUDIES.md) |
+| Kyber crystal | NFC soul-tag — the swappable soul of a Vessel; UID-unique, carries soul-data |
 
 ## Three-repo split (Tasogane)
 
@@ -59,6 +61,12 @@ Cosplay Vessel projects run the same Soul on their props:
 (Yellow, Deltarune Ch. 5 — crystalline revolver, cowboy aesthetic) and
 [Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet)
 (Takanashi Hoshino, Blue Archive — ESP-NOW + BLE wireless mesh).
+
+Studies — focused works of craft that establish principles (ADR-0004) — are
+indexed in [STUDIES.md](STUDIES.md). First: Study 001a First Light, a
+buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
+doctrine ([Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light),
+repo creation pending).
 
 ## Build-time pull graph — nothing vendored
 
