@@ -45,5 +45,11 @@ not from memory of this table.
 ## Manual setup remaining (GitLab UI)
 
 See [SETUP-UI-CHECKLIST.md](SETUP-UI-CHECKLIST.md) — labels, milestones,
-issue boards, MR approval rules, protected branches, wiki population,
-GitHub archiving.
+issue boards, MR approval rules, protected branches, GitHub archiving.
+**Wiki population is now scripted:** every repo (2026-09-23) carries
+`.gitlab/wiki/*.md` content plus `.gitlab/scripts/populate-wiki.sh` — one
+command clones the wiki repo and pushes all pages. kitsunebios and kri got
+wiki content for the first time; the four older repos were restyled
+(front-matter titles, breadcrumb nav, brand footer). Commits: Saffron
+`210812d9`, kitsuneOS `1174a7a7`, Lazy Comet `76f36b4a`, Kogane `06f87b9f`,
+kitsunebios `063ac953`, kri `496007b2`.
