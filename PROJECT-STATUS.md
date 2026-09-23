@@ -24,7 +24,7 @@ not from memory of this table.
 | [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | Vessel | Tasogane build + testbench |
 | [Project-Saffron-Blossom](https://gitlab.com/kitsune-kits/Project-Saffron-Blossom) | Cosplay Vessel | M1 — electronics design (deadline 2027-10-31) |
 | [Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet) | Cosplay Vessel | Debuted May 2026 |
-| [Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light) | Study 001a | Soul-mapped; repo creation pending (see STUDIES.md) |
+| [Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light) | Study 001a | S1 foundation done; S2 KMOD outline merged |
 
 ## Current initiatives
 
@@ -40,7 +40,7 @@ not from memory of this table.
 - **Study tier + Study 001a: First Light (Sept 23):** ADR-0005 defines the
   Study tier and numbering; STUDIES.md is the canonical index. First Light is
   a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
-  doctrine. Repo to be created by the Architect in the GitLab UI.
+  doctrine. Repo created 2026-09-23; foundation seeded, KMOD crystal-handshake outline merged (MR !1).
 
 ## Manual setup remaining (GitLab UI)
 
