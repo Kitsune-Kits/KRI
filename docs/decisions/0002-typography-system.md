@@ -19,13 +19,23 @@ Alternatives considered:
 - SF Pro everywhere, no serif — rejected: formal lettering (Gold-Leaf's role in
   ADR-0001) demands a serif voice.
 - A Western serif (New York / Source Serif 4) as the formal voice — rejected
-  during review: beautiful, but traditional without futurism. Replaced by
-  **Shippori Mincho** (open canon; New York as the Apple-native stand-in where
-  Shippori cannot be installed): Mincho letterforms are born of woodblock
-  printing — ink-cut terminals shaped by the carving knife — matching the
-  Eastern tradition of the torii crimson and sumi ink. *Modern and futuristic,
-  grounded in tradition*, per the Architect's direction.
-- Open fonts only (Inter + Shippori Mincho + JetBrains Mono) — rejected as primary:
+  during review: beautiful, but traditional without futurism. Replaced by a
+  Mincho: letterforms born of woodblock printing — ink-cut terminals shaped
+  by the carving knife — matching the Eastern tradition of the torii crimson
+  and sumi ink. *Modern and futuristic, grounded in tradition*, per the
+  Architect's direction.
+- **Shippori Mincho** — selected first, briefly replaced twice, then
+  **reinstated by Architect decision**: the initial removal was because it
+  would not install; it was then discovered that Homebrew provides it
+  (`brew install --cask font-shippori-mincho`), dissolving the objection.
+  It is the most traditional Mincho considered and holds the canon.
+- **Noto Serif JP** — replaced: a Japanese glyph set whose Latin is secondary
+  and whose download is a large CJK package.
+- **Hahmlet** — a purpose-built Mincho-style Latin typeface; held the canon
+  briefly and remains an honorable alternative if KRI ever wants a
+  Latin-first face, but Shippori is the more traditional choice and the
+  Architect prefers it.
+- Open fonts only (Inter + Noto Serif JP + JetBrains Mono) — rejected as primary:
   the Apple-native families are canon; the open faces are the licensed-for-web
   voice of the same families, not lesser fallbacks.
 - A fluid/viewport-based scale — rejected: fixed tokens survive across GitLab
@@ -40,7 +50,7 @@ The KRI type system is locked, canonically defined in
 [BRAND-TYPOGRAPHY.md](../../BRAND-TYPOGRAPHY.md):
 
 1. **Three families:** KRI Sans (SF Pro / Inter), KRI Mincho (New York /
-   Shippori Mincho), KRI Mono (SF Mono / JetBrains Mono).
+   Noto Serif JP), KRI Mono (SF Mono / JetBrains Mono).
 2. **Fifteen size tokens** on a 1.250 modular scale from 16px base
    (`display-xl` 48px down to `caption` 12px), each with canon line-height,
    weight, and family.
