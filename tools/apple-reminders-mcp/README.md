@@ -1,5 +1,15 @@
 # apple-reminders-mcp
 
+> **Status: SHELVED (2026-09-26).** Complete and fully tested end-to-end,
+> but Mistral's connector wizard never reached the Tailscale Funnel URL
+> (`.ts.net`) — validation probes never arrived at the server, confirmed by
+> full request logging. Revival path: Mistral support re `.ts.net`
+> reachability, or expose via a conventional custom domain. Local teardown:
+> LaunchAgent, Keychain token, funnel, Tailscale — all documented in
+> `launchd/TAILSCALE.md`.
+
+# apple-reminders-mcp (original below)
+
 A Node MCP server that exposes macOS **Apple Reminders** (via a JXA bridge) to
 Mistral, over Streamable HTTP with **Keychain-backed bearer auth**. Runs on the
 Architect's Mac as a hardened LaunchAgent behind a Cloudflare Tunnel guarded by
