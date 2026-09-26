@@ -30,6 +30,24 @@ Three independent walls (see `SECURITY.md` for the full threat model):
 
 The server binds to `127.0.0.1` only — the tunnel is the single door.
 
+## One-command install
+
+With a GitLab personal access token (read_api scope) exported:
+
+```bash
+export GITLAB_TOKEN=glpat-...
+bash <(curl -fsSL \
+  -H "PRIVATE-TOKEN: $GITLAB_TOKEN" \
+  "https://gitlab.com/api/v4/projects/86534918/repository/files/tools%2Fapple-reminders-mcp%2Finstall.sh/raw?ref=main")
+```
+
+It clones the repo into ~/kri, then runs `setup.sh --tunnel`: dependencies,
+Keychain token, LaunchAgent auto-start, managed-account auto-detection, and a
+guided Cloudflare Tunnel bootstrap. The token requirement is intentional —
+the repo is private, so the bootstrap only runs for you. The Cloudflare
+Access policy and the Mistral connector registration remain manual
+(`launchd/CLOUDFLARED.md`).
+
 ## Quick start
 
 ```bash
