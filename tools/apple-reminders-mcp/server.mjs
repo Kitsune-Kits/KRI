@@ -133,6 +133,13 @@ server.tool(
 const app = express();
 app.use(express.json({ limit: "2mb" }));
 
+// Log every request (any method, any path) — connector wizard probes must be visible.
+app.use((req, res, next) => {
+  console.log(new Date().toISOString(), req.ip, req.method, req.path,
+    req.headers.authorization ? "has-auth-header" : "no-auth");
+  next();
+});
+
 app.post("/mcp", async (req, res) => {
   // The MCP initialize handshake carries no data and no tool access, so it is
   // exempt from bearer auth — connector validators (e.g. Mistral's wizard) ping
