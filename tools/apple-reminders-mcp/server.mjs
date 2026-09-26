@@ -134,8 +134,14 @@ const app = express();
 app.use(express.json({ limit: "2mb" }));
 
 app.post("/mcp", async (req, res) => {
+  // The MCP initialize handshake carries no data and no tool access, so it is
+  // exempt from bearer auth — connector validators (e.g. Mistral's wizard) ping
+  // the URL before the token is entered. Everything else still requires the
+  // Keychain token.
+  const method = req.body && req.body.method;
+  const isInitialize = method === "initialize";
   const auth = req.headers.authorization || "";
-  if (auth !== "Bearer " + TOKEN) {
+  if (!isInitialize && auth !== "Bearer " + TOKEN) {
     return res.status(401).json({ error: "unauthorized" });
   }
   try {
