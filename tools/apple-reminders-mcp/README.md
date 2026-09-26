@@ -25,8 +25,8 @@ Three independent walls (see `SECURITY.md` for the full threat model):
 2. **DEFAULT_ACCOUNT policy** — when set in `.env`, the server force-scopes
    every call to the managed Apple Business account and rejects any request
    naming a different account. Personal iCloud lists are unreachable.
-3. **Cloudflare Access** — an identity wall (Zero Trust policy on the tunnel
-   hostname) in front of the bearer check. See `launchd/CLOUDFLARED.md`.
+3. **TLS via Tailscale Funnel** — stable public HTTPS URL, no domain needed;
+   TLS terminated with auto-renewed certs. See `launchd/TAILSCALE.md`.
 
 The server binds to `127.0.0.1` only — the tunnel is the single door.
 
@@ -59,9 +59,9 @@ On the first tool call, macOS prompts to allow node to control Reminders —
 approve it (System Settings → Privacy & Security → Automation to re-grant).
 
 Then set `DEFAULT_ACCOUNT` in `.env` to the managed account's exact name
-(run `list_accounts` first), and follow `launchd/CLOUDFLARED.md` for the
-tunnel. Register `https://<tunnel-host>/mcp` + the Keychain token in Mistral
-as a custom MCP connector.
+(setup.sh auto-detects it), and follow `launchd/TAILSCALE.md` for the
+Tailscale Funnel exposure. Register `https://<host>.<tailnet>.ts.net/mcp` +
+the Keychain token in Mistral as a custom MCP connector.
 
 ## Layout
 
@@ -76,7 +76,7 @@ tools/apple-reminders-mcp/
 ├── setup.sh            # idempotent local setup + LaunchAgent install
 └── launchd/
     ├── com.kitsunekits.reminders-mcp.plist   # reference copy (setup.sh writes the real one)
-    └── CLOUDFLARED.md                         # tunnel + Cloudflare Access steps
+    └── TAILSCALE.md                           # Tailscale Funnel exposure steps
 ```
 
 ## Notes
@@ -86,4 +86,4 @@ tools/apple-reminders-mcp/
 - Managed accounts sync via Apple Business (iCloud infrastructure), so writes
   propagate across devices — with occasional sync lag if re-listed immediately.
 - To return to a session-scoped posture: `launchctl unload` the agent and
-  `cloudflared service uninstall`.
+  `tailscale funnel off`.

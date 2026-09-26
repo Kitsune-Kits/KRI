@@ -2,8 +2,8 @@
 #
 # setup.sh / apple-reminders-mcp / KRI
 # Idempotent local setup: dependencies, Keychain token, LaunchAgent auto-start,
-# managed-account auto-detection, and (with --tunnel) a guided Cloudflare
-# Tunnel bootstrap. Run from the tools/apple-reminders-mcp directory.
+# managed-account auto-detection, and (with --tunnel) a Tailscale Funnel
+# bootstrap. Run from the tools/apple-reminders-mcp directory.
 # Copyright (c) 2026 Kitsune Kits. All rights reserved.
 #
 set -euo pipefail
@@ -96,48 +96,32 @@ launchctl unload "$PLIST" >/dev/null 2>&1 || true
 launchctl load "$PLIST"
 echo "LaunchAgent installed — the server auto-starts on login."
 
-# --- 5. Optional: tunnel bootstrap ---------------------------------------------
+# --- 5. Optional: Tailscale Funnel bootstrap ------------------------------------
 if [ -n "$WANT_TUNNEL" ]; then
   echo ""
-  if ! command -v cloudflared >/dev/null 2>&1; then
-    echo "Installing cloudflared via Homebrew..."
-    brew install cloudflared
+  if ! command -v tailscale >/dev/null 2>&1; then
+    echo "Installing Tailscale via Homebrew..."
+    brew install --cask tailscale
+    echo "Tailscale installed. Open the Tailscale app (or menu bar icon) and log in,"
+    echo "then re-run: ./setup.sh --tunnel"
+    exit 0
   fi
-  if [ ! -f "$HOME/.cloudflared/cert.pem" ]; then
-    echo "cloudflared needs a one-time browser login."
-    cloudflared tunnel login
+  if ! tailscale status >/dev/null 2>&1; then
+    echo "Tailscale is not logged in. Open the Tailscale app and log in,"
+    echo "then re-run: ./setup.sh --tunnel"
+    exit 0
   fi
-  if cloudflared tunnel info reminders-mcp >/dev/null 2>&1; then
-    echo "Tunnel 'reminders-mcp' already exists — reusing it."
-  else
-    cloudflared tunnel create reminders-mcp
-  fi
-  TUNNEL_UUID=$(cloudflared tunnel list -o json | /usr/bin/python3 -c \
-    'import json,sys; print([t["id"] for t in json.load(sys.stdin) if t["name"]=="reminders-mcp"][0])')
-  CFG="$HOME/.cloudflared/config.yml"
-  if [ ! -f "$CFG" ]; then
-    read -r -p "Hostname for the tunnel (e.g. reminders.example.com): " HOSTNAME
-    cat > "$CFG" <<EOF
-tunnel: $TUNNEL_UUID
-credentials-file: $HOME/.cloudflared/$TUNNEL_UUID.json
-ingress:
-  - hostname: $HOSTNAME
-    service: http://127.0.0.1:3000
-  - service: http_status:404
-EOF
-    chmod 600 "$CFG"
-    cloudflared tunnel route dns reminders-mcp "$HOSTNAME"
-    echo "Tunnel config written and DNS routed."
-  else
-    echo "config.yml exists — leaving it alone."
-  fi
+  tailscale funnel --bg 3000 || true
   echo ""
-  echo "Remaining manual steps (cannot be automated from this shell):"
-  echo "  1. Cloudflare Zero Trust dashboard -> Access -> Applications:"
-  echo "     add a policy for your hostname (Service Token for Mistral)."
-  echo "  2. sudo cloudflared service install   (tunnel auto-starts on boot)"
-  echo "  3. Register the connector in Mistral (URL + Keychain token)."
-  echo "     Full guide: launchd/CLOUDFLARED.md"
+  echo "Funnel status:"
+  tailscale funnel status || true
+  echo ""
+  echo "Remaining manual steps:"
+  echo "  1. If Funnel needs enabling on the tailnet (one-time): admin console"
+  echo "     -> Access Controls -> add the funnel attribute. See launchd/TAILSCALE.md"
+  echo "  2. Register the connector in Mistral:"
+  echo "     URL:   https://<your-host>.<tailnet>.ts.net/mcp   (from funnel status above)"
+  echo "     Token: security find-generic-password -w -s com.kitsunekits.reminders-mcp"
 fi
 
 echo ""
