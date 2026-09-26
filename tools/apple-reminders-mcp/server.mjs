@@ -141,7 +141,10 @@ app.post("/mcp", async (req, res) => {
   const method = req.body && req.body.method;
   const isInitialize = method === "initialize";
   const auth = req.headers.authorization || "";
-  if (!isInitialize && auth !== "Bearer " + TOKEN) {
+  const authorized = auth === "Bearer " + TOKEN;
+  console.log(new Date().toISOString(), req.ip, req.body && req.body.method, authorized ? "auth:ok" : (isInitialize ? "auth:skip(initialize)" : "auth:FAIL"));
+  if (!isInitialize && !authorized) {
+    res.set("WWW-Authenticate", 'Bearer realm="kitsunekits-reminders"');
     return res.status(401).json({ error: "unauthorized" });
   }
   try {
