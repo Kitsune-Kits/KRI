@@ -1,0 +1,65 @@
+{
+  "iconTheme": "kri-kitsune-modern",
+  "iconDefinitions": {
+    "_f": { "iconPath": "./icons/file-default.svg" },
+    "_f_gold": { "iconPath": "./icons/file-gold.svg" },
+    "_f_jade": { "iconPath": "./icons/file-jade.svg" },
+    "_f_crimson": { "iconPath": "./icons/file-crimson.svg" },
+    "_folder": { "iconPath": "./icons/folder.svg" },
+    "_folder_open": { "iconPath": "./icons/folder-open.svg" },
+    "_folder_gold": { "iconPath": "./icons/folder-gold.svg" },
+    "_folder_gold_open": { "iconPath": "./icons/folder-gold-open.svg" },
+    "_folder_jade": { "iconPath": "./icons/folder-jade.svg" },
+    "_folder_jade_open": { "iconPath": "./icons/folder-jade-open.svg" },
+    "_folder_crimson": { "iconPath": "./icons/folder-crimson.svg" },
+    "_folder_crimson_open": { "iconPath": "./icons/folder-crimson-open.svg" },
+    "_folder_dim": { "iconPath": "./icons/folder-dim.svg" },
+    "_folder_dim_open": { "iconPath": "./icons/folder-dim-open.svg" }
+  },
+  "file": "_f",
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "fileExtensions": {
+    "rs": "_f_crimson",
+    "c": "_f_crimson", "h": "_f_crimson",
+    "cpp": "_f_crimson", "hpp": "_f_crimson",
+    "lock": "_f_crimson",
+    "lua": "_f_jade",
+    "py": "_f_jade",
+    "js": "_f_jade", "ts": "_f_jade", "tsx": "_f_jade", "jsx": "_f_jade",
+    "mjs": "_f_jade", "cjs": "_f_jade",
+    "sh": "_f_gold",
+    "json": "_f_gold", "toml": "_f_gold", "yaml": "_f_gold", "yml": "_f_gold",
+    "svg": "_f_jade", "png": "_f_jade", "jpg": "_f_jade", "jpeg": "_f_jade",
+    "md": "_f_gold", "pdf": "_f_crimson",
+    "stl": "_f_jade", "step": "_f_jade", "stp": "_f_jade", "3mf": "_f_jade",
+    "plist": "_f_jade", "gitignore": "_f_crimson", "gitlab-ci.yml": "_f_crimson"
+  },
+  "languageIds": {
+    "rust": "_f_crimson",
+    "c": "_f_crimson", "cpp": "_f_crimson",
+    "lua": "_f_jade", "python": "_f_jade",
+    "typescript": "_f_jade", "javascript": "_f_jade",
+    "shellscript": "_f_gold",
+    "json": "_f_gold", "toml": "_f_gold", "yaml": "_f_gold",
+    "markdown": "_f_gold"
+  },
+  "folderNames": {
+    ".gitlab": "_folder_crimson", ".git": "_folder_crimson",
+    "docs": "_folder_gold", "decisions": "_folder_gold",
+    "themes": "_folder_jade", "icons": "_folder_jade", "media": "_folder_jade",
+    "tools": "_folder_gold", "scripts": "_folder_gold",
+    "target": "_folder_dim", "node_modules": "_folder_dim", "build": "_folder_dim",
+    "crates": "_folder_jade", "src": "_folder", "include": "_folder",
+    "tests": "_folder_jade", "test": "_folder_jade"
+  },
+  "folderNamesExpanded": {
+    ".gitlab": "_folder_crimson_open", ".git": "_folder_crimson_open",
+    "docs": "_folder_gold_open", "decisions": "_folder_gold_open",
+    "themes": "_folder_jade_open", "icons": "_folder_jade_open", "media": "_folder_jade_open",
+    "tools": "_folder_gold_open", "scripts": "_folder_gold_open",
+    "target": "_folder_dim_open", "node_modules": "_folder_dim_open", "build": "_folder_dim_open",
+    "crates": "_folder_jade_open", "src": "_folder_open", "include": "_folder_open",
+    "tests": "_folder_jade_open", "test": "_folder_jade_open"
+  }
+}
