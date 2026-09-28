@@ -51,3 +51,16 @@ theme on the same palette:
 - No neon green. It does not exist in a polite universe.
 
 Selected via `workbench.iconTheme: "kri-kitsune-modern"` (set by the installer).
+
+### Language glyphs (v0.3.0)
+
+Files now carry a **language glyph**, not just a color stripe — identity by
+glyph, meaning by accent color:
+
+- **Crimson** (the stamp): Rust gear, C braces, C++ braces-plus, lockfile seal
+- **Jade** (the living): Lua crescent, Python mark, TS/JS blocks, CSS brush
+- **Gold-Leaf** (the joints): shell prompt, JSON brace pair, TOML table band,
+  YAML waves, Markdown mark, HTML brackets, Makefile hammer
+
+All glyphs sit on the Foxfire page with the gold corner fold. 16×16 SVG,
+readable at 13px sidebar size.
