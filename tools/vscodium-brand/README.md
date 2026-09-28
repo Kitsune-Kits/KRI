@@ -35,3 +35,19 @@ Or from a checkout:
 - Env override: `VSCODIUM_USER_SETTINGS` for portable/Flatpak installs.
 
 After install: restart VSCodium, `⌘K ⌘T`, pick a Kitsune Modern theme.
+
+## Icon theme (v0.2.0)
+
+The installer also ships **Kitsune Modern Icons** — a file/folder icon
+theme on the same palette:
+
+- Folders: Foxfire White with **Gold-Leaf** tab (gold at the joints);
+  special folders by meaning — `docs`/`decisions` gold, `themes`/`crates`/`tests`
+  jade (the living), `.gitlab`/`.git` crimson (the sacred seal), build-output
+  folders dimmed sumi.
+- Files: neutral Foxfire page with a gold corner fold; language accent stripe —
+  **Crimson** for Rust/C and lockfiles (the stamp), **Jade** for Lua/Python/TS
+  and media/CAD, **Gold-Leaf** for config (`json`/`toml`/`yaml`) and Markdown.
+- No neon green. It does not exist in a polite universe.
+
+Selected via `workbench.iconTheme: "kri-kitsune-modern"` (set by the installer).
