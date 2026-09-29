@@ -74,6 +74,13 @@ spanning more than a handful of steps:
   [docs/decisions/](docs/decisions/) — accepted ADRs are immutable;
   supersede rather than edit.
 
+## Lessons learned
+
+- Post-incident lessons live in [docs/lessons/](docs/lessons/) —
+  read them before any first hardware bring-up, and append to them
+  when a new one teaches something. Current:
+  [Hardware bring-up (ST7789/Tufty)](docs/lessons/hardware-bringup.md).
+
 ## Tooling via Vibe (gitlab_4be8 connector)
 
 **Can do:** file read/write, commits, branches, merge requests
