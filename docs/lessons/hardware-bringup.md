@@ -19,6 +19,12 @@ Fixed in kitsuneOS !51.
 
 ## Rules
 
+0. **Docs first — always.** Before forming any hypothesis about a
+   fault, read the documentation and the known-good baked-in code:
+   vendor driver, upstream example, crate docs, board file. Most
+   "mysteries" are simple misuse of code that already works. The
+   three-session dark panel was one missing command in a sequence
+   Pimoroni's driver already contained.
 1. **Verify peripheral init against a known-good upstream driver,
    not just the datasheet.** Datasheets enumerate commands; a working
    driver shows the order and the minimum set. Read the vendor's
