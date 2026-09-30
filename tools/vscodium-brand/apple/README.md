@@ -3,14 +3,17 @@
 Goal: any KRI Mac gets VSCodium + the full forge (brand themes, mascot
 icons, snippets, extension rack, settings) with zero manual steps.
 
-## The honest constraint
+## The honest constraint — and why ABE changes it
 
-**Apple Business Manager cannot distribute this package by itself.**
-ABM only handles (a) App Store apps and (b) custom apps published by
-developers through App Store Connect. VSCodium is neither. The
-supported path for a custom .pkg on ABM-enrolled Macs is through your
-**MDM** (Jamf, Kandji, Mosyle, Addigy...) — ABM enrolls the devices,
-the MDM installs the package.
+**Apple Business Manager alone cannot distribute a custom package** —
+ABM only handles App Store apps and developer-published custom apps.
+VSCodium is neither.
+
+**But KRI runs Apple Business Essentials, which includes its own MDM.**
+ABE *can* deploy custom packages directly — no Jamf, Kandji, or Mosyle
+middleman. The flow is:
+
+    Apple Business Essentials → Collections → deploy the .pkg to devices
 
 ## Build the package
 
@@ -43,11 +46,31 @@ productbuild --package KRI-VSCodium-*.pkg \
 purchase this path needs. Unsigned pkgs also deploy fine via MDM if
 the MDM is configured to allow them — Mosyle and Addigy both can.)
 
-## Deploy
+## Deploy — Apple Business Essentials
 
-1. Upload the signed pkg to the MDM as a custom package.
-2. Scope it to the KRI device group (ABM-assigned devices).
-3. Set it to install on enrollment + auto-update on new versions.
+ABE deploys custom packages through **Collections** (Settings → your
+plan; or Devices → Collections):
+
+1. In Apple Business Essentials (business.apple.com), open
+   **Collections** and create one named *KRI Forge* (or add to an
+   existing collection).
+2. In the collection, under **Apps and books**, choose
+   **Custom App / Add Package** and upload the signed
+   `KRI-VSCodium-*.pkg`.
+3. Assign the collection to the KRI users/devices — collections sync
+   to every Mac in them automatically.
+4. The package installs silently on assignment. Upgrades: build a new
+   pkg with a bumped version and re-upload — `setup.sh` is idempotent
+   and re-merges settings safely.
+
+Notes:
+- ABE installs as the device channel; our postinstall detects the
+  console user and runs the forge setup in *their* $HOME at install
+  time. If a Mac installs while logged out, the setup defers — it
+  re-runs cleanly on the next package push, or the user can run
+  `/usr/local/kri/vscodium-brand/setup.sh` once manually.
+- ABE requires the pkg to be **signed** for silent install (see the
+  signing section above).
 
 Re-running an upgraded package is safe: `setup.sh` is idempotent and
 backs up `settings.json` before every merge (`*.backup-kri`).
