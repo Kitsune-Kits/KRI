@@ -1,0 +1,18 @@
+[
+  {
+    "key": "alt+e",
+    "command": "errorLens.toggle"
+  },
+  {
+    "key": "alt+g",
+    "command": "git-graph.view"
+  },
+  {
+    "key": "alt+o",
+    "command": "clangd.switchSourceHeader"
+  },
+  {
+    "key": "alt+shift+p",
+    "command": "workbench.action.quickOpenProfile"
+  }
+]
