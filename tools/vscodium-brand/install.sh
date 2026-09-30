@@ -5,13 +5,13 @@ set -euo pipefail
 # KRI brand themes (Foxfire light, Sumi dark), the Kitsune Modern file icon
 # theme, and brand settings into VSCodium. Palette per BRAND.md / ADR-0001
 # (locked). Neon green forbidden.
-# v0.2.0 — icon theme added
+# v0.4.1 — snippets wired (KRI banner/TODO), v0.2.0 lineage icon theme
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EXT_DIR="${VSCODIUM_EXTENSIONS_DIR:-$HOME/.vscode-oss/extensions}/kri-kitsune-modern"
 SETTINGS="${VSCODIUM_USER_SETTINGS:-$HOME/.vscode-oss/User/settings.json}"
 
-mkdir -p "$EXT_DIR/themes" "$EXT_DIR/icons"
+mkdir -p "$EXT_DIR/themes" "$EXT_DIR/icons" "$EXT_DIR/snippets"
 echo "→ installing to $EXT_DIR"
 
 # --- manifest (color + icon themes) ---
@@ -22,7 +22,7 @@ cat > "$EXT_DIR/package.json" <<'EOF'
   "publisher": "kitsune-kits",
   "version": "0.2.0",
   "engines": { "vscode": "^1.70.0" },
-  "categories": ["Themes"],
+  "categories": ["Themes", "Snippets"],
   "contributes": {
     "themes": [
       { "label": "Kitsune Modern (Foxfire)", "uiTheme": "vs", "path": "./themes/kitsune-modern.json" },
@@ -30,6 +30,12 @@ cat > "$EXT_DIR/package.json" <<'EOF'
     ],
     "iconThemes": [
       { "id": "kri-kitsune-modern", "label": "Kitsune Modern Icons", "path": "./icon-theme.json" }
+    ],
+    "snippets": [
+      { "language": "rust", "path": "./snippets/rust.json" },
+      { "language": "lua", "path": "./snippets/lua.json" },
+      { "language": "c", "path": "./snippets/c.json" },
+      { "language": "markdown", "path": "./snippets/markdown.json" }
     ]
   }
 }
@@ -46,6 +52,10 @@ fi
 cp "$SCRIPT_DIR/icon-theme.json" "$EXT_DIR/"
 cp "$SCRIPT_DIR/icons/"*.svg "$EXT_DIR/icons/"
 echo "→ icon theme installed"
+
+# --- snippets (KRI banner / TODO) ---
+cp "$SCRIPT_DIR/snippets/"*.json "$EXT_DIR/snippets/" 2>/dev/null || true
+echo "→ snippets installed (kribanner, krito)"
 
 # --- settings.json merge (typography + terminal + Ma + icon theme) ---
 BRAND_SETTINGS='{

@@ -1,0 +1,23 @@
+{
+  "KRI file banner (Apple-style)": {
+    "prefix": "kribanner",
+    "body": [
+      "<!--",
+      "${1:FileName} / ${2:ProjectName}",
+      "",
+      "Abstract:",
+      "    ${3:One-line description.}",
+      "",
+      "Copyright (c) 2026 Kitsune Research Industries. All rights reserved.",
+      "-->"
+    ],
+    "description": "KRI Apple-style file banner (org commenting standard)"
+  },
+  "KRI TODO": {
+    "prefix": "krito",
+    "body": [
+      "<!-- TODO(${1|piko,zaku,nui,coco|}): ${2:what} -->"
+    ],
+    "description": "KRI TODO with persona tag"
+  }
+}
