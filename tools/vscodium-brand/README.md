@@ -64,3 +64,40 @@ glyph, meaning by accent color:
 
 All glyphs sit on the Foxfire page with the gold corner fold. 16×16 SVG,
 readable at 13px sidebar size.
+
+## Forge setup (v0.4.0)
+
+`setup.sh` is the one-command forge bootstrap beyond branding:
+
+1. **Extension rack** — installs every extension in `extensions.txt`
+   (clangd, CMake, Lua, GitLab workflow, GitLens, Git Graph, Todo Tree,
+   Error Lens, Markdown/Mermaid/PDF, Prettier, spell checker, EditorConfig).
+   Open VSX gaps are skipped with a warning, never fatal.
+2. **Forge settings merge** — clangd args (background index, clang-tidy),
+   Lua KMOD globals, Error Lens, KRI file associations (`.kmod`/`.kmacro`
+   → Lua, `.kspec` → YAML), build/target excludes, git discipline.
+   Merged via `jq` with a `settings.json.backup-kri` backup.
+3. **Keybindings** — `Alt+E` Error Lens toggle, `Alt+G` Git Graph,
+   `Alt+O` clangd source↔header, `Alt+Shift+P` quick-open profile.
+4. Hands off to `install.sh` for the brand color themes + icon theme.
+
+```bash
+./tools/vscodium-brand/setup.sh
+```
+
+Env overrides: `VSCODIUM_BIN`, `VSCODIUM_USER_SETTINGS`,
+`VSCODIUM_USER_KEYBINDINGS`, `VSCODIUM_EXTENSIONS_DIR`.
+
+### Mascot callbacks (v0.3.1 of the icon set)
+
+Language icons now carry their official mascot, held to the brand
+accents (one accent per icon — never crimson + jade together):
+
+- **Rust** — Ferris the crab holding the page (crimson, the stamp)
+- **Python** — snake coiled around the page edge (jade, the living)
+- **C / C++** — badge ring / hexagon with `++` (crimson)
+- **CMake** — gold triangle at the fold (`.cmake`, `CMakeLists.txt`)
+- **Lua KMOD** — the crescent wearing fox ears (`.kmod`, `.kmacro`) —
+  the one allowed KRI deviation; plain `.lua` keeps the bare crescent
+
+Contact rule: every mascot touches its document.

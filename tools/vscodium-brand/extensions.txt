@@ -1,0 +1,26 @@
+# KRI forge extension rack for VSCodium (Open VSX)
+# Install with: ./setup.sh   (skips lines starting with #; failures are non-fatal)
+# --- firmware & logic (Piko) ---
+llvm-vs-code-extensions.vscode-clangd
+twxs.cmake
+ms-vscode.cmake-tools
+sumneko.lua
+ms-python.python
+ms-python.vscode-pylint
+# --- hardware (Zaku's bench notes live in Markdown; KiCad runs outside) ---
+mechatroner.rainbow-csv
+# --- the ledger (Coco) ---
+GitLab.gitlab-workflow
+eamodio.gitlens
+mhutchie.git-graph
+gruntfuggly.todo-tree
+# --- finish & docs (Nui) ---
+yzhang.markdown-all-in-one
+bierner.markdown-mermaid
+tomoki1207.pdf
+esbenp.prettier-vscode
+streetsidesoftware.code-spell-checker
+# --- everyone ---
+editorconfig.editorconfig
+usernamehw.errorlens
+oderwat.indent-rainbow
