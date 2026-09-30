@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# postinstall / KRI VSCodium Package / Abstract: runs the forge setup as
+# the console user (never root — VSCodium user settings live in $HOME).
+# Idempotent: setup.sh backs up settings before merging, so re-running
+# an upgrade package is safe.
+
+CONSOLE_USER="$(stat -f%Su /dev/console 2>/dev/null || true)"
+if [ -z "$CONSOLE_USER" ] || [ "$CONSOLE_USER" = "root" ]; then
+  echo "⚠ no console user — forge setup skipped; it will run on next login"
+  exit 0
+fi
+
+FORGE=/usr/local/kri/vscodium-brand
+CODEIUM=/Applications/VSCodium.app/Contents/Resources/app/bin/codium
+
+if [ -x "$CODEIUM" ]; then
+  sudo -u "$CONSOLE_USER" VSCODIUM_BIN="$CODEIUM" bash "$FORGE/setup.sh" \
+    || echo "⚠ forge setup failed for $CONSOLE_USER — run $FORGE/setup.sh manually"
+else
+  echo "⚠ VSCodium.app CLI not found at $CODEIUM"
+fi
+
+exit 0

@@ -101,3 +101,32 @@ accents (one accent per icon — never crimson + jade together):
   the one allowed KRI deviation; plain `.lua` keeps the bare crescent
 
 Contact rule: every mascot touches its document.
+
+## Snippets (v0.4.1)
+
+`install.sh` now registers two org snippets in the local extension:
+
+- **`kribanner`** — the Apple-style file banner (`FileName / Project /
+  Abstract / Copyright`) for Rust, Lua, C, and Markdown
+- **`krito`** — a TODO with a persona picker (`piko`/`zaku`/`nui`/`coco`)
+
+The commenting standard becomes one keystroke instead of a copy-paste
+ritual.
+
+## Git identity per repo
+
+Git deliberately ignores identity from repo-committed files, so it's a
+per-clone setting. Helper in `tools/git-identity.sh`:
+
+```bash
+./tools/git-identity.sh architect   # your identity
+./tools/git-identity.sh piko        # a persona (see PERSONA-ATTRIBUTION.md)
+```
+
+## Apple / MDM deployment
+
+`apple/make-pkg.sh` builds a deployable macOS package: VSCodium.app +
+this entire forge, with a postinstall that runs `setup.sh` as the
+console user. Apple Business Manager cannot host custom pkgs itself —
+it goes through your MDM (Jamf, Kandji, Mosyle...). Full flow, signing,
+and scope notes: [`apple/README.md`](apple/README.md).
