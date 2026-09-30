@@ -15,14 +15,33 @@ to VSCodium:
 ## Usage
 
 ```bash
-bash <(curl -fsSL https://gitlab.com/kitsune-kits/kri/-/raw/main/tools/vscodium-brand/install.sh)
+git clone https://gitlab.com/kitsune-kits/kri.git
+./kri/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
+./kri/tools/vscodium-brand/install.sh      # brand themes only
 ```
 
-Or from a checkout:
+
+## Installing (private repo — read this first)
+
+The kitsune-kits group is **private**, so the curl-pipe one-liner from
+earlier versions returns 403 for anonymous curl. The supported flow is
+clone-first:
 
 ```bash
-./tools/vscodium-brand/install.sh
+git clone https://gitlab.com/kitsune-kits/kri.git
+./kri/tools/vscodium-brand/setup.sh
 ```
+
+If you insist on the one-liner, it needs a GitLab personal access token
+with `read_api` scope (Preferences → Access Tokens), substituted for
+`<your-token>` — no angle brackets:
+
+```bash
+bash <(curl -fsSL -H "PRIVATE-TOKEN: <your-token>" \
+  "https://gitlab.com/api/v4/projects/86534918/repository/files/tools%2Fvscodium-brand%2Fsetup.sh/raw?ref=main")
+```
+
+The clone path is preferred — you can read the script before trusting it.
 
 ## Behavior
 
