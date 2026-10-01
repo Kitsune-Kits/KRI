@@ -2,6 +2,9 @@
 # Install with: ./setup.sh   (skips lines starting with #; failures are non-fatal)
 # --- firmware & logic (Piko) ---
 llvm-vs-code-extensions.vscode-clangd
+rust-lang.rust-analyzer
+tamasfe.even-better-toml
+vadimcn.vscode-lldb
 twxs.cmake
 ms-vscode.cmake-tools
 sumneko.lua
