@@ -1,1 +1,74 @@
-IiIiVHJpZ2dlciBhIHdvcmtmbG93IGV4ZWN1dGlvbiBmcm9tIHRoZSBjb21tYW5kIGxpbmUuIiIiCiMgcnVmZjogbm9xYTogRTQwMgoKaW1wb3J0IGFyZ3BhcnNlCmltcG9ydCBhc3luY2lvcmlvCmltcG9ydCBqc29uCmltcG9ydCBvcwpmcm9tIGRvdGVudiBpbXBvcnQgbG9hZF9kb3RlbnYKCmxvYWRfZG90ZW52KG92ZXJyaWRlPVRydWUpCgpmcm9tIG1pc3RyYWxhaS5leHRyYS53b3JrZmxvd3MgaW1wb3J0IFdvcmtmbG93RW5jb2RpbmdDb25maWcsIGNvbmZpZ3VyZV93b3JrZmxvd19lbmNvZGluZwpmcm9tIG1pc3RyYWxhaS53b3JrZmxvd3MuY2xpZW50IGltcG9ydCBnZXRfbWlzdHJhbF9jbGllbnQKCgpkZWYgcGFyc2VfYXJncygpIC0+IGFyZ3BhcnNlLk5hbWVzcGFjZToKICAgIHBhcnNlciA9IGFyZ3BhcnNlLkFyZ3VtZW50UGFyc2VyKAogICAgICAgIGRlc2NyaXB0aW9uPSJUcmlnZ2VyIGEgd29ya2Zsb3cgZXhlY3V0aW9uLiIsCiAgICApCiAgICBwYXJzZXIuYWRkX2FyZ3VtZW50KAogICAgICAgICItLXdvcmtmbG93IiwKICAgICAgICBkZWZhdWx0PSJoZWxsby13b3JsZCIsCiAgICAgICAgaGVscD0iTmFtZSBvZiB0aGUgd29ya2Zsb3cgdG8gZXhlY3V0ZSAoZS5nLiBoZWxsby13b3JsZCkiLAogICAgKQogICAgcGFyc2VyLmFkZF9hcmd1bWVudCgKICAgICAgICAgIi0taW5wdXQiLAogICAgICAgIGRlZmF1bHQ9cnt9IiwKICAgICAgICBoZWxwPXInSW5wdXQgZGF0YSBhcyBhIEpTT04gc3RyaW5nIChlLmcuIFwne3sibmFtZSI6ICJXb3JsZCJ9fVwnKSIsCiAgICApCiAgICByZXR1cm4gcGFyc2VyLnBhcnNlX2FyZ3MoKQoKCmFzeW5jIGRlZiBtYWluKCkgLT4gTm9uZToKICAgIGFyZ3MgPSBwYXJzZV9hcmdzKCkKICAgIHdvcmtmbG93X25hbWUgPSBhcmdzLndvcmtmbG93CgogICAgdHJ5OgogICAgICAgIHJhd19pbnB1dCA9IGpzb24ubG9hZHMoYXJncy5pbnB1dCkKICAgIGV4Y2VwdCBqc29uLkpTT05EZWNvZGVFcnJvciBhcyBleGM6CiAgICAgICAgcmFpc2UgU3lzdGVtRXhpdCgKICAgICAgICAgICAgZkdpdE1vZGlmaWVkID0gZiJFcnJvcjogaW52YWxpZCBKU09OIGZvciAtLWlucHV0OiB7ZXhjLmFyZ3NbMF19IikgZnJvbSBleGMKCiAgICByYXdfaW5wdXQgPSByYXdfaW5wdXQgb3Ige30KICAgIGlmIG5vdCBpc3RhbmNlb2RvcihyYXdfaW5wdXQsIGRpY3QpOgogICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoZkdpdE1vZGlmaWVkID0gZiJFcnJvcjogLS1pbnB1dCBtdXN0IGJlIGEgSlNPTiBvYmplY3QsIGdvdCB7dHlwZShyYXdfaW5wdXQpLl9fbmFtZV9ffSIpCgogICAgYXBpX2tleSA9IG9zLmVudmlyb24uZ2V0KCJNSVNUUkFMX0FQSV9LRVkiLCAiIikKICAgIGlmIG5vdCBhcGlfa2V5OgogICAgICAgIHByaW50KCJFcnJvcjogTUlTVFJBTF9BUElfS0VZIGlzIG5vdCBzZXQuIENoZWNrIHlvdXIgLmVudiCBmaWxlLiIpCiAgICAgICAgcmFpc2UgU3lzdGVtRXhpdCgxKQoKICAgIGNsaWVudCA9IGdldF9taXN0cmFsX2NsaWVudCgKICAgICAgICBhcGlfa2V5PWFwaV9rZXksCiAgICAgICAgc2VydmVyX3VybD1vcy5lbnZpcm9ubi5nZXQoIlNFUlZFUl9VUkwiLCAiaHR0cHM6Ly9hcGkubWlzdHJhbC5haSIpLAogICAgKQoKICAgIGF3YWl0IGNvbmZpZ3VyZV93b3JrZmxvd19lbmNvZGluZyhXb3JrZmxvd0VuY29kaW5nQ29uZmlnKCksIGNsaWVudD1jbGllbnQpCgogICAgcmVzdWx0ID0gYXdhaXQgY2xpZW50LndvcmtmbG93cy5leGVjdXRlX3dvcmtmbG93X2FuZF93YWl0X2FzeW5jKAogICAgICAgIHdvcmtmbG93X2lkZW50aWZpZXI9d29ya2Zsb3dfbmFtZSwKICAgICAgICAgICAgaW5wdXQ9cmF3X2lucHV0LAogICAgICAgICAgICBkZXBsb3ltZW50X25hbWU9b3MuZW52aXJvbi5nZXQoIkRFUExPWU1FTlRfTkFNRSIsICJkZWZhdWx0IiksCiAgICApCiAgICBwcmludChmIlfpc3VsdDoge3Jlc3VsdH1cIikKCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgYXN5bmNpb19ndF9ldmVudF9sb29wKCkucnVuX3VudGlsX2NvbXBsZXRlKG1haW4oKSkK
+"""Trigger a workflow execution from the command line."""
+# ruff: noqa: E402
+
+import argparse
+import asyncio
+import json
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+from mistralai.extra.workflows import WorkflowEncodingConfig, configure_workflow_encoding
+from mistralai.workflows.client import get_mistral_client
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Trigger a workflow execution.",
+    )
+    parser.add_argument(
+        "--workflow",
+        default="hello-world",
+        help="Name of the workflow to execute (e.g. hello-world)",
+    )
+    parser.add_argument(
+        "--input",
+        default=r"{}",
+        help=r'Input data as a JSON string (e.g. \'{"name": "World"}\')',
+    )
+    return parser.parse_args()
+
+
+async def main() -> None:
+    args = parse_args()
+    workflow_name = args.workflow
+
+    try:
+        raw_input = json.loads(args.input)
+    except json.JSONDecodeError as exc:
+        raise SystemExit(
+            f"Error: invalid JSON for --input: {exc.args[0]}\n"
+            f"  Received: {args.input!r}\n"
+            f'  Example:  --input \'{{"name": "World"}}\''
+        ) from exc
+
+    raw_input = raw_input or {}
+    if not isinstance(raw_input, dict):
+        raise SystemExit(f"Error: --input must be a JSON object, got {type(raw_input).__name__}")
+
+    api_key = os.environ.get("MISTRAL_API_KEY", "")
+    if not api_key:
+        print("Error: MISTRAL_API_KEY is not set. Check your .env file.")
+        raise SystemExit(1)
+
+    client = get_mistral_client(
+        api_key=api_key,
+        server_url=os.environ.get("SERVER_URL", "https://api.mistral.ai"),
+    )
+
+    # Enable client-side payload encoding so the Workflows API receives
+    # pre-encoded payloads and does not apply its own server-side encryption.
+    await configure_workflow_encoding(WorkflowEncodingConfig(), client=client)
+
+    result = await client.workflows.execute_workflow_and_wait_async(
+        workflow_identifier=workflow_name,
+        input=raw_input,
+        deployment_name=os.environ.get("DEPLOYMENT_NAME", "default"),
+    )
+    print(f"Result: {result}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

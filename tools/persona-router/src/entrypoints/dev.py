@@ -1,1 +1,83 @@
-IiIiV2F0Y2ggdGhlIHByb2plY3QgZm9yIC5weSBjaGFuZ2VzIGFuZCBhdXRvLXJlc3RhcnQgdGhlIHdvcmtmbG93IHdvcmtlci4iIiIKCmltcG9ydCBvcwppbXBvcnQgc2lnbmFsCmltcG9ydCBzdWJwcm9jZXNzCmltcG9ydCBzeXMKaW1wb3J0IHRpbWUKCmZyb20gd2F0Y2hkb2cuZXZlbnRzIGltcG9ydCBGaWxlU3lzdGVtRXZlbnRIYW5kbGVyCmZyb20gd2F0Y2hkb2cub2JzZXJ2ZXJzIGltcG9ydCBPYnNlcnZlcgoKIyBXYXRjaCB0aGUgYHNyYy9gIGRpcmVjdG9yeSAocGFyZW50IG9mIHRoaXMgcGFja2FnZSkuCldBVENIX0RJUiA9IG9zLnBhdGguZGlybmFtZShvcy5wYXRoLmRpcm5hbWUob3MucGF0aC5hYnNwYXRoKF9fZmlsZV9fKSkpCkRFQk9VTkNFX1NFQ09ORFMgPSAxLjAKCgpjbGFzcyBfUmVzdGFydEhhbmRsZXIoRmlsZVN5c3RlbUV2ZW50SGFuZGxlcik6CiAgICBkZWYgX19pbml0X18oc2VsZikgLT4gTm9uZToKICAgICAgICBzZWxmLl9sYXN0X3RyaWdnZXIgPSAwLjAKICAgICAgICBzZWxmLl9uZWVkc19yZXN0YXJ0ID0gRmFsc2UKCiAgICBkZWYgb25fYW55X2V2ZW50KHNlbGYsIGV2ZW50KSAtPiBOb25lOiAgIyB0eXBlOiBpZ25vcmVbb3ZlcnJpZGVdCiAgICAgICAgaWYgbm90IGV2ZW50LnNyY19wYXRoLmVuZHN3aXRoKCIucHkiKToKICAgICAgICAgICAgcmV0dXJuCiAgICAgICAgbm93ID0gdGltZS5tb25vdG9uaWMoKQogICAgICAgIGlmIG5vdyAtIHNlbGYuX2xhc3RfdHJpZ2dlciA8IERFQk9VTkNFX1NFQ09ORFM6CiAgICAgICAgICAgIHJldHVybgogICAgICAgIHNlbGYuX2xhc3RfdHJpZ2dlciA9IG5vdwogICAgICAgIHNlbGYuX25lZWRzX3Jlc3RhcnQgPSBUcnVlCgogICAgZGVmIGNvbnN1bWVfcmVzdGFydChzZWxmKSAtPiBib29sOgogICAgICAgIGlmIHNlbGYuX25lZWRzX3Jlc3RhcnQ6CiAgICAgICAgICAgIHNlbGYuX25lZWRzX3Jlc3RhcnQgPSBGYWxzZQogICAgICAgICAgICByZXR1cm4gVHJ1ZQogICAgICAgIHJldHVybiBGYWxzZQoKCmRlZiBfc3RhcnRfd29ya2VyKCkgLT4gc3VicHJvY2Vzcy5Qb3BlbjoKICAgIHJldHVybiBzdWJwcm9jZXNzLlBvcGVuKFtzeXMuZXhlY3V0YWJsZSwgIi1tIiwgImVudHJ5cG9pbnRzLndvcmtlciJdKQoKCmRlZiBfc3RvcF93b3JrZXIocHJvYzogc3VicHJvY2Vzcy5Qb3BlbikgLT4gTm9uZToKICAgIHByb2Muc2VuZF9zaWduYWwoc2lnbmFsLlNJR1RFUk0pCiAgICB0cnk6CiAgICAgICAgcHJvYy53YWl0KHRpbWVvdXQ9NSkKICAgIGV4Y2VwdCBzdWJwcm9jZXNzLlRpbWVvdXRFeHBpcmVkOgogICAgICAgIHByb2Mua2lsbCgpCiAgICAgICAgcHJvYy53YWl0KCkKCgpkZWYgbWFpbigpIC0+IE5vbmU6CiAgICBoYW5kbGVyID0gX1Jlc3RhcnRIYW5kbGVyKCkKICAgIG9ic2VydmVyID0gT2JzZXJ2ZXIoKQogICAgb2JzZXJ2ZXIuc2NoZWR1bGUoaGFuZGxlciwgV0FUQ0hfRElSLCByZWN1cnNpdmU9VHJ1ZSkKICAgIG9ic2VydmVyLnN0YXJ0KCkKCiAgICBwcm9jID0gX3N0YXJ0X3dvcmtlcigpCiAgICBwcmludChmIltkZXd2XSBXb3JrZXIgc3RhcnRlZCAocGlkIHtwcm9jLnBpZH0pLiBXYXRjaGluZyB7V0FUQ0hfRElSfSBmb3IgY2hhbmdlcy4uLiIpCgogICAgdHJ5OgogICAgICAgIHdoaWxlIFRydWU6CiAgICAgICAgICAgIHRpbWUuc2xlZXAoMC4zKQogICAgICAgICAgICBpZiBoYW5kbGVyLmNvbnN1bWVfcmVzdGFydCgpOgogICAgICAgICAgICAgICAgcHJpbnQoIltkZGV2XSBDaGFuZ2UgZGV0ZWN0ZWQsIHJlc3RhcnRpbmcgd29ya2VyLi4uIikKICAgICAgICAgICAgICAgIF9zdG9wX3dvcmtlcihwcm9jKQogICAgICAgICAgICAgICAgcHJvYyA9IF9zdGFydF93b3JrZXIoKQogICAgICAgICAgICAgICAgcHJpbnQoZiJbZGV2XSBXb3JrZXIgcmVzdGFydGVkIChwaWQge3Byb2MucGlkfSkuIikKICAgICAgICAgICAgICBpZiBwcm9jLnBvbGwoKSBpcyBub3QgTm9uZToKICAgICAgICAgICAgICAgICAgICBwcmludChmIltkZGV2XSBDaGFuZ2UgZGV0ZWN0ZWQsIHJlc3RhcnRpbmcgd29ya2VyLi4uIikKICAgICAgICAgICAgICAgICAgICBwcm9jID0gX3N0YXJ0X3dvcmtlcigpCiAgICAgICAgICAgICAgICB3aGlsZSBub3QgaGFuZGxlci5jb25zdW1lX3Jlc3RhcnQoKToKICAgICAgICAgICAgICAgICAgICB0aW1lLnNsZWVwKDAuMykKICAgICAgICAgIGV4Y2VwdCBLZXlib2FyZEludGVycnVwdDoKICAgICAgICAgICAgcHJpbnQoIlxuW2Rldl0gU2h1dHRpbmcgZG93bi4uLiIpCiAgICAgICAgICAgIF9zdG9wX3dvcmtlcihwcm9jKQogICAgICAgICAgICBvYnNlcnZlci5zdG9wKCkKICAgIG9ic2VydmVyLmpvaW4oKQoKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBtYWluKCkK
+"""Watch the project for .py changes and auto-restart the workflow worker."""
+
+import os
+import signal
+import subprocess
+import sys
+import time
+
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
+
+# Watch the `src/` directory (parent of this package).
+WATCH_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEBOUNCE_SECONDS = 1.0
+
+
+class _RestartHandler(FileSystemEventHandler):
+    def __init__(self) -> None:
+        self._last_trigger = 0.0
+        self._needs_restart = False
+
+    def on_any_event(self, event) -> None:  # type: ignore[override]
+        if not event.src_path.endswith(".py"):
+            return
+        now = time.monotonic()
+        if now - self._last_trigger < DEBOUNCE_SECONDS:
+            return
+        self._last_trigger = now
+        self._needs_restart = True
+
+    def consume_restart(self) -> bool:
+        if self._needs_restart:
+            self._needs_restart = False
+            return True
+        return False
+
+
+def _start_worker() -> subprocess.Popen:
+    return subprocess.Popen([sys.executable, "-m", "entrypoints.worker"])
+
+
+def _stop_worker(proc: subprocess.Popen) -> None:
+    proc.send_signal(signal.SIGTERM)
+    try:
+        proc.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        proc.wait()
+
+
+def main() -> None:
+    handler = _RestartHandler()
+    observer = Observer()
+    observer.schedule(handler, WATCH_DIR, recursive=True)
+    observer.start()
+
+    proc = _start_worker()
+    print(f"[dev] Worker started (pid {proc.pid}). Watching {WATCH_DIR} for changes...")
+
+    try:
+        while True:
+            time.sleep(0.3)
+            if handler.consume_restart():
+                print("[dev] Change detected, restarting worker...")
+                _stop_worker(proc)
+                proc = _start_worker()
+                print(f"[dev] Worker restarted (pid {proc.pid}).")
+            # If the worker crashed, stop and wait for a file change
+            if proc.poll() is not None:
+                print(f"[dev] Worker exited (code {proc.returncode}). Waiting for file changes to restart...")
+                while not handler.consume_restart():
+                    time.sleep(0.3)
+                proc = _start_worker()
+                print(f"[dev] Worker restarted (pid {proc.pid}).")
+    except KeyboardInterrupt:
+        print("\n[dev] Shutting down...")
+        _stop_worker(proc)
+        observer.stop()
+    observer.join()
+
+
+if __name__ == "__main__":
+    main()

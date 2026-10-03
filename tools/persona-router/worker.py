@@ -1,1 +1,6 @@
-aW1wb3J0IGFzeW5jaW8KCmZyb20gZW50cnlwb2ludHMud29ya2VyIGltcG9ydCBtYWluCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgYXN5bmNpby5ydW4obWFpbigpKQo=
+import asyncio
+
+from entrypoints.worker import main
+
+if __name__ == "__main__":
+    asyncio.run(main())
