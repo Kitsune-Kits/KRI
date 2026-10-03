@@ -1,1 +1,25 @@
-IiIiTWluaW1hbCBleGFtcGxlIHdvcmtmbG93IOKAlCBlZGl0IHRoaXMgZmlsZSBvciBjcmVhdGUgbmV3IG9uZXMuIiIiCgpmcm9tIG1pc3RyYWxhaSBpbXBvcnQgd29ya2Zsb3dzCmZyb20gcHlkYW50aWMgaW1wb3J0IEJhc2VNb2RlbAoKCmNsYXNzIEhlbGxvSW5wdXQoQmFzZU1vZGVsKToKICAgIG5hbWU6IHN0ciA9ICJXb3JsZCIKCgpAd29ya2Zsb3dzLmFjdGl2aXR5KCkKYXN5bmMgZGVmIGdyZWV0KG5hbWU6IHN0cikgLT4gc3RyOgogICAgIiIiQSBzaW1wbGUgYWN0aXZpdHkgdGhhdCByZXR1cm5zIGEgZ3JlZXRpbmcuIiIiCiAgICByZXR1cm4gZiJIZWxsbywge25hbWV9ISBXZWxjb21lIHRvIE1pc3RyYWwgV29ya2Zsb3dzLiIKCgpAd29ya2Zsb3dzLndvcmtmbG93LmRlZmluZSgKICAgIG5hbWU9ImhlbGxvLXdvcmxkIiwKICAgIHdvcmtmbG93X2Rpc3BsYXlfbmFtZT0iSGVsbG8gV29ybGQiLAogICAgd29ya2Zsb3dfZGVzY3JpcHRpb249IkEgbWluaW1hbCBoZWxsby13b3JsZCB3b3JrZmxvdy4iLAopCmNsYXNzIEhlbGxvV29ya2Zsb3c6CiAgICBAd29ya2Zsb3dzLndvcmtmbG93LmVudHJ5cG9pbnQKICAgIGFzeW5jIGRlZiBydW4oc2VsZiwgaW5wdXQ6IEhlbGxvSW5wdXQpIC0+IHN0cjoKICAgICAgICByZXR1cm4gYXdhaXQgZ3JlZXQoaW5wdXQubmFtZSkK
+"""Minimal example workflow — edit this file or create new ones."""
+
+from mistralai import workflows
+from pydantic import BaseModel
+
+
+class HelloInput(BaseModel):
+    name: str = "World"
+
+
+@workflows.activity()
+async def greet(name: str) -> str:
+    """A simple activity that returns a greeting."""
+    return f"Hello, {name}! Welcome to Mistral Workflows."
+
+
+@workflows.workflow.define(
+    name="hello-world",
+    workflow_display_name="Hello World",
+    workflow_description="A minimal hello-world workflow.",
+)
+class HelloWorkflow:
+    @workflows.workflow.entrypoint
+    async def run(self, input: HelloInput) -> str:
+        return await greet(input.name)
