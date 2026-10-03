@@ -1,1 +1,14 @@
-RlJPTSBweXRob246My4xMi1zbGltCgpXT1JLRElSIC9hcHAKCkNPUFkgLS1mcm9tPWdoY3IuaW8vYXN0cmFsLXNoL3V2OmxhdGVzdCAvdXYgL3Vzci9sb2NhbC9iaW4vdXYKCkNPUFkgcHlwcm9qZWN0LnRvbWwgdXYubG9jayAuLwpSVU4gdXYgc3luYyAtLWZyb3plbiAtLW5vLWRldiAtLW5vLWluc3RhbGwtcHJvamVjdAoKQ09QWSBzcmMgLi9zcmMKQ09QWSB3b3JrZXIucHkgLi8KRU5WIFBBVEg9Ii9hcHAvLnZlbnYvYmluOiRQQVRIIgoKQ01EIFsicHl0aG9uIiwgIi1tIiwgImVudHJ5cG9pbnRzLndvcmtlciJdCg==
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+COPY pyproject.toml ./
+RUN uv sync --no-dev --no-install-project
+
+COPY src ./src
+COPY worker.py ./
+ENV PATH="/app/.venv/bin:$PATH"
+
+CMD ["python", "-m", "entrypoints.worker"]

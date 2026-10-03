@@ -1,1 +1,50 @@
-IiIiQXV0by1kaXNjb3ZlciBhbGwgd29ya2Zsb3cgY2xhc3NlcyBpbiB0aGUgYHdvcmtmbG93c2AgcGFja2FnZSBhbmQgc3RhcnQgYSB3b3JrZXIuIiIiCiMgcnVmZjogbm9xYTogRTQwMgoKaW1wb3J0IGFzeW5jaW8KaW1wb3J0IGltcG9ydGxpYgppbXBvcnQgaW5zcGVjdAppbXBvcnQgcGtndXRpbAppbXBvcnQgc3lzCgpmcm9tIGRvdGVudiBpbXBvcnQgbG9hZF9kb3RlbnYKCmxvYWRfZG90ZW52KG92ZXJyaWRlPVRydWUpCgppbXBvcnQgbWlzdHJhbGFpLndvcmtmbG93cyBhcyBtaXN0cmFsYWlfd29ya2Zsb3dzCmZyb20gbWlzdHJhbGFpLndvcmtmbG93cy5jb3JlLmRlZmluaXRpb24ud29ya2Zsb3dfZGVmaW5pdGlvbiBpbXBvcnQgKAogICAgZ2V0X3dvcmtmbG93X2RlZmluaXRpb24sCikKCgpkZWYgZGlzY292ZXJfd29ya2Zsb3dzKCkgLT4gbGlzdFt0eXBlXToKICAgICIiIlNjYW4gdGhlIGB3b3JrZmxvd3NgIHBhY2thZ2UgYW5kIHJldHVybiBhbGwgd29ya2Zsb3cgY2xhc3Nlcy4iIiIKICAgIGRpc2NvdmVyZWQgPSBbXQogICAgcGFja2FnZSA9IGltcG9ydGxpYi5pbXBvcnRfbW9kdWxlKCJ3b3JrZmxvd3MiKQoKICAgIGZvciBfLCBtb2RuYW1lLCBpc3BrZyBpbiBwa2d1dGlsLml0ZXJfbW9kdWxlcyhwYWNrYWdlLl9fcGF0aF9fLCBwcmVmaXg9IndvcmtmbG93cy4iKToKICAgICAgICBpZiBpc3BrZzoKICAgICAgICAgICAgY29udGludWUKICAgICAgICBtb2R1bGUgPSBpbXBvcnRsaWIuaW1wb3J0X21vZHVsZShtb2RuYW1lKQogICAgICAgIGZvciBfLCBvYmogaW4gaW5zcGVjdC5nZXRtZW1iZXJzKG1vZHVsZSwgaW5zcGVjdC5pc2NsYXNzKToKICAgICAgICAgICAgaWYgaGFzYXR0cihvYmosICJfX3dvcmtmbG93c193b3JrZmxvd19kZWYiKToKICAgICAgICAgICAgICAgIGRpc2NvdmVyZWQuYXBwZW5kKG9iaikKCiAgICByZXR1cm4gZGlzY292ZXJlZAoKCmFzeW5jIGRlZiBtYWluKCkgLT4gTm9uZToKICAgIGRpc2NvdmVyZWQgPSBkaXNjb3Zlcl93b3JrZmxvd3MoKQoKICAgIGlmIG5vdCBkaXNjb3ZlcmVkOgogICAgICAgIHByaW50KCJObyB3b3JrZmxvd3MgZGlzY292ZXJlZCBpbiB0aGUgYHdvcmtmbG93c2AgcGFja2FnZS4iKQogICAgICAgIHN5cy5leGl0KDEpCgogICAgbmFtZXMgPSBbZ2V0X3dvcmtmbG93X2RlZmluaXRpb24od2YpLm5hbWUgZm9yIHdmIGluIGRpc2NvdmVyZWRdCiAgICBwcmludChmIkRpc2NvdmVyZWQge2xlbihkaXNjb3ZlcmVkKX0gd29ya2Zsb3cocyk6IHsnLCAnLmpvaW4obmFtZXMpfSIpCgogICAgYXdhaXQgbWlzdHJhbGFpX3dvcmtmbG93cy5ydW5fd29ya2VyKGRpc2NvdmVyZWQpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIGFzeW5jaW8ucnVuKG1haW4oKSkK
+"""Auto-discover all workflow classes in the `workflows` package and start a worker."""
+# ruff: noqa: E402
+
+import asyncio
+import importlib
+import inspect
+import pkgutil
+import sys
+
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+import mistralai.workflows as mistralai_workflows
+from mistralai.workflows.core.definition.workflow_definition import (
+    get_workflow_definition,
+)
+
+
+def discover_workflows() -> list[type]:
+    """Scan the `workflows` package and return all workflow classes."""
+    discovered = []
+    package = importlib.import_module("workflows")
+
+    for _, modname, ispkg in pkgutil.iter_modules(package.__path__, prefix="workflows."):
+        if ispkg:
+            continue
+        module = importlib.import_module(modname)
+        for _, obj in inspect.getmembers(module, inspect.isclass):
+            if hasattr(obj, "__workflows_workflow_def"):
+                discovered.append(obj)
+
+    return discovered
+
+
+async def main() -> None:
+    discovered = discover_workflows()
+
+    if not discovered:
+        print("No workflows discovered in the `workflows` package.")
+        sys.exit(1)
+
+    names = [get_workflow_definition(wf).name for wf in discovered]
+    print(f"Discovered {len(discovered)} workflow(s): {', '.join(names)}")
+
+    await mistralai_workflows.run_worker(discovered)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
