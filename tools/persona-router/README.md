@@ -1,1 +1,63 @@
-IyBwZXJzb25hLXJvdXRlcgoKQSBNaXN0cmFsIFdvcmtmbG93cyBwcm9qZWN0IHRoYXQgcm91dGVzIGVhY2ggdXNlciBtZXNzYWdlIHRocm91Z2ggYSBwZXJzb25hCmFnZW50IGNoYWluOiAqKmNvY28tc2Vuc2VpKiDihpIgKip6YWt1KiogfCAqKnBpa28qKiB8ICoqbnVpKiopIOKGkiAqKmNvY28tc2Vuc2VpKiouCgojIyBMb2dpcwoKMS4gRXZlcnkgdXNlciBtZXNzYWdlIChwbHVzIGZ1bGwgY29udmVyc2F0aW9uIGhpc3RvcnkpIGdvZXMgdG8gYGNvY28tc2Vuc2VpYC4KMi4gSWYgc2hlIGNhbGxzIGByb3V0ZV90b19wZXJzb25hKHBlcnNvbmEsIGNvbnRleHRfbm90ZSlgLCB0aGUgY29udmVyc2F0aW9uIOKAlCBpbmNsdWRpbmcgYQogICBgW0hhbmRvZmYgZnJvbSBYIHRvIFldIDxjb250ZXh0X25vdGU-YCBtZXNzYWdlIOKAlCBnb2VzIHRvIHRoYXQgY3ViCiAgIChgemFrdWBgsCBgcGlrbmAsIG9yIGBudWlgKS4KMy4gSWYgdGhlIGN1YiBjYWxscyBgcm91dGVfdG9fcGVyc29uYShwZXJzb25hOiAib2NvbyIsIC4uLilgLCB0aGUgY29udmVyc2F0aW9uIHJldHVybnMgdG8gYGNvY28tc2Vuc2VpYAogICBleGFjdGx5IG9uY2UgZm9yIGEgc2hvcnQgY2xvc2luZyBiaW5kaW5nIHJlcGx5LCB3aGljaCBpcyByZXR1cm5lZCBhcyB0aGUgZmluYWwgbWFya2Rvd24gYW5zd2VyLgo0LiBJZiBjb2NvIG1ha2VzIG5vIHJvdXRlIGNhbGwsIGhlciByZXBseSBpcyB0aGUgZmluYWwgYW5zd2VyIGRpcmVjdGx5Lgo1LiBIYW5kb2ZmcyBhcmUgY2FwcGVkIGF0IDYgcGVyIHVzZXIgbWVzc2FnZTsgdGhlIGJlc3QgYW5zd2VyIHNvIGZhciBpcyByZXR1cm5lZAogICBpZiB0aGUgY2FwIGlzIGhpdC4gSW52YWxpZCByb3V0ZXMgKGNvY28gdG8gImNvY28iLCBjdWIgdG8gY3ViKSBlbmQgdGhlIGxvb3AgICB3aXRoIHRoZSBiZXN0IGFuc3dlciBzbyBmYXIuCgojIyBTZXR1cAoKYGBgYmFzaAp1diBzeW5jCiMgY29weSAuZW52LmV4YW1wbGUgdG8gLmVudiBhbmQgZmlsbCBpbiB5b3VyIE1JU1RSQUxfQVBJX0tFWSAoLmVudiBpcyBnaXRpZ25vcmVkKQpgYGAKCiMjIFRlc3QKClVuaXQgdGVzdHMgZm9yIHRoZSByb3V0aW5nIGxvb3Agd2l0aCBhIG1vY2tlZCBhZ2VudCBjYWxsZXI6CgpgYGBiYXNoCnV2IHJ1biBweXRlc3QgdGVzdHMvIC1xCmBgYAoKIyMgUnVuIGxvY2FsbHkKCmBgYGJhc2gKbWFrZSBzdGFydC13b3JrZXIgICMgcmVnaXN0ZXJzIHBlcnNvbmEtcm91dGVyICsgaGVsbG8td29ybGQgb3JrZmxvd3MKbWFrZSBleGVjdXRlIHdvcmtmbG93PXBlcnNvbmEtcm91dGVyIGlucHV0PSd7Im1lc3NhZ2UiOiAiSGkhIiwgImhpc3RvcnkiOiBbXX0nCmBgYAoKIyMgRGVwbG95bWVudAoKVGhpcyByZXBvIGhvc3RzIHRoZSB3b3JrZXIgY29kZSBvbiBHaXRMYWI7IHRoZSB3b3JrZXIgY2FuIGJlIHJ1biBlaXRoZXI6CgotIG1hbmFnZWQgYnkgTWlzdHJhbCAoYnVpbGRzIGZyb20gYSBHaXRIdWItY2xvbmVkIHJlcG8gb25seSkg4oCUIHJldmVhb2xlIGdyaW5kCi0gc2VsZi1tYW5hZ2VkIGluIHlvdXIgaW5mcmEgdHJ1Y3R1cmUgdXNpbmcgdGhlIGRlc2t0b3AncyBEb2NrZXJmaWxlICh3b3JrZXIgY29ubmVjdHMgb3V0Ym91bmQgdG8gTWlzdHJhbCkg4oCUIHRoZSBuYXRpdmUgZml0IGZvciBhIEdpdExhYi1ob3N0ZWQgcmVwbwo=
+# persona-router
+
+A Mistral Workflows project that routes each user message through a persona
+agent chain: **coco-sensei** → (**zaku** | **piko** | **nui**) → **coco-sensei**.
+
+## Logic
+
+1. Every user message (plus full conversation history) goes to `coco-sensei`.
+2. If she calls `route_to_persona(persona, context_note)`, the conversation —
+   including a `[Handoff from X to Y] <context_note>` message — goes to that
+   cub (`zaku`, `piko`, or `nui`).
+3. If the cub calls `route_to_persona(persona: "coco", ...)`, the conversation
+   returns to `coco-sensei` exactly once for a short closing binding reply,
+   which is returned as the final markdown answer.
+4. If coco makes no route call, her reply is the final answer directly.
+5. Handoffs are capped at 6 per user message; the best answer so far is
+   returned if the cap is hit. Invalid personas (e.g. coco routing to "coco",
+   or a cub routing to another cub) end the loop with the best answer so far.
+
+## Setup
+
+```bash
+uv sync
+# put your real MISTRAL_API_KEY in .env (already gitignored)
+```
+
+`.env` is loaded automatically by the worker entrypoint (`dotenv`).
+
+Optional env overrides if your Studio agent IDs differ from the agent names:
+
+```
+AGENT_ID_COCO_SENSEI=<agent-id-or-name>
+AGENT_ID_ZAKU=<agent-id-or-name>
+AGENT_ID_PIKO=<agent-id-or-name>
+AGENT_ID_NUI=<agent-id-or-name>
+```
+
+## Test
+
+```bash
+uv run pytest tests/ -q          # routing loop unit tests (mocked agent calls)
+make check                        # ruff + mypy + semgrep workflow lint
+```
+
+## Run locally
+
+```bash
+make start-worker                 # registers persona-router + hello-world
+make execute workflow=persona-router input='{"message": "Hi!", "history": []}'
+```
+
+## Deployment
+
+Managed Mistral deployments clone the repo via the Mistral GitHub App
+(GitHub only). Since this project lives on GitLab, the native path is a
+self-managed worker:
+
+1. Build and run the Docker image locally or on your own infra
+   (`docker build -t persona-router . && docker run --env-file .env persona-router`).
+2. The worker connects outbound to Mistral and registers `persona-router`.
+3. Trigger executions from Studio, or via `make execute`.
+
+Alternatively, mirror the repo to GitHub and use a managed deployment.

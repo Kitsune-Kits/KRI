@@ -1,1 +1,35 @@
-LlBIT05ZOiBzdGFydC13b3JrZXIgZXhlY3V0ZSBpbnN0YWxsZGVwcyBsaW50IGZvcm1hdCB0eXBlY2hlY2sgbGludC13b3JrZmxvd3MgY2hlY2sgc3RhcnQtZXhhbXBsZXMgZXhlY3V0ZS1pbnN1cmFuY2UtY2xhaW1zIGV4ZWN1dGUtY2FyZ28tcmVsZWFzZSBleGVjdXRlLWNvZGUtbW9kZXJuaXphdGlvbgoKIyMgSW5zdGFsbCBkZXBlbmRlbmNpZXMKaW5zdGFsbGRlcHM6Cgl1diBzeW5jCgojIyBDaGVjayB3b3JrZmxvdyBjb2RlIHdpdGggcnVmZiAobGludCArIGZvcm1hdCBjaGVjaykKbGludDoKCXV2IHJ1biBydWZmIGNoZWNrIHNyYy93b3JrZmxvd3MvCgl1diBydW4gcnVmZiBmb3JtYXQgLS1jaGVjayBzcmMvd29ya2Zsb3dzLwoKIyMgQXV0by1mb3JtYXQgd29ya2Zsb3cgY29kZSBhbmQgYXBwbHkgcnVmZiBhdXRvZml4ZXMKZm9ybWF0OgoJdXYgcnVuIHJ1ZmYgZm9ybWF0IHNyYy93b3JrZmxvd3MvCgl1diBydW4gcnVmZiBjaGVjayAtLWZpeCBzcmMvd29ya2Zsb3dzLwoKIyMgVHlwZS1jaGVjayB3b3JrZmxvdyBjb2RlIHdpdGggbXlweQp0eXBlY2hlY2s6Cgl1diBydW4gbXlweSBzcmMvd29ya2Zsb3dzLwoKIyMgTGludCB3b3JrZmxvd3MgZm9yIGRldGVybWluaXNtIC8gSS9PIC8gc3RydWN0dXJlIGlzc3VlcyAoc2VtZ3JlcCwgYWR2aXNvcnkpCmxpbnQtd29ya2Zsb3dzOgoJdXYgcnVuIHNlbWdyZXAgLS1jb25maWcgLmFnZW50cy9za2lsbHMvd29ya2Zsb3dzL3NjcmlwdHMvbGludGluZy9ydWxlcy8gLS1xdWlldCBzcmMvd29ya2Zsb3dzLwoKIyMgUnVuIGFsbCBjaGVja3M6IHJ1ZmYgbGludCwgbXlweSB0eXBlcywgYW5kIHdvcmtmbG93IGxpbnQKY2hlY2s6IGxpbnQgdHlwZWNoZWNrIGxpbnQtd29ya2Zsb3dzCgojIyBBdXRvLWRpc2NvdmVyIGFsbCB3b3JrZmxvd3MgYW5kIHN0YXJ0IHRoZSB3b3JrZXIgKHdpdGggZmlsZS13YXRjaCBhdXRvLXJlbG9hZCkKc3RhcnQtd29ya2VyOgoJdXYgcnVuIHB5dGhvbiAtbSBlbnRyeXBvaW50cy5kZXYKCiMjIFRyaWdnZXIgYSB3b3JrZmxvdyBleGVjdXRpb24KIyMgVXNhZ2U6IG1ha2UgZXhlY3V0ZSB3b3JrZmxvdz1oZWxsby13b3JsZCBpbnB1dD0neyJuYW1lIjogIldvcmxkIn0nCmV4ZWN1dGU6Cgl1diBydW4gcHl0aG9uIC1tIGVudHJ5cG9pbnRzLnN0YXJ0ICQoaWYgJCh3b3JrZmxvdyksLS13b3JrZmxvdyAkKHdvcmtmbG93KSwpICQoaWYgJChpbnB1dCksLS1pbnB1dCAnJChpbnB1dCknLCkK
+.PHONY: installdeps lint format typecheck lint-workflows check start-worker execute
+
+## Install dependencies
+installdeps:
+	uv sync
+
+## Check workflow code with ruff (lint + format check)
+lint:
+	uv run ruff check src/workflows/
+	uv run ruff format --check src/workflows/
+
+## Auto-format workflow code and apply ruff autofixes
+format:
+	uv run ruff format src/workflows/
+	uv run ruff check --fix src/workflows/
+
+## Type-check workflow code with mypy
+typecheck:
+	uv run mypy src/workflows/
+
+## Lint workflows for determinism / I/O / structure issues (semgrep, advisory)
+lint-workflows:
+	uv run semgrep --config .agents/skills/workflows/scripts/linting/rules/ --quiet src/workflows/
+
+## Run all checks: ruff lint, mypy types, and workflow lint
+check: lint typecheck lint-workflows
+
+## Auto-discover all workflows and start the worker (with file-watch auto-reload)
+start-worker:
+	uv run python -m entrypoints.dev
+
+## Trigger a workflow execution
+## Usage: make execute workflow=hello-world input='{"name": "World"}'
+execute:
+	uv run python -m entrypoints.start $(if $(workflow),--workflow $(workflow),) $(if $(input),--input '$(input)',)
