@@ -1,1 +1,128 @@
-IiIiUGVyc29uYSByb3V0ZXIgd29ya2Zsb3c6IGNvY28tc2Vuc2VpIHJvdXRlcyBjb252ZXJzYXRpb25zIHRvIHpha3UsIHBpa28sIG9yIG51aS4iIiIKCmltcG9ydCBqc29uCmltcG9ydCBvcwpmcm9tIGNvbGxlY3Rpb25zLmFiYyBpbXBvcnQgQXdhaXRhYmxlLCBDYWxsYWJsZQpmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBjYXN0Cgpmcm9tIG1pc3RyYWxhaSBpbXBvcnQgd29ya2Zsb3dzCmZyb20gbWlzdHJhbGFpLndvcmtmbG93cy5wbHVnaW5zLm1pc3RyYWxhaSBpbXBvcnQgZ2V0X21pc3RyYWxfY2xpZW50CmZyb20gcHlkYW50aWMgaW1wb3J0IEJhc2VNb2RlbAoKQ09DTyA9ICJjb2NvLXNlbnNlaSIKQ1VCUyA9ICgiemFrdSIsICJwaWtvIiwgIm51aSIpCk1BWF9IQU5ET0ZGUyA9IDYKUk9VVEVfRlVOQ1RJT04gPSAicm91dGVfdG9fcGVyc29uYSIKCkhpc3RvcnkgPSBsaXN0W2RpY3Rbc3RyLCBzdHJdXQpBZ2VudFJlc3VsdCA9IGRpY3Rbc3RyLCBBbnldCkFnZW50Q2FsbGVyID0gQ2FsbGFibGVbW3N0ciwgbGlzdFtkaWN0W3N0ciwgQW55XV1dSwgQXdhaXRhYmxlW0FnZW50UmVzdWx0XV0KCgpjbGFzcyBQZXJzb25hUm91dGVySW5wdXQoQmFzZU1vZGVsKToKICAgIG1lc3NhZ2U6IHN0cgogICAgaGlzdG9yeTogbGlzdFtkaWN0W3N0ciwgc3RyXV0gPSBbXQoKCgpAd29ya2Zsb3dzLmFjdGl2aXR5KCkKYXN5bmMgZGVmIGNhbGxfYWdlbnQoYWdlbnQ6IHN0ciwgbWVzc2FnZXM6IGxpc3RbZGljdFtzdHIsIEFueV1dXSkgLT4gQWdlbnRSZXN1bHQ6CiAgICBjbGllbnQgPSBnZXRfbWlzdHJhbF9jbGllbnQoKQogICAgYWdlbnRfaWQgPSBvcy5lbnZpcm9uLmdldChmIkFHRU5UX0lEX3thZ2VudC51cHBlcigpLnJlcGxhY2UoJy0nLCAnXycpfSIsIGFnZW50KQogICAgcmVzcG9uc2UgPSBhd2FpdCBjbGllbnQuYWdlbnRzLmNvbXBsZXRlX2FzeW5jKAogICAgICAgIGFnZW50X2lkPWFnZW50X2lkLCBtZXNzYWdlcz1jYXN0KCJBbnkiLCBtZXNzYWdlcykKICAgICkKICAgIGNob2ljZSA9IHJlc3BvbnNlLmNob2ljZXNbMF0KICAgIHRvb2xfY2FsbHM6IGxpc3RbZGljdFtzdHIsIEFueV1dSA9IFtdCiAgICBtZXNzYWdlID0gY2hvaWNlLm1lc3NhZ2UKICAgIGlmIG1lc3NhZ2UgaXMgbm90IE5vbmU6CiAgICAgICAgZm9yIHRjIGluIG1lc3NhZ2UudG9vbF9jYWxscyBvciBbXToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgYXJndW1lbnRzID0ganNvbi5sb2FkcyhzdHIodGMuZnVuY3Rpb24uYXJndW1lbnRzIG9yICJ7fSIpKQogICAgICAgICAgICBleGNlcHQgKGpzb24uSlNPTkRlY29kZUVycm9yLCBUeXBlRXJyb3IpOgogICAgICAgICAgICAgICAgYXJndW1lbnRzID0ge30KICAgICAgICAgICAgdG9vbF9jYWxscy5hcHBlbmQoeyJuYW1lIjogdGMuZnVuY3Rpb24ubmFtZSwgImFyZ3VtZW50cyI6IGFyZ3VtZW50c30pCiAgICBjb250ZW50ID0gbWVzc2FnZS5jb250ZW50IGlmIG1lc3NhZ2UgaXMgbm90IE5vbmUgZWxzZSBOb25lCiAgICByZXR1cm4geyJjb250ZW50IjogY29udGVudCBvciAiIiwgInRvb2xfY2FsbHMiOiB0b29sX2NhbGxzfQoKCmRlZiBleHRyYWN0X3JvdXRlKHRvb2xfY2FsbHM6IGxpc3RbZGljdFtzdHIsIEFueV1dSkgLT4gdHVwbGVbc3RyLCBzdHJdIHwgTm9uZToKICAgIGZvciB0YyBpbiB0b29sX2NhbGxzOgogICAgICAgIGlmIHRjLmdldCgibmFtZSIpICE9IFJPVVRFX0ZVTkNUSU9OOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGFyZ3VtZW50cyA9IHRjLmdldCgiYXJndW1lbnRzIikgb3IgW10KICAgICAgICBwZXJzb25hID0gYXJndW1lbnRzLmdldCgicGVyc29uYSIpCiAgICAgICAgaWYgcGVyc29uYToKICAgICAgICAgICAgcmV0dXJuIG5vcm1hbGl6ZV9wZXJzb25hKHBlcnNvbmEpLCBhcmd1bWVudHMuZ2V0KCJjb250ZXh0X25vdGUiKSBvciAiIgogICAgcmV0dXJuIE5vbmUKCgpkZWYgbm9ybWFsaXplX3BlcnNvbmEocGVyc29uYTogc3RyKSAtPiBzdHI6CiAgICByZXR1cm4gQ09DTyBpZiBwZXJzb25hID09ICJjb2NvIiBlbHNlIHBlcnNvbmEKCgpkZWYgX2hhbmRvZmZfbWVzc2FnZSgKICAgIHBlcnNvbmE6IHN0ciwgY29udGV4dF9ub3RlOiBzdHIsIGZyb21fYWdlbnQ6IHN0cikpIC0+IGRpY3Rbc3RyLCBzdHJdOgogICAgbm90ZSA9IGNvbnRleHRfbm90ZS5zdHJpcCgpCiAgICBwcmVmaXggPSBmIltIYW5kb2ZmIGZyb20ge2Zyb21fYWdlbnR9IHRvIHtwZXJzb25hPV0iCiAgICByZXR1cm4geyJyb2xlIjogInVzZXIiLCAiY29udGVudCI6IGYie3ByZWZpeH0ge25vdGV9Ii5zdHJpcCgpKX0KCgphc3luYyBkZWYgcnVuX3JvdXRpbmcoCiAgICBtZXNzYWdlOiBzdHIsCiAgICBoaXN0b3J5OiBIaXN0b3J5LAogICAgYWdlbnRfY2FsbGVyOiBBZ2VudENhbGxlciA9IGNhbGxfYWdlbnQsCiAgICBtYXhfaGFuZG9mZnM6IGludCA9IE1BWF9IQU5ET0ZGUywKKSAtPiBzdHI6CiAgICBtZXNzYWdlczogbGlzdFtkaWN0W3N0ciwgQW55XV0gPSBbZGljdChtKSBmb3IgbSBpbiBoaXN0b3J5XQogICAgbWVzc2FnZXMuYXBwZW5kKHsicm9sZSI6ICJ1c2VyIiwgImNvbnRlbnQiOiBtZXNzYWdlfSkKCiAgICBhZ2VudCA9IENPQ08KICAgIGJlc3RfYW5zd2VyID0gIiIKICAgIGhhbmRvZmZzID0gMAogICAgZnJvbV9jdWJfdG9fY29jbyA9IEZhbHNlCgogICAgd2hpbGUgVHJ1ZToKICAgICAgICByZXN1bHQgPSBhd2FpdCBhZ2VudF9jYWxsZXIoYWdlbnQsIG1lc3NhZ2VzKQogICAgICAgIGNvbnRlbnQgPSAocmVzdWx0LmdldCgiY29udGVudCIpIG9yICIiKS5zdHJpcCgpCiAgICAgICAgaWYgY29udGVudDoKICAgICAgICAgICAgYmVzdF9hbnN3ZXIgPSBjb250ZW50CiAgICAgICAgICAgIG1lc3NhZ2VzLmFwcGVuZCh7InJvbGUiOiAiYXNzaXN0YW50IiwgImNvbnRlbnQiOiBjb250ZW50fSkKCiAgICAgICAgaWYgZnJvbV9jdWJfdG9fY29jbzoKICAgICAgICAgICAgcmV0dXJuIGJlc3RfYW5zd2VyCgogICAgICAgIHJvdXRlID0gZXh0cmFjdF9yb3V0ZShyZXN1bHQuZ2V0KCJ0b29sX2NhbGxzIikgb3IgW10pCiAgICAgICAgaWYgcm91dGUgaXMgTm9uZToKICAgICAgICAgICAgcmV0dXJuIGJlc3RfYW5zd2VyCgogICAgICAgIHBlcnNvbmEsIGNvbnRleHRfbm90ZSA9IHJvdXRlCiAgICAgICAgaWYgaGFuZG9mZnMgPj0gbWF4X2hhbmRvZmZzOgogICAgICAgICAgICByZXR1cm4gYmVzdF9hbnN3ZXIKICAgICAgICBoYW5kb2ZmcyArPSAxCgogICAgICAgIGlmIGFnZW50ID09IENPQ086CiAgICAgICAgICAgIGlmIHBlcnNvbmEgbm90IGluIENVQlM6CiAgICAgICAgICAgICAgICByZXR1cm4gYmVzdF9hbnN3ZXIKICAgICAgICBlbHNlOgogICAgICAgICAgICBpZiBwZXJzb25hICE9IENPQ086CiAgICAgICAgICAgICAgICByZXR1cm4gYmVzdF9hbnN3ZXIKICAgICAgICAgICAgZnJvbV9jdWJfdG9fY29jbyA9IFRydWUKCiAgICAgICAgbWVzc2FnZXMuYXBwZW5kKF9oYW5kb2ZmX21lc3NhZ2UocGVyc29uYSwgY29udGV4dF9ub3RlLCBhZ2VudCkpCiAgICAgICAgYWdlbnQgPSBwZXJzb25hCgoKQHdvcmtmbG93cy53b3JrZmxvdy5kZWZpbmUoCiAgICBuYW1lPSJwZXJzb25hLXJvdXRlciIsCiAgICB3b3JrZmxvd19kaXNwbGF5X25hbWU9IlBlcnNvbmEgUm91dGVyIiwKICAgIHdvcmtmbG93X2Rlc2NyaXB0aW9uPSgKICAgICAgICAiUm91dGVzIGVhY2ggdXNlciBtZXNzYWdlIHRocm91Z2ggY29jby1zZW5zZWksIHdobyBtYXkgaGFuZCBvZmYgdG8gIgogICAgICAgICJ6YWt1LCBwaWtvLCBvciBudWkgdmlhIHJvdXRlX3RvX3BlcnNvbmE7IGEgY3ViIGhhbmRzIGJhY2sgdG8gY29jbyAiCiAgICAgICAgImZvciBhIGZpbmFsIGJpbmRpbmcgcmVwbHkuIgogICAgKSwKKQpjbGFzcyBQZXJzb25hUm91dGVyV29ya2Zsb3c6CiAgICBAd29ya2Zsb3dzLndvcmtmbG93LmVudHJ5cG9pbnQKICAgIGFzeW5jIGRlZiBydW4oc2VsZiwgaW5wdXQ6IFBlcnNvbmFSb3V0ZXJJbnB1dCkgLT4gc3RyOgogICAgICAgIHJldHVybiBhd2FpdCBydW5fcm91dGluZyhpbnB1dC5tZXNzYWdlLCBpbnB1dC5oaXN0b3J5KQo=
+"""Persona router workflow: coco-sensei routes conversations to zaku, piko, or nui."""
+
+import json
+import os
+from collections.abc import Awaitable, Callable
+from typing import Any, cast
+
+from mistralai import workflows
+from mistralai.workflows.plugins.mistralai import get_mistral_client
+from pydantic import BaseModel
+
+COCO = "coco-sensei"
+CUBS = ("zaku", "piko", "nui")
+MAX_HANDOFFS = 6
+ROUTE_FUNCTION = "route_to_persona"
+
+History = list[dict[str, str]]
+AgentResult = dict[str, Any]
+AgentCaller = Callable[[str, list[dict[str, Any]]], Awaitable[AgentResult]]
+
+
+class PersonaRouterInput(BaseModel):
+    message: str
+    history: list[dict[str, str]] = []
+
+
+@workflows.activity()
+async def call_agent(agent: str, messages: list[dict[str, Any]]) -> AgentResult:
+    client = get_mistral_client()
+    agent_id = os.environ.get(f"AGENT_ID_{agent.upper().replace('-', '_')}", agent)
+    response = await client.agents.complete_async(
+        agent_id=agent_id, messages=cast("Any", messages)
+    )
+    choice = response.choices[0]
+    tool_calls: list[dict[str, Any]] = []
+    message = choice.message
+    if message is not None:
+        for tc in message.tool_calls or []:
+            try:
+                arguments = json.loads(str(tc.function.arguments or "{}"))
+            except (json.JSONDecodeError, TypeError):
+                arguments = {}
+            tool_calls.append({"name": tc.function.name, "arguments": arguments})
+    content = message.content if message is not None else None
+    return {"content": content or "", "tool_calls": tool_calls}
+
+
+def extract_route(tool_calls: list[dict[str, Any]]) -> tuple[str, str] | None:
+    for tc in tool_calls:
+        if tc.get("name") != ROUTE_FUNCTION:
+            continue
+        arguments = tc.get("arguments") or {}
+        persona = arguments.get("persona")
+        if persona:
+            return normalize_persona(persona), arguments.get("context_note") or ""
+    return None
+
+
+def normalize_persona(persona: str) -> str:
+    return COCO if persona == "coco" else persona
+
+
+def _handoff_message(
+    persona: str, context_note: str, from_agent: str
+) -> dict[str, str]:
+    note = context_note.strip()
+    prefix = f"[Handoff from {from_agent} to {persona}]"
+    return {"role": "user", "content": f"{prefix} {note}".strip()}
+
+
+async def run_routing(
+    message: str,
+    history: History,
+    agent_caller: AgentCaller = call_agent,
+    max_handoffs: int = MAX_HANDOFFS,
+) -> str:
+    messages: list[dict[str, Any]] = [dict(m) for m in history]
+    messages.append({"role": "user", "content": message})
+
+    agent = COCO
+    best_answer = ""
+    handoffs = 0
+    from_cub_to_coco = False
+
+    while True:
+        result = await agent_caller(agent, messages)
+        content = (result.get("content") or "").strip()
+        if content:
+            best_answer = content
+            messages.append({"role": "assistant", "content": content})
+
+        if from_cub_to_coco:
+            return best_answer
+
+        route = extract_route(result.get("tool_calls") or [])
+        if route is None:
+            return best_answer
+
+        persona, context_note = route
+        if handoffs >= max_handoffs:
+            return best_answer
+        handoffs += 1
+
+        if agent == COCO:
+            if persona not in CUBS:
+                return best_answer
+        else:
+            if persona != COCO:
+                return best_answer
+            from_cub_to_coco = True
+
+        messages.append(_handoff_message(persona, context_note, agent))
+        agent = persona
+
+
+@workflows.workflow.define(
+    name="persona-router",
+    workflow_display_name="Persona Router",
+    workflow_description=(
+        "Routes each user message through coco-sensei, who may hand off to "
+        "zaku, piko, or nui via route_to_persona; a cub hands back to coco "
+        "for a final binding reply."
+    ),
+)
+class PersonaRouterWorkflow:
+    @workflows.workflow.entrypoint
+    async def run(self, input: PersonaRouterInput) -> str:
+        return await run_routing(input.message, input.history)
