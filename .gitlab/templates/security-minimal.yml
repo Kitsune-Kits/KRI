@@ -1,0 +1,24 @@
+#
+#  security-minimal.yml
+#  kri — org-wide CI template
+#
+#  Abstract:
+#      Minimal security stage shared across repos (ADR-0006):
+#      GitLab-managed SAST and secret detection, re-staged into a
+#      'security' stage. Dependency scanning stays opt-in — repos that
+#      need it include the Dependency-Scanning template locally.
+#
+#  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
+
+stages:
+  - security
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+sast:
+  stage: security
+
+secret_detection:
+  stage: security

@@ -1,0 +1,69 @@
+#
+#  agents-guard.yml
+#  kri — org-wide CI template
+#
+#  Abstract:
+#      The KRI context-rot guard as a shared include (ADR-0006). Repos
+#      include this template from the kri hub instead of carrying their
+#      own copy of the job and script. Set KRI_LINK_REQUIRED: "false"
+#      only in the KRI repo itself (it carries no AGENTS.md self-link).
+#      Non-blocking by design — failures are signals, not gates.
+#
+#  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
+
+stages:
+  - lint
+
+agents-guard:
+  stage: lint
+  image: alpine:latest
+  variables:
+    KRI_LINK_REQUIRED: "true"
+  script:
+    - |
+      set -u
+      FAIL=0
+      for f in AGENTS.md CLAUDE.md PROJECT-STATUS.md; do
+        if [ -f "$f" ]; then
+          echo "OK: $f present"
+        else
+          echo "FAIL: $f is missing"
+          FAIL=1
+        fi
+      done
+      if [ -f CLAUDE.md ] && ! grep -q '@AGENTS.md' CLAUDE.md; then
+        echo "FAIL: CLAUDE.md does not import AGENTS.md (@AGENTS.md)"
+        FAIL=1
+      fi
+      if [ "${KRI_LINK_REQUIRED:-true}" = "true" ] && [ -f AGENTS.md ]; then
+        if grep -q 'kitsune-kits/kri' AGENTS.md; then
+          echo "OK: AGENTS.md links to the KRI org repo"
+        else
+          echo "FAIL: AGENTS.md does not link to kitsune-kits/kri"
+          FAIL=1
+        fi
+      fi
+      if [ -f PROJECT-STATUS.md ]; then
+        updated=$(grep -m1 -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]' PROJECT-STATUS.md || true)
+        if [ -z "$updated" ]; then
+          echo "WARN: no date found in PROJECT-STATUS.md"
+        else
+          then=$(date -u -d "$updated" +%s 2>/dev/null || echo 0)
+          if [ "$then" -gt 0 ]; then
+            now=$(date +%s)
+            age=$(( (now - then) / 86400 ))
+            if [ "$age" -gt 30 ]; then
+              echo "WARN: PROJECT-STATUS.md is ${age} days old (>30) — refresh it"
+            else
+              echo "OK: PROJECT-STATUS.md updated ${age} days ago"
+            fi
+          else
+            echo "WARN: could not parse PROJECT-STATUS.md date ($updated)"
+          fi
+        fi
+      fi
+      exit $FAIL
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
+  allow_failure: true

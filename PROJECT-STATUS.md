@@ -1,6 +1,6 @@
 # PROJECT-STATUS — KRI (org context hub)
 
-> **Last updated:** 2026-09-23 · **Maintained by:** KRI (Kitsune Research Industries)
+> **Last updated:** 2026-10-13 (shared CI templates, ADR-0006) · **Maintained by:** KRI (Kitsune Research Industries)
 > **Read this first when starting a new chat** — org-wide state lives here.
 
 ## Overview
@@ -9,7 +9,7 @@
 |---|---|
 | **Project** | KRI — org-wide context hub for the kitsune-kits group |
 | **Role** | Agent standards, org context, persona attribution, repo index, decisions |
-| **CI pipeline** | `agents-guard` + `repo-link-check` (both non-blocking) |
+| **CI pipeline** | `agents-guard` (shared template, ADR-0006) + `repo-link-check` (both non-blocking) |
 | **GitLab URL** | https://gitlab.com/kitsune-kits/kri |
 
 ## Repo states (at a glance)
@@ -42,6 +42,8 @@ not from memory of this table.
   Study tier and numbering; STUDIES.md is the canonical index. First Light is
   a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
   doctrine. Repo created 2026-09-23; foundation seeded, KMOD crystal-handshake outline merged (MR !1).
+
+- **Shared CI templates (Oct 13, ADR-0006):** the agents-guard job and the minimal security stage now live in `.gitlab/templates/` here; sibling repos include them instead of carrying copies. Fixes the escaped-variable bug that silently disabled the KRI-link check. Sibling repos adopt via their own `piko/ci-streamline` MRs.
 
 ## Manual setup remaining (GitLab UI)
 

@@ -73,6 +73,9 @@ spanning more than a handful of steps:
 - Architectural decisions are recorded as ADRs in
   [docs/decisions/](docs/decisions/) — accepted ADRs are immutable;
   supersede rather than edit.
+- Shared CI templates live in
+  [.gitlab/templates/](.gitlab/templates/) — repos include them from
+  this repo instead of carrying per-repo copies (ADR-0006).
 
 ## Lessons learned
 
