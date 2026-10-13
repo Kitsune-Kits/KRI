@@ -37,8 +37,11 @@ pushes trigger pipelines nobody asked for.
   pipeline creation — the blast radius of kri `main` grows. Keep the
   templates minimal and additive; breaking template changes require
   coordinated MRs across repos.
-- Included `stages` entries merge by union, so repos do not need to
-  add `lint` or `security` to their own `stages:` lists by hand.
+- Templates carry jobs only. A `stages:` block in an included
+  file does **not** union-merge into the consuming repo's stage list —
+  each consuming repo must list `lint` and `security` in its own
+  `stages:` (learned 2026-10-13: template-declared stages break
+  pipeline creation with "chosen stage does not exist").
 - The escaping fix restores the KRI-link check across all repos.
 - Pinning the Rust toolchain makes upgrades a deliberate two-line
   change (image tag + `rust-toolchain.toml` channel) instead of a

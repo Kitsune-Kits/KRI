@@ -8,12 +8,10 @@
 #      own copy of the job and script. The guard reads the KRI_LINK_REQUIRED
 #      environment variable (default "true"); set it to "false" as a
 #      top-level CI variable only in the KRI repo itself (no self-link).
+#      The consuming repo must list the "lint" stage in its own stages:.
 #      Non-blocking by design — failures are signals, not gates.
 #
 #  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
-
-stages:
-  - lint
 
 agents-guard:
   stage: lint
