@@ -15,10 +15,9 @@ include:
 stages:
   - validate
 
-# -- Agents guard (org template, ADR-0006; kri is the hub, no self-link) --
-agents-guard:
-  variables:
-    KRI_LINK_REQUIRED: "false"
+# kri is the hub — its AGENTS.md carries no kitsune-kits/kri self-link.
+variables:
+  KRI_LINK_REQUIRED: "false"
 
 # -- Sibling repo link check (README / ORG-CONTEXT URLs resolve) --
 repo-link-check:

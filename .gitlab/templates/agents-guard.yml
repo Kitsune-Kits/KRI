@@ -5,8 +5,9 @@
 #  Abstract:
 #      The KRI context-rot guard as a shared include (ADR-0006). Repos
 #      include this template from the kri hub instead of carrying their
-#      own copy of the job and script. Set KRI_LINK_REQUIRED: "false"
-#      only in the KRI repo itself (it carries no AGENTS.md self-link).
+#      own copy of the job and script. The guard reads the KRI_LINK_REQUIRED
+#      environment variable (default "true"); set it to "false" as a
+#      top-level CI variable only in the KRI repo itself (no self-link).
 #      Non-blocking by design — failures are signals, not gates.
 #
 #  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
@@ -17,8 +18,6 @@ stages:
 agents-guard:
   stage: lint
   image: alpine:latest
-  variables:
-    KRI_LINK_REQUIRED: "true"
   script:
     - |
       set -u
