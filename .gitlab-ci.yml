@@ -3,28 +3,22 @@
 #  kri
 #
 #  Abstract:
-#      Minimal CI for the KRI org context hub: the agent-guidance guard
-#      and a sibling repo link check. All jobs are non-blocking --
-#      signals, not gates (org convention).
+#      Minimal CI for the KRI org context hub: the shared agents-guard
+#      template (ADR-0006) and a sibling repo link check. All jobs are
+#      non-blocking — signals, not gates (org convention).
 #
 #  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
-#
+
+include:
+  - local: .gitlab/templates/agents-guard.yml
 
 stages:
   - validate
+  - lint
 
-# -- Agents guard (KRI context-rot standard) --
-agents-guard:
-  stage: validate
-  image: alpine:latest
-  variables:
-    KRI_LINK_REQUIRED: "false"
-  script:
-    - sh .gitlab/scripts/agents-guard.sh
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == "main"
-  allow_failure: true
+# kri is the hub — its AGENTS.md carries no kitsune-kits/kri self-link.
+variables:
+  KRI_LINK_REQUIRED: "false"
 
 # -- Sibling repo link check (README / ORG-CONTEXT URLs resolve) --
 repo-link-check:
