@@ -161,3 +161,14 @@ Known limitation: batch-retagging entire archived folder trees is not native —
 3. **The Obsidian Protocol spirit:** tools must be removable and modular — no glue, no lock-in.
 4. **Decisions are written down** — this file, the decision records in `00-KRI/Decisions/`, and the ADRs in this repo's `docs/decisions/`.
 5. **The Vessel's kami must always feel welcome.**
+
+---
+
+## 7. Obsidian Vault Layer (October 2026)
+
+Obsidian is the reading room, not the archive: **the repos remain the source of truth.**
+
+- **Vault root:** open ~/GitLab/ (the local repos folder, §3) as one vault spanning all clones. The .obsidian/ config then lives at ~/GitLab/.obsidian/ — *outside every repo*, so no repo is dirtied and no .gitignore is needed. Never open a single repo as its own vault.
+- **The layer lives in kri/notes/** — Home (front-door MOC), Forge Notes (digest), VAULT (doctrine + setup). See notes/VAULT.md. Removable in one folder delete — Obsidian Protocol spirit, no glue, no lock-in.
+- **Notes link and digest; they never fork state.** PROJECT-STATUS.md in each repo stays the single source of truth. When a note and a repo disagree, the repo wins and the note gets fixed.
+- **Under the surface, nothing changes:** git, CI, MRs, persona attribution, VS Code. A note edit is a commit like any other; commits happen in VS Code or the terminal, not inside Obsidian.
