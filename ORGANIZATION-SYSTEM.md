@@ -81,12 +81,13 @@ Examples:
 
 ---
 
-## 3. GitLab ↔ iCloud Sync
+## 3. GitLab — The Single Home (October 2026)
 
-- Local repos live in `~/GitLab/`; the GitLab group is `kitsune-kits` on gitlab.com.
-- `~/GitLab/sync-to-icloud.sh` mirrors repos into the matching pillar folders (rsync, runs every 30 min via cron: `*/30 * * * * /bin/bash ~/GitLab/sync-to-icloud.sh`).
-- Log: `~/GitLab/sync.log`.
-- ⚠️ The business iCloud root is the Daemon Containers path on the synced volume — copy the path from Finder's "Copy as Pathname," never hand-type it (a single wrong character silently breaks the sync).
+- Local repos live in `~/GitLab/`; the GitLab group is `kitsune-kits` on gitlab.com. **The repos are the single home for project truth** — MacBook and iPad connect to them directly.
+- **The iCloud mirror is RETIRED (Architect ruling, 2026-10-14).** The rsync mirror (`~/GitLab/sync-to-icloud.sh`, 30-min cron, `sync.log`) is discontinued — remove the cron line, delete the script, and remove the mirrored repo copies from the pillar folders. Do not resurrect mirrored repo copies: a second copy of the truth goes stale and lies.
+- **MacBook:** clones in `~/GitLab/` — also the Obsidian vault root (§7). Commits via VS Code or terminal.
+- **iPad:** Working Copy clones linked into an Obsidian vault — the iPad ritual in `kri/notes/VAULT.md`.
+- iCloud keeps its role for Apple-native files and media (§1 pillars, §4 toolchain) — never for repo copies.
 
 ---
 
