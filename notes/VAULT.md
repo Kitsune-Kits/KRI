@@ -40,3 +40,17 @@ The iPad cannot open the Mac's folders — Working Copy is the bridge: a real gi
 3. In each Working Copy repo: share menu → Link Repository to Folder → a subfolder inside the vault folder, named exactly as the repo (kri, kitsuneOS, ...). Home's wiki-links then resolve exactly like on the Mac.
 4. Rhythm: pull in Working Copy before reading, edit in Obsidian, commit + push in Working Copy after.
 5. The iPad vault's .obsidian config lives in the vault root, never inside a repo — the doctrine holds on both devices.
+
+## The Theme — Kitsune Modern
+
+*Tradition is the structure, the future is the light.* One snippet carries the brand into the vault: paper Foxfire White #F4F7F8, ink Sumi #0E1113, Gold-Leaf at the joints (titles, the breathing tab glow), jade for the living (links, active states), crimson for the sacred (errors and seals only — never beside jade in one component). Mincho for headings, Sans for body, Mono for code. Neon green does not exist in a polite universe.
+
+- **Canonical source:** notes/theme/kri-theme.css in this repo. Presentation only — the repos stay the truth, and the theme never touches a repo's own files.
+- **Mac ritual:** install the Mincho once (brew install --cask font-shippori-mincho), then copy the snippet into the vault and enable it:
+
+      mkdir -p ~/GitLab/.obsidian/snippets
+      cp ~/GitLab/kri/notes/theme/kri-theme.css ~/GitLab/.obsidian/snippets/
+
+  then Obsidian → Settings → Appearance → CSS snippets → enable **kri-theme**.
+- **iPad ritual:** the iPad vault has its own .obsidian — copy kri-theme.css from the Working Copy kri clone into the vault's .obsidian/snippets/ folder (Files app), then enable it under Settings → Appearance. On iPad the Mincho falls back gracefully (New York).
+- **Removable:** delete the snippet and the theme is gone — no glue, no lock-in. The third law holds.

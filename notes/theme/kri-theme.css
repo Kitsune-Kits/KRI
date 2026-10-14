@@ -1,0 +1,133 @@
+/* ============================================================
+   kri-theme.css / Kitsune Research Industries
+   Obsidian theme snippet — Kitsune Modern
+   "Tradition is the structure, the future is the light."
+   Canon: kri BRAND.md + docs/decisions/0001-brand-palette-cold-white
+   Install: copy into <vault>/.obsidian/snippets/, enable under
+   Settings → Appearance → CSS snippets.
+   ============================================================ */
+
+/* ——— Type families (BRAND-TYPOGRAPHY canon) ——— */
+body {
+  --kri-mincho: "Shippori Mincho", "New York", "Songti SC", "Hiragino Mincho ProN", serif;
+  --kri-sans: "Inter", "SF Pro Text", -apple-system, "Helvetica Neue", sans-serif;
+  --kri-mono: "SF Mono", "JetBrains Mono", "Menlo", monospace;
+
+  --font-text-override: var(--kri-sans);
+  --font-monospace-override: var(--kri-mono);
+}
+
+/* ——— The paper and the ink ——— */
+body {
+  --background-primary: #F4F7F8;        /* Foxfire White — the paper */
+  --background-primary-alt: #EDF2F3;    /* one cold step off the paper */
+  --background-secondary: #EDF2F3;      /* sidebars breathe darker */
+  --background-secondary-alt: #E3EAEB;
+  --background-modifier-border: #D7E0E2;
+  --background-modifier-hover: rgba(15, 168, 152, 0.09); /* jade breath on hover */
+
+  --text-normal: #0E1113;                /* Sumi Ink — the ink, not the paper */
+  --text-muted: #5C6A6D;
+  --text-faint: #8D979A;
+  --hr-color: #D7E0E2;
+  --table-header-background: #E3EAEB;
+}
+
+::selection {
+  background: rgba(15, 168, 152, 0.18); /* jade wash — the living, held */
+}
+
+/* ——— The living: jade (links, active, success) ——— */
+body {
+  --link-color: #0B8A7E;                  /* Imperial Jade, sunk for paper legibility */
+  --link-color-hover: #0FA898;           /* full Imperial Jade on approach */
+  --link-unresolved: #8D979A;
+  --text-success: #0B8A7E;
+  --checkbox-color: #0B8A7E;
+  --accent-h: 174;
+  --accent-s: 84;
+  --accent-l: 34;                        /* interactive surfaces: deep jade */
+}
+
+/* ——— The sacred: crimson (errors and seals only — never beside jade in one component) ——— */
+body {
+  --text-error: #D0342C;                 /* Torii Crimson */
+}
+
+/* ——— Gold-Leaf at the joints: titles and ceremony ——— */
+body {
+  --h1-color: #C9A227;                  /* Gold-Leaf — formal lettering */
+  --h2-color: #0E1113;
+  --h3-color: #0E1113;
+  --h4-color: #0E1113;
+  --h5-color: #5C6A6D;
+  --h6-color: #5C6A6D;
+  --h1-font: var(--kri-mincho);         /* the Mincho is earned */
+  --h2-font: var(--kri-mincho);
+  --h3-font: var(--kri-mincho);
+  --inline-title-font: var(--kri-mincho);
+  --inline-title-color: #C9A227;
+  --blockquote-border-color: #C9A227;   /* the Ledger margin is gold */
+}
+
+/* Kintsugi line — a gold hairline under H2 (reading + preview) */
+.markdown-rendered h2,
+.markdown-preview-view h2 {
+  border-bottom: 1px solid rgba(201, 162, 39, 0.45);
+  padding-bottom: 0.15em;
+}
+
+/* ——— Code: KRI Mono on cold paper ——— */
+body {
+  --code-background: #EDF2F3;
+  --code-normal: #0E1113;
+}
+
+/* ——— Tags: the hanko ——— */
+body {
+  --tag-color: #0B8A7E;
+  --tag-background: rgba(15, 168, 152, 0.10);
+  --tag-background-hover: rgba(15, 168, 152, 0.16);
+}
+
+/* ——— Callouts: one seal per surface ——— */
+body {
+  --callout-note: 190, 21%, 6%;         /* ink */
+  --callout-quote: 46, 68%, 47%;        /* gold */
+  --callout-tip: 174, 84%, 36%;          /* jade — the living */
+  --callout-success: 174, 84%, 36%;
+  --callout-warning: 3, 71%, 50%;       /* crimson — the sacred */
+  --callout-error: 3, 71%, 50%;
+}
+
+/* ——— Graph view: foxfire colors ——— */
+body {
+  --graph-line: #D7E0E2;
+  --graph-node: #0E1113;
+  --graph-node-unresolved: #8D979A;
+  --graph-node-tag: #0B8A7E;
+  --graph-node-attachment: #C9A227;
+  --graph-node-focused: #C9A227;
+}
+
+/* ——— Foxfire Bloom: the active tab breathes (5 s sine, gold) ——— */
+.workspace-tab-header.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  border-radius: 2px;
+  background: #C9A227;
+  animation: kri-foxfire 5s ease-in-out infinite;
+}
+
+@keyframes kri-foxfire {
+  0%, 100% { box-shadow: 0 0 3px rgba(201, 162, 39, 0.30); opacity: 0.75; }
+  50%      { box-shadow: 0 0 9px rgba(201, 162, 39, 0.65); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-tab-header.is-active::after { animation: none; }
+}
