@@ -54,3 +54,14 @@ The iPad cannot open the Mac's folders — Working Copy is the bridge: a real gi
   then Obsidian → Settings → Appearance → CSS snippets → enable **kri-theme**.
 - **iPad ritual:** the iPad vault has its own .obsidian — copy kri-theme.css from the Working Copy kri clone into the vault's .obsidian/snippets/ folder (Files app), then enable it under Settings → Appearance. On iPad the Mincho falls back gracefully (New York).
 - **Removable:** delete the snippet and the theme is gone — no glue, no lock-in. The third law holds.
+
+## Code in the Reading Room
+
+Source files live in the repos, and the vault spans the repos — so code is viewable in Obsidian with two switches:
+
+1. **Settings → Files & Links → Detect all file extensions — on.** Every file in every clone now appears in the file explorer and quick switcher (.rs, .lua, .c, .css, .sh, ...). Hidden folders (.git, .obsidian) stay hidden.
+2. **Community plugin: Code Viewer.** Opens 50+ extensions (Rust, Lua, C, CSS, shell, ...) with syntax highlighting through Obsidian's own renderer — colors always follow the theme, so code wears Kitsune Modern too. Read-only by default: the reading room reads; edits stay deliberate.
+
+- Wiki-links reach code directly: Home can link [[Project-Kogane/kogane.lua|kogane.lua]] or [[kri/notes/theme/kri-theme.css|the theme itself]].
+- Trade-off: the file explorer grows dense — every repo file becomes visible. That is the point: the whole forge, readable from one room. Content search stays markdown-first; code is found by file name.
+- The anvil stays the anvil: real editing sessions belong to VS Code / terminal. (If an in-vault editor is ever wanted, the VSCode Editor plugin brings Monaco in — not default doctrine.)
