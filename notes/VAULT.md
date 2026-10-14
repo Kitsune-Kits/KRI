@@ -28,3 +28,15 @@
 - **Each repo** — the truth: PROJECT-STATUS.md, ADRs, design docs, plans, code
 - **kri/notes/** — the layer: Home (front door MOC), Forge Notes (digest)
 - **~/GitLab/.obsidian/** — app config; ignored by every repo, never committed
+- **iPad** — Working Copy clones linked into an Obsidian vault (the ritual below)
+- **Nowhere else** — no mirrored repo copies, ever; the repos are the single home (ORGANIZATION-SYSTEM §3)
+
+## The iPad Ritual (Working Copy)
+
+The iPad cannot open the Mac's folders — Working Copy is the bridge: a real git client that clones, pulls, commits, and pushes.
+
+1. Install Working Copy; add each repo (https://gitlab.com/kitsune-kits/&lt;repo&gt;.git) with your GitLab username + personal access token. Clone and pull are free; pushing needs the one-time premium unlock.
+2. In Obsidian on iPad: create an empty vault named kitsune-kits (stored On My iPad).
+3. In each Working Copy repo: share menu → Link Repository to Folder → a subfolder inside the vault folder, named exactly as the repo (kri, kitsuneOS, ...). Home's wiki-links then resolve exactly like on the Mac.
+4. Rhythm: pull in Working Copy before reading, edit in Obsidian, commit + push in Working Copy after.
+5. The iPad vault's .obsidian config lives in the vault root, never inside a repo — the doctrine holds on both devices.
