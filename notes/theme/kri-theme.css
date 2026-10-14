@@ -77,6 +77,12 @@ body {
   padding-bottom: 0.15em;
 }
 
+/* Kintsugi in Live Preview — the gold joint appears while editing, too */
+.markdown-source-view.mod-cm6 .HyperMD-header-2 {
+  border-bottom: 1px solid rgba(201, 162, 39, 0.45);
+  padding-bottom: 0.15em;
+}
+
 /* ——— Code: KRI Mono on cold paper ——— */
 body {
   --code-background: #EDF2F3;
