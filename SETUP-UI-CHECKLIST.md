@@ -44,6 +44,20 @@ shared across all repos; component labels are repo-specific.
 ### KRI (this repo)
 - Type: `docs`, `standard`, `decision`, `chore`
 
+## Group runner (CI Forge)
+
+One-time group-level setup; covers all repos. Full runbook:
+[docs/infra/CI-RUNNERS.md](docs/infra/CI-RUNNERS.md).
+
+- [ ] Create group runner: group → Settings → CI/CD → Runners →
+      **New group runner** — description `KRI Forge (Mac, docker)`,
+      tick **Run untagged jobs**, copy the `glrt-` token
+- [ ] Register on the Mac (Docker executor) per the runbook, install
+      as launchd service, verify green
+- [ ] Once green: disable instance runners for the group (quota
+      becomes fallback only) and enforce "Pipelines must succeed"
+      namespace-wide
+
 ## All repos
 
 - [ ] Protected branches: `main` (maintainers only)
