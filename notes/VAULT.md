@@ -9,6 +9,8 @@
 2. **One vault, spanning all clones.** Open ~/GitLab/ (the existing local repos folder, per ORGANIZATION-SYSTEM §3) as a single Obsidian vault. The Obsidian config then lands in ~/GitLab/.obsidian/ — *outside every repo*, so no .gitignore is needed and no repo is dirtied. **Never open a single repo as its own vault** — that drops an .obsidian/ folder inside it.
 3. **Removable, no glue — the Obsidian Protocol spirit.** The entire layer is kri/notes/ plus ~/GitLab/.obsidian/. Delete both and zero repo data is lost. Obsidian can be uninstalled tomorrow with nothing of value inside it.
 
+*Amended 2026-10-31 (Door 2): the vault root is now a local-only meta-repo — scaffolding, not truth. See the Door 2 section below.*
+
 ## Under the Surface (what does NOT change)
 
 - Git, CI, MRs, persona attribution — untouched. A note edit is a commit like any other, with branch prefix and trailers.
@@ -27,7 +29,7 @@
 
 - **Each repo** — the truth: PROJECT-STATUS.md, ADRs, design docs, plans, code
 - **kri/notes/** — the layer: Home (front door MOC), Forge Notes (digest)
-- **~/GitLab/.obsidian/** — app config; ignored by every repo, never committed
+- **~/GitLab/.obsidian/** — app config; ignored by every repo and by the root meta-repo, never committed
 - **iPad** — Working Copy clones linked into an Obsidian vault (the ritual below)
 - **Nowhere else** — no mirrored repo copies, ever; the repos are the single home (ORGANIZATION-SYSTEM §3)
 
@@ -65,3 +67,35 @@ Source files live in the repos, and the vault spans the repos — so code is vie
 - Wiki-links reach code directly: Home can link [[Project-Kogane/kogane.lua|kogane.lua]] or [[kri/notes/theme/kri-theme.css|the theme itself]].
 - Trade-off: the file explorer grows dense — every repo file becomes visible. That is the point: the whole forge, readable from one room. Content search stays markdown-first; code is found by file name.
 - The anvil stays the anvil: real editing sessions belong to VS Code / terminal. (If an in-vault editor is ever wanted, the VSCode Editor plugin brings Monaco in — not default doctrine.)
+
+## Door 2 — the Vault Root Meta-Repo (ruling of 2026-10-31)
+
+**The ruling.** `~/GitLab/` is a **local-only git meta-repo**. The clones inside it are registered as **submodules**. The meta-repo commits exactly two files — `.gitignore` and `.gitmodules` — and **never gets a remote**; it is never pushed anywhere. It is scaffolding, not truth: dissolving it (`rm -rf ~/GitLab/.git .gitmodules .gitignore`) leaves every clone untouched, with its own history and remote. Law 3 holds.
+
+**Why.** Obsidian Git needs one git root to see. With the meta-repo, in-vault pull works natively at the vault root while commits stay deliberate, per repo, as always. Door 1's terminal loop remains the fallback.
+
+**Migration (once, on the Mac — non-destructive; it absorbs the existing clones. Commit or stash any uncommitted work in a clone first):**
+
+```sh
+cd ~/GitLab
+git init
+git config submodule.recurse true   # root pulls reach into the clones
+for d in */; do
+  d="${d%/}"
+  [ -d "$d/.git" ] || continue
+  git submodule add -b "$(git -C "$d" rev-parse --abbrev-ref HEAD)" "$(git -C "$d" remote get-url origin)" "$d"
+done
+cat > .gitignore <<'EOF'
+/*
+!/.gitignore
+!/.gitmodules
+EOF
+git add .gitignore
+git commit -m "chore(vault): door 2 — local-only submodule meta-repo"
+```
+
+**Obsidian Git (now allowed at the root only).** Install the plugin, turn **off** auto commit-and-push (the root has no remote; the clones still commit from VS Code / terminal per existing law), turn **on** pull on startup plus a pull interval. Pull is the reading ritual; commit stays deliberate.
+
+**Accepted costs.** Submodule clones sit on detached HEAD by nature — branch work inside each clone is unchanged, and the `-b` pin keeps the meta-repo tracking each clone's main. A fresh re-clone of the whole arrangement needs `git clone --recurse-submodules` (rare — the root never lives on a server). `git status` at the root shows submodule dirt as noise; read it as weather.
+
+**Door 1 fallback.** If the meta-repo ever sours, dissolve it with the `rm -rf` above and the terminal pull loop resumes — nothing else changes.
