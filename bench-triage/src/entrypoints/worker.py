@@ -1,9 +1,13 @@
 """Worker entrypoint — registers the bench triage workflow and serves.
 
-Passes the workflow class directly to run_worker() from the Workflows
-SDK (mistralai.workflows), which registers it in the workspace and
-starts serving executions.
+Self-hosted workers must identify themselves with a stable DEPLOYMENT_NAME;
+this entrypoint defaults it to kri-bench-triage before anything imports
+the SDK, so a bare `make start-worker` is enough.
 """
+
+import os
+
+os.environ.setdefault("DEPLOYMENT_NAME", "kri-bench-triage")
 
 import asyncio
 
