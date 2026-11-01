@@ -1,24 +1,20 @@
-"""Worker entrypoint — mirrors the scaffolded project's generated file.
+"""Worker entrypoint — registers the bench triage workflow and serves.
 
-Discovers workflow classes under ``src/workflows`` and hands them to
-``run_worker()``, which registers the workflows and starts serving
-executions. If the deploy build rejects this file's shape, regenerate it
-with ``uvx mistralai-workflows-cli@latest setup`` and keep only
-``src/workflows/bench_triage.py`` — it is scaffold-independent.
+Passes the workflow class directly to run_worker() from the Workflows
+SDK (mistralai.workflows), which registers it in the workspace and
+starts serving executions.
 """
 
 import asyncio
 
-import mistralai_workflows
+import mistralai.workflows as workflows
 
-# Importing the workflow modules registers their classes for discovery.
-import src.workflows.bench_triage  # noqa: F401
+from src.workflows.bench_triage import BenchTriageWorkflow
 
 
 async def main() -> None:
-    """Discover workflows in src/workflows and run the worker until stopped."""
-    discovered = mistralai_workflows.discover_workflows()
-    await mistralai_workflows.run_worker(discovered)
+    """Run the worker, serving kitsune-bench-triage until stopped."""
+    await workflows.run_worker([BenchTriageWorkflow])
 
 
 if __name__ == "__main__":
