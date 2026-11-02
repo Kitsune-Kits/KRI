@@ -5,7 +5,7 @@
 #  Abstract:
 #      The KRI context-rot guard as a reusable workflow (ADR-0006
 #      pattern). Repos call it with
-#      uses: KitsuneKits/KRI/.github/workflows/agents-guard.yml@main
+#      uses: Kitsune-Kits/KRI/.github/workflows/agents-guard.yml@main
 #      instead of carrying their own copy of the job — the same shape
 #      as the GitLab include (.gitlab/templates/agents-guard.yml).
 #      The guard reads the kri-link-required input (default true);
@@ -50,7 +50,7 @@ jobs:
             FAIL=1
           fi
           if [ "${KRI_LINK_REQUIRED:-true}" = "true" ] && [ -f AGENTS.md ]; then
-            if grep -Eq '(kitsune-kits/kri|KitsuneKits/KRI)' AGENTS.md; then
+            if grep -Eq '(kitsune-kits/kri|KitsuneKits/KRI|Kitsune-Kits/KRI)' AGENTS.md; then
               echo "OK: AGENTS.md links to the KRI org repo"
             else
               echo "FAIL: AGENTS.md does not link to the KRI org repo"
