@@ -26,10 +26,11 @@ index.
 | Repo | Role |
 |---|---|
 | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace (Orange Pi Zero 3W) |
-| [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Soul — pure C prop OS (RP2350) |
+| [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Soul — prop OS for RP2350 (Rust-primary, ADR-0004) |
 | [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | Vessel — Tasogane gunblade + testbench |
 | [Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom) | Yellow (Deltarune Ch. 5) cosplay Vessel |
 | [Project-Lazy-Comet](https://github.com/Kitsune-Kits/Project-Lazy-Comet) | Hoshino (Blue Archive) mesh prop system |
+| [Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light) | Study 001a — First Light (ADR-0005) |
 
 Each repo carries its own repo-specific `AGENTS.md` and a living
 `PROJECT-STATUS.md`.
