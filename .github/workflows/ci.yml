@@ -22,7 +22,7 @@ on:
 jobs:
   agents-guard:
     name: agents-guard (non-blocking)
-    uses: KitsuneKits/KRI/.github/workflows/agents-guard.yml@main
+    uses: Kitsune-Kits/KRI/.github/workflows/agents-guard.yml@main
     with:
       kri-link-required: false
 
@@ -37,11 +37,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           for repo in \
-            KitsuneKits/kitsunebiOS \
-            KitsuneKits/kitsuneOS \
-            KitsuneKits/Project-Kogane \
-            KitsuneKits/Project-Saffron-Blossom \
-            KitsuneKits/Project-Lazy-Comet; do
+            Kitsune-Kits/kitsunebiOS \
+            Kitsune-Kits/kitsuneOS \
+            Kitsune-Kits/Project-Kogane \
+            Kitsune-Kits/Project-Saffron-Blossom \
+            Kitsune-Kits/Project-Lazy-Comet; do
             if gh api "repos/$repo" >/dev/null 2>&1; then
               echo "OK: $repo"
             else
