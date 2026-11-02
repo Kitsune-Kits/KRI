@@ -1,6 +1,6 @@
 # PROJECT-STATUS — KRI (org context hub)
 
-> **Last updated:** 2026-11-02 (GitHub homecoming — ADR-0007; previous: 2026-10-13 shared CI templates, ADR-0006) · **Maintained by:** KRI (Kitsune Research Industries)
+> **Last updated:** 2026-11-02 (GitHub homecoming — ADR-0007 + hub/repo link pass; previous: 2026-10-13 shared CI templates, ADR-0006) · **Maintained by:** KRI (Kitsune Research Industries)
 > **Read this first when starting a new chat** — org-wide state lives here.
 
 ## Overview
@@ -10,7 +10,7 @@
 | **Project** | KRI — org-wide context hub for the Kitsune-Kits organization |
 | **Role** | Agent standards, org context, persona attribution, repo index, decisions |
 | **CI pipeline** | GitHub Actions: `agents-guard` (reusable workflow, ADR-0006/0007) + `repo-link-check` (both non-blocking) |
-| **GitHub URL** | https://github.com/Kitsune-Kits/KRI · mirror (read-only until post-AWA): https://gitlab.com/kitsune-kits/kri |
+| **GitHub URL** | https://github.com/Kitsune-Kits/KRI · mirror (read-only until post-AWA): https://github.com/Kitsune-Kits/KRI |
 
 ## Repo states (at a glance)
 
@@ -34,7 +34,7 @@ not from memory of this table.
   agents-guard now runs from every sibling. The C/Lua retirement landed:
   kitsuneOS #23 (C estate) + #36, Kogane #2/#3, Saffron #15. **Open:** Pages
   enablement (Settings → Pages → Source: GitHub Actions) on kitsuneOS and
-  Saffron; the link/reference pass across operational docs; Lazy-Comet's Lua
+  Saffron; Lazy-Comet's Lua
   estate awaits the Rhai conversion; a vault-backup committed cargo's
   `target/` tree to kitsuneOS main (now gitignored — bulk removal pending
   the Architect's word; one `git rm -r target/` from the bench clone is the
