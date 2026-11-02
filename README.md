@@ -2,7 +2,7 @@
 
 Org-wide context hub for the [Kitsune-Kits](https://github.com/Kitsune-Kits)
 GitHub organization (kri ADR-0007 — the GitHub homecoming); the
-[kitsune-kits](https://github.com/Kitsune-Kits) GitLab group is the read-only
+[kitsune-kits GitLab group](https://gitlab.com/kitsune-kits) is the read-only
 mirror until the post-AWA review. This repo holds no product code — it holds everything shared:
 the agent operating standard, persona attribution, org context, and the repo
 index.
@@ -25,7 +25,7 @@ index.
 
 | Repo | Role |
 |---|---|
-| [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace (Orange Pi Zero 3W) |
+| [kitsunebiOS](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace (Orange Pi Zero 3W; template repo) |
 | [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Soul — prop OS for RP2350 (Rust-primary, ADR-0004) |
 | [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | Vessel — Tasogane gunblade + testbench |
 | [Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom) | Yellow (Deltarune Ch. 5) cosplay Vessel |
