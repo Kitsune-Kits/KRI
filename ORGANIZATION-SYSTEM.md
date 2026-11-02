@@ -81,9 +81,13 @@ Examples:
 
 ---
 
-## 3. GitLab — The Single Home (October 2026)
+## 3. Git — The Single Home (Oct 2026; GitHub homecoming Nov 2026)
 
-- Local repos live in `~/GitLab/`; the GitLab group is `kitsune-kits` on gitlab.com. **The repos are the single home for project truth** — MacBook and iPad connect to them directly.
+- Local clones live in `~/GitLab/` (folder name kept); the canonical remote
+  is the `Kitsune-Kits` organization on github.com (kri ADR-0007) — **the
+  repos are the single home for project truth**, and MacBook and iPad connect
+  to them directly. The `kitsune-kits` GitLab group is the read-only mirror
+  until the post-AWA review.
 - **The iCloud mirror is RETIRED (Architect ruling, 2026-10-14).** The rsync mirror (`~/GitLab/sync-to-icloud.sh`, 30-min cron, `sync.log`) is discontinued — remove the cron line, delete the script, and remove the mirrored repo copies from the pillar folders. Do not resurrect mirrored repo copies: a second copy of the truth goes stale and lies.
 - **MacBook:** clones in `~/GitLab/` — also the Obsidian vault root (§7). Commits via VS Code or terminal.
 - **iPad:** Working Copy clones linked into an Obsidian vault — the iPad ritual in `kri/notes/VAULT.md`.

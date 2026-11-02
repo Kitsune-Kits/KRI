@@ -1,7 +1,7 @@
 # AGENTS.md — Kitsune Kits org-wide agent standard
 
-Operating standard for AI coding agents working anywhere in the kitsune-kits
-GitLab group. Each repo carries its own repo-specific `AGENTS.md`; this file
+Operating standard for AI coding agents working anywhere in the Kitsune-Kits
+GitHub organization (kri ADR-0007). Each repo carries its own repo-specific `AGENTS.md`; this file
 holds what is shared. **Read both before working.**
 
 ## Grounding order (any repo)
@@ -9,7 +9,8 @@ holds what is shared. **Read both before working.**
 1. The repo's `PROJECT-STATUS.md` — single source of truth for where things are.
 2. The repo's `README.md`.
 3. The repo's `AGENTS.md` — repo-specific rules, repo map, watch-outs.
-4. This file, plus the repo's `.gitlab/DEV-WORKFLOW.md`.
+4. This file. (Each repo's `.gitlab/DEV-WORKFLOW.md` is GitLab-era, retained
+   until the post-AWA archive decision.)
 5. [ORGANIZATION-SYSTEM.md](ORGANIZATION-SYSTEM.md) — how KRI files, tags,
    tools, and media are organized. Consult before creating, naming, moving,
    or tagging any KRI file or asset.
@@ -45,8 +46,8 @@ spanning more than a handful of steps:
 - **Summarize at handoff.** When finishing or pausing an operation, leave a
   short note of what changed and what is next, so the next session re-grounds
   in one read.
-- **Treat connector errors as unverified.** The GitLab connector has reported
-  false commit failures (the commits actually landed). On any error: verify
+- **Treat connector errors as unverified.** Both the GitLab-era and GitHub
+  connectors have reported false commit failures (the commits actually landed). On any error: verify
   actual state (file tree, file contents) before retrying — blind retries can
   duplicate work.
 
@@ -64,8 +65,9 @@ spanning more than a handful of steps:
 
 ## Git & attribution
 
-- Default branch: `main`. Org namespace: `kitsune-kits` on gitlab.com.
-- Lifecycle (each repo's `.gitlab/DEV-WORKFLOW.md`):
+- Default branch: `main`. Org namespace: `Kitsune-Kits` on github.com
+  (ADR-0007); the `kitsune-kits` GitLab group mirrors read-only until post-AWA.
+- Lifecycle (GitLab-era record, each repo's `.gitlab/DEV-WORKFLOW.md`):
   Plan → Branch → Code → Commit → Review → Merge → CI/CD → Deploy.
 - KRI persona attribution — branch prefixes (`coco/`, `zaku/`, `piko/`,
   `nui/`), `KRI-Persona:` and `Co-authored-by:` trailers:
@@ -73,9 +75,11 @@ spanning more than a handful of steps:
 - Architectural decisions are recorded as ADRs in
   [docs/decisions/](docs/decisions/) — accepted ADRs are immutable;
   supersede rather than edit.
-- Shared CI templates live in
-  [.gitlab/templates/](.gitlab/templates/) — repos include them from
-  this repo instead of carrying per-repo copies (ADR-0006).
+- Shared CI lives in [.github/workflows/](.github/workflows/) —
+  `agents-guard.yml` is a reusable workflow that repos call from their own
+  GitHub Actions CI (the ADR-0006 hub pattern in homecoming form, ADR-0007).
+  The GitLab-era templates remain in [.gitlab/templates/](.gitlab/templates/),
+  dormant until the post-AWA archive review.
 
 ## Lessons learned
 
@@ -84,25 +88,31 @@ spanning more than a handful of steps:
   when a new one teaches something. Current:
   [Hardware bring-up (ST7789/Tufty)](docs/lessons/hardware-bringup.md).
 
-## Tooling via Vibe (gitlab_4be8 connector)
+## Tooling via Vibe (GitHub App connector — ADR-0007)
 
-**Can do:** file read/write, commits, branches, merge requests
-(create/review/approve/merge), issues/work items, pipelines
-(run/retry/cancel/check), search (code/issues/MRs/commits), labels (read),
-wiki (list/read).
+**Can do:** file read/write (push_files, single-commit multi-file), branches,
+pull requests (create/read/merge, check runs, diff, review comments), code
+search, commit history, PR branch updates.
 
-**Cannot do (manual GitLab UI required):** create projects, create labels,
-create milestones, create issue boards, set protected branches, configure MR
+**Cannot do (manual GitHub UI required):** org and repo settings (Actions
+policy, Pages enablement), tag creation, branch protection rules.
+
+*GitLab-era record (superseded):* the `gitlab_4be8` MCP connector provided
+file read/write, commits, branches, merge requests (create/review/approve/
+merge), issues/work items, pipelines (run/retry/cancel/check), search
+(code/issues/MRs/commits), labels (search/read), wiki (list/read). Manual
+GitLab UI was required for: create projects, create labels, create
+milestones, create issue boards, set protected branches, configure MR
 approval rules, write wiki pages, archive repos.
 
 ## Do-not-touch list (org-wide)
 
 - `.github/scripts/` directories — intentionally retained; referenced by
-  `.gitlab-ci.yml`.
+  CI scripts.
 - Historical references in `CHANGELOG.md`, `LICENSE`, `SECURITY.md`, and older
   docs (brand names, historical fix notes).
-- Known-failing non-blocking CI jobs — intentional on the free tier; don't
-  fix them by making them blocking.
+- Known-failing non-blocking CI jobs (docs-check, countdown-badge) —
+  intentional; don't fix them by making them blocking.
 - kitsunebios locked key decisions (see that repo's `AGENTS.md`).
 - This repo is the org standard — propose changes via MR rather than
   rewriting unilaterally.
