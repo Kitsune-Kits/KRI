@@ -10,7 +10,7 @@
 | **Project** | KRI — org-wide context hub for the Kitsune-Kits organization |
 | **Role** | Agent standards, org context, persona attribution, repo index, decisions |
 | **CI pipeline** | GitHub Actions: `agents-guard` (reusable workflow, ADR-0006/0007) + `repo-link-check` (both non-blocking) |
-| **GitHub URL** | https://github.com/Kitsune-Kits/KRI · mirror (read-only until post-AWA): https://github.com/Kitsune-Kits/KRI |
+| **GitHub URL** | https://github.com/Kitsune-Kits/KRI · mirror (read-only until post-AWA): https://gitlab.com/kitsune-kits/kri |
 
 ## Repo states (at a glance)
 
