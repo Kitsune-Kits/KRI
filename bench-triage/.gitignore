@@ -1,0 +1,9 @@
+# environment and secrets — never commit
+.env
+*.key
+
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/

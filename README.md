@@ -1,7 +1,9 @@
 # Kitsune Research Industries (KRI)
 
-Org-wide context hub for the [kitsune-kits](https://gitlab.com/kitsune-kits)
-GitLab group. This repo holds no product code — it holds everything shared:
+Org-wide context hub for the [Kitsune-Kits](https://github.com/Kitsune-Kits)
+GitHub organization (kri ADR-0007 — the GitHub homecoming); the
+[kitsune-kits GitLab group](https://gitlab.com/kitsune-kits) is the read-only
+mirror until the post-AWA review. This repo holds no product code — it holds everything shared:
 the agent operating standard, persona attribution, org context, and the repo
 index.
 
@@ -23,11 +25,12 @@ index.
 
 | Repo | Role |
 |---|---|
-| [kitsunebios](https://gitlab.com/kitsune-kits/kitsunebios) | Shell — Linux userspace (Orange Pi Zero 3W) |
-| [kitsuneOS](https://gitlab.com/kitsune-kits/kitsuneOS) | Soul — pure C prop OS (RP2350) |
-| [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | Vessel — Tasogane gunblade + testbench |
-| [Project-Saffron-Blossom](https://gitlab.com/kitsune-kits/Project-Saffron-Blossom) | Yellow (Deltarune Ch. 5) cosplay Vessel |
-| [Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet) | Hoshino (Blue Archive) mesh prop system |
+| [kitsunebiOS](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace (Orange Pi Zero 3W; template repo) |
+| [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Soul — prop OS for RP2350 (Rust-primary, ADR-0004) |
+| [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | Vessel — Tasogane gunblade + testbench |
+| [Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom) | Yellow (Deltarune Ch. 5) cosplay Vessel |
+| [Project-Lazy-Comet](https://github.com/Kitsune-Kits/Project-Lazy-Comet) | Hoshino (Blue Archive) mesh prop system |
+| [Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light) | Study 001a — First Light (ADR-0005) |
 
 Each repo carries its own repo-specific `AGENTS.md` and a living
 `PROJECT-STATUS.md`.

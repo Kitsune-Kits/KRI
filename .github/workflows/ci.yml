@@ -1,0 +1,50 @@
+#
+#  ci.yml
+#  kri
+#
+#  Abstract:
+#      Minimal CI for the KRI org context hub, translated from
+#      .gitlab-ci.yml in the GitHub homecoming (2026-11-01): the
+#      shared agents-guard as a reusable workflow (no self-link —
+#      KRI_LINK_REQUIRED stays false) and a sibling repo link check
+#      against GitHub URLs. All jobs are non-blocking — signals, not
+#      gates (org convention).
+#
+#  Copyright (c) 2026 Kitsune Research Industries. All rights reserved.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  agents-guard:
+    name: agents-guard (non-blocking)
+    uses: Kitsune-Kits/KRI/.github/workflows/agents-guard.yml@main
+    with:
+      kri-link-required: false
+
+  repo-link-check:
+    name: sibling repo link check (non-blocking)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Sibling repos resolve on GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for repo in \
+            Kitsune-Kits/kitsunebiOS \
+            Kitsune-Kits/kitsuneOS \
+            Kitsune-Kits/Project-Kogane \
+            Kitsune-Kits/Project-Saffron-Blossom \
+            Kitsune-Kits/Project-Lazy-Comet; do
+            if gh api "repos/$repo" >/dev/null 2>&1; then
+              echo "OK: $repo"
+            else
+              echo "FAIL: $repo does not resolve"
+            fi
+          done

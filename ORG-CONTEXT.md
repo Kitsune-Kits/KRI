@@ -58,21 +58,21 @@ How we decide *what* we do, *how* we do it, and *why*:
 
 | Layer | Repo | Device | Role |
 |---|---|---|---|
-| Shell | [kitsunebios](https://gitlab.com/kitsune-kits/kitsunebios) | Orange Pi Zero 3W (A733) | Linux userspace (Linux 5.15, Buildroot) |
-| Soul | [kitsuneOS](https://gitlab.com/kitsune-kits/kitsuneOS) | Pimoroni Pico 2 (RP2350) | Pure C prop OS (Zeus VM, Hercules HAL) |
-| Vessel | [Project-Kogane](https://gitlab.com/kitsune-kits/Project-Kogane) | — | kogane.kmod, CAD, 3D prints, BOM |
+| Shell | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Orange Pi Zero 3W (A733) | Linux userspace (Linux 5.15, Buildroot) |
+| Soul | [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Pimoroni Pico 2 (RP2350) | Prop OS — Rust-primary (ADR-0004; ZEUS power core, HERCULES HAL) |
+| Vessel | [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | — | kogane.kmod, CAD, 3D prints, BOM |
 
 Cosplay Vessel projects run the same Soul on their props:
-[Project-Saffron-Blossom](https://gitlab.com/kitsune-kits/Project-Saffron-Blossom)
+[Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom)
 (Yellow, Deltarune Ch. 5 — crystalline revolver, cowboy aesthetic) and
-[Project-Lazy-Comet](https://gitlab.com/kitsune-kits/Project-Lazy-Comet)
+[Project-Lazy-Comet](https://github.com/Kitsune-Kits/Project-Lazy-Comet)
 (Takanashi Hoshino, Blue Archive — ESP-NOW + BLE wireless mesh).
 
 Studies — focused works of craft that establish principles (ADR-0005) — are
 indexed in [STUDIES.md](STUDIES.md). First: Study 001a First Light, a
 buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
-doctrine ([Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light),
-repo creation pending).
+doctrine ([Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light),
+created 2026-09-23).
 
 ## Build-time pull graph — nothing vendored
 
@@ -89,5 +89,7 @@ kitsuneOS is fetched via CMake FetchContent by Project-Kogane at build time.
 ## History
 
 Migrated from GitHub (KitsuneKits) to GitLab (kitsune-kits) in September 2026
-for sovereignty over repos, CI, and data. Legacy GitHub repos are ready to be
-archived. Per-repo migration details live in each `PROJECT-STATUS.md`.
+for sovereignty over repos, CI, and data. **Homecoming (kri ADR-0007, Nov 2026):**
+the Kitsune-Kits GitHub organization is the single home again; the GitLab
+group is the read-only mirror until the post-AWA review. Per-repo migration
+details live in each `PROJECT-STATUS.md`.

@@ -1,8 +1,8 @@
 # PERSONA-ATTRIBUTION.md — KRI ensemble attribution standard
 
-The KRI ensemble works through Vibe as four distinct personas. The GitLab MCP
-connector authenticates as a single GitLab account, so attribution is achieved
-through branch naming, commit trailers, and MR metadata.
+The KRI ensemble works through Vibe as four distinct personas. The GitHub App
+connector authenticates as a single account, so attribution is achieved
+through branch naming, commit trailers, and PR metadata.
 
 ## Persona identities
 
@@ -13,7 +13,7 @@ through branch naming, commit trailers, and MR metadata.
 | Piko | ⚡ | Firmware, logic, electronics | `piko/` | `Piko <piko@kitsune-kits.gitlab>` |
 | Nui | ✨ | Finishing, garmenting, surface, color | `nui/` | `Nui <nui@kitsune-kits.gitlab>` |
 
-These git identities are metadata conventions — not real GitLab accounts. The
+These git identities are metadata conventions — not real accounts. The
 commit is pushed by the single authenticated connector account.
 
 ## Branch naming
@@ -51,12 +51,12 @@ Co-authored-by: Nui <nui@kitsune-kits.gitlab>
 KRI-Persona: Zaku
 ```
 
-## Merge request convention
+## Pull request convention
 
 - **Title:** persona emoji + name + colon (e.g., `⚡ Piko: Blade Sled I2C init sequence`)
 - **Description:** includes `KRI-Persona:` line and brief role note
 - **Source branch:** uses persona's branch prefix
-- **Multi-persona MR:** lead persona owns branch/title; others listed under a
+- **Multi-persona PR:** lead persona owns branch/title; others listed under a
   `KRI Contributors:` section
 
 ## Domain → persona mapping
