@@ -1,7 +1,6 @@
 # PROJECT-STATUS — KRI (org context hub)
 
-> **Last updated:** 2026-10-26 (P4 face-wing display doctrine, ADR-0007) · **Maintained by:** KRI (Kitsune Research Industries)
-> **Last updated:** 2026-11-02 (GitHub homecoming — ADR-0007 + hub/repo link pass; previous: 2026-10-13 shared CI templates, ADR-0006) · **Maintained by:** KRI (Kitsune Research Industries)
+> **Last updated:** 2026-11-07 (Pocket Forge: the ensemble becomes agents — subproject initiative; previous: 2026-11-02 GitHub homecoming, ADR-0007) · **Maintained by:** KRI (Kitsune Research Industries)
 > **Read this first when starting a new chat** — org-wide state lives here.
 
 ## Overview
@@ -28,6 +27,14 @@ not from memory of this table.
 | [Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light) | Study 001a | S1 foundation done; S2 KMOD outline merged |
 
 ## Current initiatives
+
+- **Pocket Forge — the ensemble becomes agents (Nov 7):** the four spirits now exist as
+  Managed Agents (`mistralai-agents` 1.1.0, public preview) in `pocket-forge/` — 🦊
+  Coco Sensei at the front door, Zaku/Piko/Nui as subagents cast by craft, typed
+  GitHub tools (10 reads allowed, 8 writes gated: an approval is the Architect's
+  word), persona canon embedded as law. Housed in the hub per the Architect's word
+  (no separate repo). **Open:** first live run (needs MISTRAL_API_KEY +
+  GITHUB_TOKEN on the bench); LICENSE for the subproject; deploy decision.
 
 - **GitHub homecoming (Nov 1–2, ADR-0007):** all seven repos mirrored to the
   Kitsune-Kits org (every branch and tag); CI translated to GitHub Actions
