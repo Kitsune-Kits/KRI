@@ -1,0 +1,10 @@
+# Secrets — the forge keeps its keys out of the book.
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
