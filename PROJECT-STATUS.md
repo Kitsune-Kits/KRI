@@ -1,5 +1,6 @@
 # PROJECT-STATUS — KRI (org context hub)
 
+> **Last updated:** 2026-10-26 (P4 face-wing display doctrine, ADR-0007) · **Maintained by:** KRI (Kitsune Research Industries)
 > **Last updated:** 2026-11-02 (GitHub homecoming — ADR-0007 + hub/repo link pass; previous: 2026-10-13 shared CI templates, ADR-0006) · **Maintained by:** KRI (Kitsune Research Industries)
 > **Read this first when starting a new chat** — org-wide state lives here.
 
@@ -54,6 +55,8 @@ not from memory of this table.
   a buildable in-universe lightsaber on kitsuneOS with the NFC kyber-crystal
   doctrine. Repo created 2026-09-23; foundation seeded, KMOD crystal-handshake outline merged (MR !1).
 
+- **Shared CI templates (Oct 13, ADR-0006):** the agents-guard job and the minimal security stage now live in `.gitlab/templates/` here; sibling repos include them instead of carrying copies. Fixes the escaped-variable bug that silently disabled the KRI-link check. Sibling repos adopt via their own `piko/ci-streamline` MRs.
+- **P4 face-wing display doctrine (Oct 26, ADR-0007):** any KRI prop requiring a display uses an ESP32-P4 face wing on the principles of Project-Kogane ADR-0002 — kami stays on the RP2350 Soul, LVGL over MIPI-DSI with capacitive touch, Rust-on-ESP-IDF, face wing doubles as bench instrument and at-con authoring surface. kitsunebiOS stays retired. First application: Kogane (gated G1–G3); Saffron Blossom and Lazy Comet adopt next.
 - **Shared CI templates (Oct 13, ADR-0006):** the agents-guard job and the minimal security stage now live in `.gitlab/templates/` here; sibling repos include them instead of carrying copies. Fixes the escaped-variable bug that silently disabled the KRI-link check. Sibling repos adopt via their own `piko/ci-streamline` MRs. **GitHub realization (Nov 2026, ADR-0007):** the live form is now `.github/workflows/agents-guard.yml`, called via `uses:`; the GitLab templates stay dormant until the post-AWA archive decision.
 
 ## Manual setup remaining (GitLab-era — superseded by ADR-0007)
