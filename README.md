@@ -10,6 +10,7 @@ everything shared: the agent operating standard, persona attribution, org
 context, the brand canon, and the repo index.
 
 [![CI](https://github.com/Kitsune-Kits/KRI/actions/workflows/ci.yml/badge.svg)](https://github.com/Kitsune-Kits/KRI/actions/workflows/ci.yml)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-0E1113.svg?labelColor=C9A227)](LICENSE)
 [![Kitsune Modern](https://img.shields.io/badge/KRI-Kitsune_Modern-C9A227.svg?labelColor=0E1113)](https://github.com/Kitsune-Kits/KRI/blob/main/BRAND-AESTHETIC.md)
 
 ---
@@ -28,6 +29,7 @@ context, the brand canon, and the repo index.
 | `BRAND-AESTHETIC.md` | Design language — Kitsune Modern: tradition is the structure, the future is the light (ADR-0003) |
 | `BRAND-WORDMARK.md` | Wordmark & seal spec — the hanko (ADR-0004) |
 | `STUDIES.md` | Index of Studies — the tier canon (ADR-0005) |
+| `LICENSE` | Proprietary license — © 2026 KRI / Kitsune Kits |
 
 ---
 
@@ -53,6 +55,13 @@ Each repo carries its own repo-specific `AGENTS.md` and a living
 We do not manufacture props. We facilitate the birth of Vessels to house
 digital souls. Every circuit, layer of PETG, and line of code has a kami.
 Full glossary: [ORG-CONTEXT.md](ORG-CONTEXT.md).
+
+---
+
+## License
+
+Proprietary — © 2026 Kitsune Research Industries (KRI) / Kitsune Kits.
+All rights reserved. See [LICENSE](LICENSE).
 
 ---
 
