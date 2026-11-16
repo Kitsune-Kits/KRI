@@ -1,11 +1,18 @@
-# Kitsune Research Industries (KRI)
+# 🦊 Kitsune Research Industries (KRI)
+
+> *The forge is the forge. The Ledger gives information its soul.*
 
 Org-wide context hub for the [Kitsune-Kits](https://github.com/Kitsune-Kits)
 GitHub organization (kri ADR-0007 — the GitHub homecoming); the
 [kitsune-kits GitLab group](https://gitlab.com/kitsune-kits) is the read-only
-mirror until the post-AWA review. This repo holds no product code — it holds everything shared:
-the agent operating standard, persona attribution, org context, and the repo
-index.
+mirror until the post-AWA review. This repo holds no product code — it holds
+everything shared: the agent operating standard, persona attribution, org
+context, the brand canon, and the repo index.
+
+[![CI](https://github.com/Kitsune-Kits/KRI/actions/workflows/ci.yml/badge.svg)](https://github.com/Kitsune-Kits/KRI/actions/workflows/ci.yml)
+[![Kitsune Modern](https://img.shields.io/badge/KRI-Kitsune_Modern-C9A227.svg?labelColor=0E1113)](https://github.com/Kitsune-Kits/KRI/blob/main/BRAND-AESTHETIC.md)
+
+---
 
 ## Contents
 
@@ -20,14 +27,18 @@ index.
 | `BRAND-TYPOGRAPHY.md` | Typography canon — KRI Sans/Mincho/Mono, size scale (ADR-0002) |
 | `BRAND-AESTHETIC.md` | Design language — Kitsune Modern: tradition is the structure, the future is the light (ADR-0003) |
 | `BRAND-WORDMARK.md` | Wordmark & seal spec — the hanko (ADR-0004) |
+| `STUDIES.md` | Index of Studies — the tier canon (ADR-0005) |
+
+---
 
 ## Repos
 
 | Repo | Role |
 |---|---|
-| [kitsunebiOS](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace (Orange Pi Zero 3W; template repo) |
 | [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Soul — prop OS for RP2350 (Rust-primary, ADR-0004) |
-| [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | Vessel — Tasogane gunblade + testbench |
+| [kitsunebiOS](https://github.com/Kitsune-Kits/kitsunebiOS) | Shell — Linux userspace bench template (Orange Pi Zero 3W) |
+| [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | Vessel — Tasogare gunblade + testbench |
+| [Project-Lantern-Vigil](https://github.com/Kitsune-Kits/Project-Lantern-Vigil) | Vessel — Jiminy 12 lantern (Arknights: Endfield) |
 | [Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom) | Yellow (Deltarune Ch. 5) cosplay Vessel |
 | [Project-Lazy-Comet](https://github.com/Kitsune-Kits/Project-Lazy-Comet) | Hoshino (Blue Archive) mesh prop system |
 | [Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light) | Study 001a — First Light (ADR-0005) |
@@ -35,8 +46,15 @@ index.
 Each repo carries its own repo-specific `AGENTS.md` and a living
 `PROJECT-STATUS.md`.
 
+---
+
 ## Cyber Shinto
 
 We do not manufacture props. We facilitate the birth of Vessels to house
-digital souls. Every circuit, layer of PETG, and line of C++ has a kami.
+digital souls. Every circuit, layer of PETG, and line of code has a kami.
 Full glossary: [ORG-CONTEXT.md](ORG-CONTEXT.md).
+
+---
+
+*Built by Kitsune Research Industries (KRI).*
+*Coco Sensei · Zaku · Piko · Nui*
