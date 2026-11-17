@@ -17,7 +17,7 @@
 
 | Study | Title | Soul | Status | Repo |
 |---|---|---|---|---|
-| 001a | First Light | kitsuneOS + blade KMOD | Active — foundation seeded (S1), KMOD outline merged (S2 doc) | [Study-First-Light](https://gitlab.com/kitsune-kits/Study-First-Light) |
+| 001a | First Light | kitsuneOS + blade KMOD | Active — foundation seeded (S1), KMOD outline merged (S2 doc) | [Study-First-Light](https://github.com/Kitsune-Kits/Study-First-Light) |
 | 001ab | *(reserved)* First Light subset — Yoda's lightsaber | — | Not started | — |
 
 ## Study 001a: First Light — founding doctrine

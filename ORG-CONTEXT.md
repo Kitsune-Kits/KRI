@@ -58,7 +58,7 @@ How we decide *what* we do, *how* we do it, and *why*:
 
 | Layer | Repo | Device | Role |
 |---|---|---|---|
-| Shell | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Orange Pi Zero 3W (A733) | Linux userspace (Linux 5.15, Buildroot) |
+| Shell | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Orange Pi Zero 3W (A733) | Linux userspace (Linux 6.6.98 vendor BSP, Buildroot) |
 | Soul | [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Pimoroni Pico 2 (RP2350) | Prop OS — Rust-primary (ADR-0004; ZEUS power core, HERCULES HAL) |
 | Vessel | [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | — | kogane.kmod, CAD, 3D prints, BOM |
 
@@ -77,7 +77,7 @@ created 2026-09-23).
 ## Build-time pull graph — nothing vendored
 
 Buildroot (network fetch at build time)
-- UPSTREAM (not stored in our repos): Linux kernel (Allwinner AIOT SDK),
+- UPSTREAM (not stored in our repos): Linux kernel (Orange Pi vendor BSP, 6.6),
   LVGL, musl libc, BusyBox, U-Boot
 - OUR REPOS (only proprietary code): kitsunebios → /usr/bin/kitsunebios,
   Project-Kogane → /sdcard/props/*.lua
