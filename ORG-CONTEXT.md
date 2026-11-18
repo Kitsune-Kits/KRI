@@ -28,8 +28,9 @@ How we decide *what* we do, *how* we do it, and *why*:
 
 - **Focus.** A small number of projects, each done exceptionally well.
   New initiatives displace old ones — nothing is simply added.
-- **Integration.** Our stack is vertically integrated (Shell / Soul /
-  Vessel, built together). Standards are enforced by tooling, not memory.
+- **Integration.** Our stack is vertically integrated (Soul / Vessel,
+  built together; the Shell's functions live in kitsuneOS since its retirement,
+  2026-11-18). Standards are enforced by tooling, not memory.
 - **Craft.** Every surface is a surface someone touches: docs, commits,
   CI output, print orientation. Polish is not optional.
 - **Say no.** To bloat, to duplication, to features that do not serve the
@@ -48,9 +49,9 @@ How we decide *what* we do, *how* we do it, and *why*:
 | Bambu Harmony | Design for high-speed multi-material FDM; the machine never dictates the soul of the print |
 | The Nursery | Archive of catastrophically failed prints, kept for their tragic, beautiful personality |
 | 5% Rule | Workshop entropy — chaos is a team member; glitches are feedback, not failures |
-| Three-repo split | Shell / Soul / Vessel architecture |
+| Three-repo split | Shell / Soul / Vessel architecture — historical; the Shell retired 2026-11-18 and its functions live in kitsuneOS |
 | KMOD | Compiled prop module, loaded by URANOS with CRC32 verification |
-| Kitsunebi | Fox-fire; also the name of the Shell OS (kitsunebiOS) |
+| Kitsunebi | Fox-fire; also the name of the retired Shell OS (kitsunebiOS, RETIRED 2026-11-18) |
 | Study | Focused work of craft, smaller than a Project, whose deliverable includes written principles (ADR-0005; index: STUDIES.md) |
 | Kyber crystal | NFC soul-tag — the swappable soul of a Vessel; UID-unique, carries soul-data |
 
@@ -58,9 +59,15 @@ How we decide *what* we do, *how* we do it, and *why*:
 
 | Layer | Repo | Device | Role |
 |---|---|---|---|
-| Shell | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | Orange Pi Zero 3W (A733) | Linux userspace (Linux 6.6.98 vendor BSP, Buildroot) |
+| ∅∂ ~~Shell~~ — RETIRED | [kitsunebios](https://github.com/Kitsune-Kits/kitsunebiOS) | ~~Orange Pi Zero 3W (A733)~~ | Historical Linux userspace — RETIRED 2026-11-18 (its ADR-0002): functions live in kitsuneOS; displays carried by the ESP32-P4 (kitsuneOS ADR-0005, the prop mesh display seat) |
 | Soul | [kitsuneOS](https://github.com/Kitsune-Kits/kitsuneOS) | Pimoroni Pico 2 (RP2350) | Prop OS — Rust-primary (ADR-0004; ZEUS power core, HERCULES HAL) |
 | Vessel | [Project-Kogane](https://github.com/Kitsune-Kits/Project-Kogane) | — | kogane.kmod, CAD, 3D prints, BOM |
+
+**Shell retirement (2026-11-18):** kitsunebiOS is retired and stamped
+(kitsunebiOS ADR-0002); its functions live in kitsuneOS, whose display seat is
+the ESP32-P4 (kitsuneOS ADR-0005 — the prop mesh display seat). Inter-prop
+sync rides ESP-NOW on each prop's radio edge — a dumb relay; the kami never
+sits on Espressif silicon or Linux. The archived repo remains as history.
 
 Cosplay Vessel projects run the same Soul on their props:
 [Project-Saffron-Blossom](https://github.com/Kitsune-Kits/Project-Saffron-Blossom)
@@ -76,13 +83,12 @@ created 2026-09-23).
 
 ## Build-time pull graph — nothing vendored
 
-Buildroot (network fetch at build time)
-- UPSTREAM (not stored in our repos): Linux kernel (Orange Pi vendor BSP, 6.6),
-  LVGL, musl libc, BusyBox, U-Boot
-- OUR REPOS (only proprietary code): kitsunebios → /usr/bin/kitsunebios,
-  Project-Kogane → /sdcard/props/*.lua
-
-kitsuneOS is fetched via CMake FetchContent by Project-Kogane at build time.
+- **UPSTREAM** (not stored in our repos): toolchain and SDK components
+  fetched at build time. The Buildroot estate (kernel, LVGL, musl, BusyBox,
+  U-Boot) retired with the Shell (2026-11-18); kitsunebiOS keeps the archive.
+- **OUR REPOS:** kitsuneOS + Project-Kogane — Project-Kogane's `build.sh`
+  pulls kitsuneOS at build time (`KITSUNEOS_REF` pin, canonical GitHub per
+  kri ADR-0007) and stages the Vessel's Rhai into the Soul's prop store.
 
 **Principle: don't store what's readily available upstream.**
 
