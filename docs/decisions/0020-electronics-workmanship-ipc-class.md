@@ -1,6 +1,6 @@
 # ADR-0020: Electronics workmanship: the IPC class declaration for KRI boards
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** ⚡ Piko (lead)
 - **Scope:** org-wide
@@ -19,6 +19,12 @@ electrical test), IPC-7351 (land patterns and footprint naming),
 IPC/WHMA-A-620 (cable and wire harness assemblies, including crimped
 interconnections), and IPC-7711/7721 (rework, modification, repair).
 The research brief's electronics round grounded each member.
+
+Round 4 of the brief added the radio law: in the United States,
+intentional radiators are governed by FCC Part 15, and the practical
+host path is modular approval under 47 CFR 15.212, where a
+pre-certified module carries its own grant and the host product
+references it.
 
 ## Decision
 
@@ -40,6 +46,13 @@ The research brief's electronics round grounded each member.
    the bench log.
 6. IPC texts are paywalled like ISO texts: structure adapts now,
    requirements are quoted only after purchase, per ADR-0008 point 5.
+7. **Radio modules:** any intentional radiator in a KRI build ships
+   only as a pre-certified module carrying its own grant (47 CFR
+   15.212 modular approval). The module's FCC ID is recorded in its
+   BOM row alongside the ADR-0013 battery evidence, and the host
+   follows the module grant's integration conditions (antenna,
+   separation, shielding). Full host certification is re-opened as
+   a separate decision before any commercial sale.
 
 ## Consequences
 

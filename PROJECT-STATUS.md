@@ -50,8 +50,22 @@ not from memory of this table.
   the gear-class declaration (ADR-0011); quality-plan + print-acceptance
   templates to docs/standards/; the battery BOM gate row + pre-MomoCon
   risk docket; the ADR reference pass across affected repos; the 0007
-  double-plate numbering ruling; the next tranche (priority-2/3) awaits
-  the Architect's word.
+  double-plate numbering ruling; the next tranche (ratified below).
+
+- **ISO next tranche (Nov 19):** ADR-0018..0021 RATIFIED by the
+  Architect's word — KRI fits (ISO 286-1 grammar, forge-computed
+  interference, creep rider), conformity decision rules (ISO 14253-1
+  guard bands), electronics workmanship (IPC Class 2 declaration with
+  the FCC 15.212 pre-certified radio-module rule folded in), and the
+  convention travel rider (UN 38.3 test summaries + the 2026 30%
+  state-of-charge rules). PR #17 squash-merged `cfe245d6`; the IEC
+  60825-1 laser section has seeded the standing tower docket at
+  docs/safety/tower-risk-docket.md (first installment; electrical,
+  thermal, mechanical, solvent sections pending bench sittings).
+  **Open:** standards text purchases (ISO + IPC set), capability
+  rounds, templates to docs/standards/, the battery BOM gate row +
+  pre-MomoCon docket, the ADR reference pass, the 0007 double-plate
+  ruling.
 
 - **Shell retirement + the prop mesh (Nov 18):** kitsunebiOS retired by
   the Architect's word — functions live in kitsuneOS, the ESP32-P4 drives

@@ -1,6 +1,6 @@
 # ADR-0021: Convention travel rider: UN 38.3 evidence and 30% state of charge for flying props
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** ⚡ Piko (lead), 🦊 Coco (records)
 - **Scope:** org-wide

@@ -1,6 +1,6 @@
 # ADR-0019: Conformity decision rules: ISO 14253-1 guard bands at the tolerance edge
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead), ⚡ Piko (instrument uncertainty)
 - **Scope:** org-wide

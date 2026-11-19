@@ -1,6 +1,6 @@
 # ADR-0018: KRI fits standard: ISO 286-1 grammar, forge-computed interference
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead)
 - **Scope:** org-wide
