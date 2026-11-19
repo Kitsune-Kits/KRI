@@ -1,6 +1,6 @@
 # ADR-0015: Records declaration: naming the Tail Ledger's record classes
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🦊 Coco (lead)
 - **Scope:** org-wide

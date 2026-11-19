@@ -1,6 +1,6 @@
 # ADR-0016: Quality plan template: the bench round's published shape
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🦊 Coco (lead), 🔨 Zaku (bench acceptance)
 - **Scope:** org-wide

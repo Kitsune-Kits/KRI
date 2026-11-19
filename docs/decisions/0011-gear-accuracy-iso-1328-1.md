@@ -1,6 +1,6 @@
 # ADR-0011: Gear acceptance grammar: declare an ISO 1328-1 flank tolerance class
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead)
 - **Scope:** org-wide

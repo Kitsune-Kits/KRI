@@ -37,12 +37,20 @@ not from memory of this table.
   Nov 18 rulings. **Open:** merge decision on the pass PR pending the
   Architect's word; the ADR index itself belongs to the ISO rail (PR #15).
 
-- **ISO standards alignment (Nov 19):** priority-1 ADR pack drafted —
-  KRI ADR-0008 to 0017, all Proposed (additive-manufacturing standard, GPS
-  default tolerances, gear accuracy, measurement management, battery
-  sourcing gate, risk assessment docket, records canon, quality plan
-  template, timestamp canon) — PR #15 open. **Open:** ratification,
-  standards text purchases, capability rounds, and templates all pending
+- **ISO standards alignment (Nov 19):** priority-1 ADR pack RATIFIED by
+  the Architect's word — KRI ADR-0008 to 0017, all Accepted (PR #15
+  squash-merged `5dce47d6`; statuses flipped in the ratification
+  commit): the alignment program umbrella, additive-manufacturing
+  standard (ISO/ASTM 529xx), GPS default tolerances (ISO 8015 + 2768),
+  gear accuracy (ISO 1328-1), measurement management (ISO 10012:2026 +
+  22514), battery sourcing gate (IEC 62133-2), risk assessment docket
+  (ISO 12100), records declaration (ISO 15489-1), quality plan template
+  (ISO 10005), timestamp canon (ISO 8601-1). **Open:** standards text
+  purchases; capability rounds feeding the class values (ADR-0010) and
+  the gear-class declaration (ADR-0011); quality-plan + print-acceptance
+  templates to docs/standards/; the battery BOM gate row + pre-MomoCon
+  risk docket; the ADR reference pass across affected repos; the 0007
+  double-plate numbering ruling; the next tranche (priority-2/3) awaits
   the Architect's word.
 
 - **Shell retirement + the prop mesh (Nov 18):** kitsunebiOS retired by

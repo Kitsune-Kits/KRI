@@ -1,6 +1,6 @@
 # ADR-0012: Measurement management: instrument fitness and capability rounds
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead), ⚡ Piko (bench instruments)
 - **Scope:** org-wide

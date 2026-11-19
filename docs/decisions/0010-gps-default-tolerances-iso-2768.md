@@ -1,6 +1,6 @@
 # ADR-0010: GPS default tolerances: ISO 8015 principles, forge-computed classes
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead)
 - **Scope:** org-wide

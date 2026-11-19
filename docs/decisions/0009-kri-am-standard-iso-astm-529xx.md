@@ -1,6 +1,6 @@
 # ADR-0009: KRI-AM standard: the ISO/ASTM 52900 line as base layer
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead)
 - **Scope:** org-wide
@@ -38,7 +38,7 @@ assessment) exists for scoring what each tower can hold; ISO/ASTM 52915
    producing per-tower, per-material capability numbers.
 4. AMF is watch-only. The file chain remains 3MF and STL.
 5. Existing sub-standards (all-PETG prototyping, the nylon tier,
-  color doctrine) are re-expressed in this vocabulary, not rewritten.
+   color doctrine) are re-expressed in this vocabulary, not rewritten.
 
 ## Consequences
 

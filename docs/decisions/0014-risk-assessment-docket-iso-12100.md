@@ -1,6 +1,6 @@
 # ADR-0014: Risk assessment docket: ISO 12100 hazard register for towers and worn Vessels
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🔨 Zaku (lead, towers), ✨ Nui (worn surfaces), ⚡ Piko (electrical hazards)
 - **Scope:** org-wide

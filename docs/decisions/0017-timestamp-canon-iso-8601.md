@@ -1,6 +1,6 @@
 # ADR-0017: Timestamp canon: ISO 8601-1 everywhere a clock is written
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** ⚡ Piko (lead)
 - **Scope:** org-wide

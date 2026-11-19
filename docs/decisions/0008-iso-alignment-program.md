@@ -1,6 +1,6 @@
 # ADR-0008: The ISO alignment program: adaptation, not certification
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** 🦊 Coco (lead)
 - **Scope:** org-wide

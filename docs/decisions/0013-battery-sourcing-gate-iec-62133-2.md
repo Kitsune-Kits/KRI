@@ -1,6 +1,6 @@
 # ADR-0013: Battery sourcing gate: IEC 62133-2 qualification for worn cells
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-19
 - **Persona:** ⚡ Piko (lead)
 - **Scope:** org-wide
@@ -13,7 +13,7 @@ Architect's body, in crowds, for ten-hour convention days. IEC
 cells, 2017 edition consolidated with Amendment 1:2021) is the
 international standard the battery industry, venues, and insurers
 recognize for exactly this class of cell. The current gate on battery
-choice isdatasheet vibes and house caution; that is not a document
+choice is datasheet vibes and house caution; that is not a document
 that survives a hallway conversation with a fire marshal.
 
 ## Decision
