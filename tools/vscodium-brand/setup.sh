@@ -3,10 +3,11 @@ set -euo pipefail
 
 # setup.sh / KRI VSCodium Forge Setup / Abstract: one-command forge
 # bootstrap for VSCodium — installs the KRI extension rack, merges forge
-# settings (clangd, Lua, error lens, KRI file associations) and keybindings,
-# then hands off to install.sh for brand themes + icon theme. Idempotent;
-# every merge is backed up first. Palette per BRAND.md / ADR-0001 (locked).
-# v0.4.0
+# settings (rust-analyzer/clippy parity, clangd, Lua, error lens, KRI file
+# associations incl. .rhai) and keybindings, then hands off to install.sh
+# for brand themes + icon theme. Idempotent; every merge is backed up
+# first. Palette per BRAND.md / ADR-0001 (locked).
+# v0.5.0 — rust-era pass: clippy parity, .rhai association, rack re-cut
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SETTINGS="${VSCODIUM_USER_SETTINGS:-$HOME/.vscode-oss/User/settings.json}"
@@ -34,13 +35,15 @@ FORGE_SETTINGS='{
   "Lua.runtime.version": "LuaJIT",
   "errorLens.enabled": true,
   "errorLens.exclude": ["info"],
+  "rust-analyzer.check.command": "clippy",
   "editor.bracketPairColorization.enabled": true,
   "editor.stickyScroll.enabled": true,
   "editor.formatOnPaste": true,
   "editor.tabSize": 4,
   "editor.insertSpaces": true,
   "files.autoSave": "onFocusChange",
-  "files.associations": {"*.kmod": "lua", "*.kmacro": "lua", "*.kspec": "yaml"},
+  "files.associations": {"*.kmod": "lua", "*.kmacro": "lua", "*.kspec": "yaml", "*.rhai": "rust"},
+  "files.exclude": {"**/.DS_Store": true},
   "search.exclude": {"**/build": true, "**/target": true, "**/.pio": true, "**/node_modules": true},
   "files.watcherExclude": {"**/build/**": true, "**/target/**": true, "**/.pio/**": true},
   "git.autofetch": true,
