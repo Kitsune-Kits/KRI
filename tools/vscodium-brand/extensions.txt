@@ -1,18 +1,21 @@
 # KRI forge extension rack for VSCodium (Open VSX)
 # Install with: ./setup.sh   (skips lines starting with #; failures are non-fatal)
-# --- firmware & logic (Piko) ---
-llvm-vs-code-extensions.vscode-clangd
+# --- the Soul: Rust era (Piko) — rust is canonical, clippy is the gate ---
 rust-lang.rust-analyzer
-tamasfe.even-better-toml
 vadimcn.vscode-lldb
+tamasfe.even-better-toml
+# --- legacy estates (read-only reference; the Rust Doctrine froze C forever) ---
+llvm-vs-code-extensions.vscode-clangd
 twxs.cmake
 ms-vscode.cmake-tools
+# --- Lua until the Rhai flip (Lazy-Comet estate; KMOD snippets) ---
 sumneko.lua
+# --- docs pipelines (mkdocs + check scripts) ---
 ms-python.python
 ms-python.vscode-pylint
 # --- hardware (Zaku's bench notes live in Markdown; KiCad runs outside) ---
 mechatroner.rainbow-csv
-# --- the ledger (Coco) ---
+# --- the ledger (Coco): GitHub is home; GitLab stays the read-only mirror ---
 GitLab.gitlab-workflow
 GitHub.vscode-pull-requests-github-actions
 eamodio.gitlens
