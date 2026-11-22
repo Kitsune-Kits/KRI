@@ -6,6 +6,8 @@ set -euo pipefail
 # theme, and brand settings into VSCodium. Palette per BRAND.md / ADR-0001
 # (locked). Neon green forbidden.
 # v0.4.1 — snippets wired (KRI banner/TODO), v0.2.0 lineage icon theme
+# v0.5.0 — Foxfire/Sumi themes copied from the repo-root themes/; brand
+#          prefs trimmed (update.mode none — brew owns the binary; telemetry off)
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EXT_DIR="${VSCODIUM_EXTENSIONS_DIR:-$HOME/.vscode-oss/extensions}/kri-kitsune-modern"
@@ -80,6 +82,8 @@ BRAND_SETTINGS='{
   "files.insertFinalNewline": true,
   "editor.formatOnSave": true,
   "window.autoDetectColorScheme": false,
+  "update.mode": "none",
+  "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Kitsune Modern (Foxfire)",
   "workbench.iconTheme": "kri-kitsune-modern",
   "workbench.colorCustomizations": {
