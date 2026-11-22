@@ -16,7 +16,7 @@ to VSCodium:
 
 ```bash
 git clone https://github.com/Kitsune-Kits/KRI.git
-bash KRI/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
+bash KRI/tools/vscodium-brand/setup.sh        # full forge (v0.5.0)
 bash KRI/tools/vscodium-brand/install.sh      # brand themes + prefs only
 ```
 
@@ -28,7 +28,7 @@ your GitHub credentials — the `gh` CLI, or a personal access token with
 
 ```bash
 git clone https://github.com/Kitsune-Kits/KRI.git
-./KRI/tools/vscodium-brand/setup.sh
+bash KRI/tools/vscodium-brand/setup.sh
 ```
 
 The clone path is preferred — you can read the script before trusting it.
