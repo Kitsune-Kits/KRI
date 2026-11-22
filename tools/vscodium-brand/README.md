@@ -16,8 +16,8 @@ to VSCodium:
 
 ```bash
 git clone https://github.com/Kitsune-Kits/KRI.git
-./KRI/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
-./KRI/tools/vscodium-brand/install.sh      # brand themes only
+bash KRI/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
+bash KRI/tools/vscodium-brand/install.sh      # brand themes + prefs only
 ```
 
 ## Installing (private repo — read this first)
@@ -32,6 +32,8 @@ git clone https://github.com/Kitsune-Kits/KRI.git
 ```
 
 The clone path is preferred — you can read the script before trusting it.
+Connector commits may not carry the executable bit, so invoke through
+`bash` — the door, not the lock.
 (The GitLab group stays a read-only mirror until the post-AWA review.)
 
 ## Behavior
@@ -111,7 +113,7 @@ readable at 13px sidebar size.
 4. Hands off to `install.sh` for the brand color themes + icon theme.
 
 ```bash
-./tools/vscodium-brand/setup.sh
+bash tools/vscodium-brand/setup.sh
 ```
 
 Env overrides: `VSCODIUM_BIN`, `VSCODIUM_USER_SETTINGS`,
