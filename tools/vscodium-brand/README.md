@@ -48,6 +48,32 @@ Connector commits may not carry the executable bit, so invoke through
 
 After install: restart VSCodium, `⌘K ⌘T`, pick a Kitsune Modern theme.
 
+## Insiders builds (macOS bench truth, v0.5.0)
+
+The default paths in these scripts are stable/Linux-shaped
+(`~/.vscode-oss`). The Insiders build keeps everything under its own
+names: the app is `VSCodium - Insiders.app`, the CLI is `codium-insiders`,
+and its data folder is `.vscodium-insiders` — set in VSCodium's own build
+script (`prepare_vscode.sh`). On macOS, user settings live under
+`~/Library/Application Support`, not the home folder. Without overrides
+the scripts still exit green while writing into a drawer an Insiders
+bench never reads; with them, everything lands where the app looks:
+
+```bash
+VSCODIUM_BIN="/Applications/VSCodium - Insiders.app/Contents/Resources/app/bin/codium-insiders" \
+VSCODIUM_EXTENSIONS_DIR="$HOME/.vscodium-insiders/extensions" \
+VSCODIUM_USER_SETTINGS="$HOME/Library/Application Support/VSCodium - Insiders/User/settings.json" \
+VSCODIUM_USER_KEYBINDINGS="$HOME/Library/Application Support/VSCodium - Insiders/User/keybindings.json" \
+bash tools/vscodium-brand/setup.sh
+```
+
+Bench-verified 2026-11-22: 22 of 24 rack entries installed ✓ under
+`codium-insiders`; `ms-python.vscode-pylint` and
+`GitHub.vscode-pull-requests-github-actions` sit off Open VSX and skip
+with a warning, by design and non-fatal. With `brew install --cask
+vscodium@insiders`, `VSCODIUM_BIN=codium-insiders` suffices (the cask
+puts the CLI on PATH).
+
 ## Color themes (v0.5.0)
 
 The workbench color themes live in the repo itself, at the root `themes/`

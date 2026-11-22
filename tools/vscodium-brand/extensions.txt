@@ -1,5 +1,5 @@
 # KRI forge extension rack for VSCodium (Open VSX)
-# Install with: ./setup.sh   (skips lines starting with #; failures are non-fatal)
+# Install with: bash setup.sh   (skips lines starting with #; failures are non-fatal)
 # --- the Soul: Rust era (Piko) — rust is canonical, clippy is the gate ---
 rust-lang.rust-analyzer
 vadimcn.vscode-lldb
