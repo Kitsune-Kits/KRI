@@ -14,6 +14,7 @@ ms-python.vscode-pylint
 mechatroner.rainbow-csv
 # --- the ledger (Coco) ---
 GitLab.gitlab-workflow
+GitHub.vscode-pull-requests-github-actions
 eamodio.gitlens
 mhutchie.git-graph
 gruntfuggly.todo-tree

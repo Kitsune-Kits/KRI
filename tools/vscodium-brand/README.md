@@ -4,8 +4,8 @@ One-command VSCodium branding for KRI. Applies the locked brand palette
 (`BRAND.md` / ADR-0001) and typography canon (`BRAND-TYPOGRAPHY.md` / ADR-0002)
 to VSCodium:
 
-- **Kitsune Modern (Foxfire)** — canonical light theme ("black is the ink,
-  not the paper"): Foxfire White `#F4F7F8` surfaces, Sumi Ink `#0E1113` text.
+- **Kitsune Modern (Foxfire)** — canonical light theme (“black is the ink,
+  not the paper”): Foxfire White `#F4F7F8` surfaces, Sumi Ink `#0E1113` text.
 - **Kitsune Modern (Sumi)** — dark variant for deep-night sessions.
 - Accent discipline: Gold-Leaf `#C9A227` = types/headings/focus,
   Torii Crimson `#D0342C` = keywords/errors (the stamp),
@@ -15,33 +15,24 @@ to VSCodium:
 ## Usage
 
 ```bash
-git clone https://gitlab.com/kitsune-kits/kri.git
-./kri/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
-./kri/tools/vscodium-brand/install.sh      # brand themes only
+git clone https://github.com/Kitsune-Kits/KRI.git
+./KRI/tools/vscodium-brand/setup.sh        # full forge (v0.4.0)
+./KRI/tools/vscodium-brand/install.sh      # brand themes only
 ```
-
 
 ## Installing (private repo — read this first)
 
-The kitsune-kits group is **private**, so the curl-pipe one-liner from
-earlier versions returns 403 for anonymous curl. The supported flow is
-clone-first:
+The Kitsune-Kits organization on GitHub is **private**, so clone with
+your GitHub credentials — the `gh` CLI, or a personal access token with
+`repo` scope. The supported flow is clone-first:
 
 ```bash
-git clone https://gitlab.com/kitsune-kits/kri.git
-./kri/tools/vscodium-brand/setup.sh
-```
-
-If you insist on the one-liner, it needs a GitLab personal access token
-with `read_api` scope (Preferences → Access Tokens), substituted for
-`<your-token>` — no angle brackets:
-
-```bash
-bash <(curl -fsSL -H "PRIVATE-TOKEN: <your-token>" \
-  "https://gitlab.com/api/v4/projects/86534918/repository/files/tools%2Fvscodium-brand%2Fsetup.sh/raw?ref=main")
+git clone https://github.com/Kitsune-Kits/KRI.git
+./KRI/tools/vscodium-brand/setup.sh
 ```
 
 The clone path is preferred — you can read the script before trusting it.
+(The GitLab group stays a read-only mirror until the post-AWA review.)
 
 ## Behavior
 
@@ -54,6 +45,25 @@ The clone path is preferred — you can read the script before trusting it.
 - Env override: `VSCODIUM_USER_SETTINGS` for portable/Flatpak installs.
 
 After install: restart VSCodium, `⌘K ⌘T`, pick a Kitsune Modern theme.
+
+## Color themes (v0.5.0)
+
+The workbench color themes live in the repo itself, at the root `themes/`
+folder — exactly where `install.sh` copies them from into the local
+extension:
+
+- `themes/kitsune-modern.json` — **Kitsune Modern (Foxfire)**, the canonical
+  light paper: Foxfire White surfaces, Sumi Ink text, jade interactive
+  surfaces, a Gold-Leaf Kintsugi hairline on the active tab, and an
+  ink-black status margin.
+- `themes/kitsune-modern-dark.json` — **Kitsune Modern (Sumi)**, the
+  deep-night variant: the same architecture reversed — ink surfaces,
+  Foxfire text.
+
+Legibility shifts are permitted and recorded: jade is sunk (`#0B8A7E`) on
+paper and full (`#0FA898`) on sumi; crimson is raised (`#E0554C`) on sumi
+for thin squiggles. Accent discipline holds everywhere — never crimson
+and jade in one component, and no neon green, ever.
 
 ## Icon theme (v0.2.0)
 
