@@ -62,7 +62,7 @@
     "statusBar.debuggingBackground": "#D0342C",
     "statusBar.debuggingForeground": "#F4F7F8",
     "statusBar.noFolderBackground": "#0E1113",
-    "statusBarItem.hoverBackground": "#1A2 he",
+    "statusBarItem.hoverBackground": "#1A2228",
     "statusBarItem.prominentBackground": "#D0342C",
     "statusBarItem.prominentHoverBackground": "#B02E27",
     "badge.background": "#0FA898",
